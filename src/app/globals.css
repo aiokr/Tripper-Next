@@ -4,4 +4,9 @@
 
 body {
     --radius: 5px;
+    color: #222831;
+}
+
+.center {
+    margin: 0 auto
 }

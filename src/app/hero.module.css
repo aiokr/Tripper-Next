@@ -1,3 +1,20 @@
+.header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    background-color: #ffffffb5;
+    -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+    backdrop-filter: saturate(180%) blur(18px) !important;
+    z-index: 9999;
+}
+
+.header a {
+    height: 58px;
+    display: inline-block;
+    line-height: 58px;
+    padding: 0 12px;
+}
+
 .hero-img {
     background-image: url('https://imgur.lzmun.com/picgo/after2022/202209112241772.png_itp');
     background-position: center;
