@@ -11,9 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh-cn">
       <body>
-        <div className={`${styles.header} w-screen h-[58px] shadow-sm`}>
+        <div className={`${styles.header} w-screen h-[58px]`}>
           <Link className='' href="/">Home</Link>
           <Link className='' href="/posts">Posts</Link>
+          <Link className='' href="/photo">Photo</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}
