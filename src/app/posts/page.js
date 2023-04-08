@@ -1,6 +1,30 @@
 import Image from 'next/image'
+import { headers } from 'next/headers';
 import style from './post.module.css'
-export default function PostsList() {
+
+async function fetchBlogData() {
+    const BlogDbUrl = 'https://api.notion.com/v1/databases/c37515903dc94a60939422b2157a5ff3'
+    // const headersInstance = headers()
+    const authorization = 'Bearer ' + process.env.NOTION_SECRET
+    const NotionVersion = process.env.NOTION_V
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Notion-Version': NotionVersion,
+        'Authorization': authorization
+    }
+    const res = await fetch(BlogDbUrl, {
+        headers: headers
+    });
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data');
+    }
+    return res.json();
+}
+
+async function  getStaticProps({ Posts }) {
+    const data = await fetchBlogData();
     return (
         <main className="container px-6 lg:px-8 max-w-[1280px]">
             <div className={`${style['postHeader']} pt-8 pb-4`}>
@@ -18,6 +42,11 @@ export default function PostsList() {
                 </div>
             </div>
             <hr />
+            <ul>
+              {data.last_edited_time}
+            </ul>
         </main>
     )
 }
+
+export default getStaticProps
