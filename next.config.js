@@ -1,11 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const { withContentlayer } = require('next-contentlayer');
+module.exports = withContentlayer({
+  /* 其他配置 */
   experimental: {
     appDir: true,
   },
   images: {
     domains: ['imgur.lzmun.com'],
   },
-}
-
-module.exports = nextConfig
+});
