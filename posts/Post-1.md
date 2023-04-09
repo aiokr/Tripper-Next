@@ -1,8 +1,9 @@
 ---
-title: Title-1
+title: 宣布 Tripper Press V2
 date: 2021-12-24
 type: Post
-url: post-1
+cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan_itp'
+url: test-post-1
 ---
 
 Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum. Ipsum
