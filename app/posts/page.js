@@ -32,12 +32,11 @@ async function BlogPage() {
           {posts && posts.map((post) => (
             <div key={post.url}>
             <Link href={`/post/${post.url}`} >
-              <div className={`${style['postEntry']} pb-12 pt-4`}>
+              <div className={`${style['postEntry']} my-8 p-6`}>
                   <div className='text-2xl font-medium'>{post.title}</div>
                   <div className='opacity-60'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
               </div>
                 </Link>
-              <div className='p-12' ></div>
             </div>
           ))}
         </div>

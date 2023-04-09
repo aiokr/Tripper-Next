@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import styles from './hero.module.css'
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <Link className='' href="/about">About</Link>
         </div>
         {children}
+        <Analytics />
       </body>
     </html>
   )
