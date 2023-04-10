@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh-cn">
       <body>
-        <div className={`${styles.header} w-screen h-[58px]`}>
+        <div className={`${styles.header}`}>
           <Link className='' href="/">Home</Link>
           <Link className='' href="/posts">Posts</Link>
           <Link className='' href="/photo">Photo</Link>

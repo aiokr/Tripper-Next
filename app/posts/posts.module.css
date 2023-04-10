@@ -6,11 +6,12 @@
 }
 
 .postEntry {
-    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+    /*box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, 0.03);*/
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+    border-radius: 5px;
 }
 
 .postEntry:hover {
-    transform: translateY(-5px);
-    box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 1px 5px 15px 0 rgba(0, 0, 0, 0.1);
 }

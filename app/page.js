@@ -4,8 +4,8 @@ import styles from './hero.module.css'
 
 export default function Home() {
   return (
-    <main className="container">
-      <div className={`${styles['hero-area']} lg:container lg:max-w-7xl lg:px-8`}>
+    <main className="container lg:px-8 max-w-[1280px]">
+      <div className={`${styles['hero-area']}`}>
         <div className={`${styles['hero-img']} h-[300px] lg:h-[500px]`}>
           <div className={`${styles['hero-layer']}`}>
             <div className={`${styles['hero-title']} text-4xl font-bold`}>前行有风</div>

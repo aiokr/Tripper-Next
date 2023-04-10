@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import style from './post.module.css'
+import style from './posts.module.css'
 
 async function fetchBlogData() {
   const posts = allPosts.sort((a, b) => {
