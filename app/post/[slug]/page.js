@@ -2,12 +2,11 @@
 
 import Head from 'next/head'
 import Link from 'next/link'
-import Script from 'next/script'
 import { format, parseISO } from 'date-fns'
 import React, { useRef } from 'react';
 import { allPosts } from 'contentlayer/generated'
 import style from './post.module.css'
-import { ReactCusdis } from 'react-cusdis'
+// import { ReactCusdis } from 'react-cusdis'
 var md = require('markdown-it')({
   breaks: true,
 });
@@ -24,16 +23,7 @@ export default async function PostPage(props) {
       <div className='opacity-60 pt-4'>{format(parseISO(post.date), 'yyyy-MM-dd')}{post.category ? `/${post.category}` : ''}{post.tags ? `/${post.tags}` : ''}</div>
       <div className='article pt-6' dangerouslySetInnerHTML={{ __html: result }} />
       <div className={`${style['commentHr']} pt-10 pb-6`}>
-        <ReactCusdis
-          lang="zh-cn"
-          attrs={{
-            host: 'https://cusdis.com',
-            appId: 'f72a62c5-d240-4ab2-a094-fdda5a919029',
-            pageId: props.params.slug,
-            pageTitle: post.title,
-            pageUrl: url
-          }}
-        /></div>
+</div>
     </main>
   )
 }
