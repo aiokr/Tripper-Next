@@ -2,7 +2,7 @@
 title: 宣布 Tripper Press V2
 date: 2023-05-01
 type: Post
-cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan_itp'
+cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan'
 url: release-tr-v2
 ---
 
