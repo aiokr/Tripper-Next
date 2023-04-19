@@ -16,7 +16,7 @@
 }
 
 .hero-img {
-    background-image: url('https://stars.tripper.press/api/himawari8');
+    background-color: #D4EAFC;
     background-position: center;
     background-size: cover;
     display: block;
