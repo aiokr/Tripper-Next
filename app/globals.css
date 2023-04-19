@@ -203,3 +203,7 @@ article .footnote-ref a {
     text-decoration: none;
     font-size: .2em;
 }
+
+.markdownIt-Anchor {
+    display: none;
+}

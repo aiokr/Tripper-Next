@@ -5,11 +5,18 @@ import { format, parseISO } from 'date-fns'
 import React, { useRef } from 'react';
 import { allPosts } from 'contentlayer/generated'
 import style from './post.module.css'
-// import { ReactCusdis } from 'react-cusdis'
+//Markdown
+import MarkdownIt from 'markdown-it'
+import tocAndAnchor from 'markdown-it-toc-and-anchor'
+import emoji from 'markdown-it-emoji'
+import footnote from 'markdown-it-footnote'
 var md = require('markdown-it')({
   breaks: true,
+  breaks: true,
+  langPrefix: 'language-',
+  linkify: true,
 });
-
+md.use(emoji).use(footnote).use(tocAndAnchor)
 import Image from 'next/image'
 
 const upyunImg = ({ src, width, quality }) => {

@@ -21,6 +21,10 @@ export const Post = defineDocumentType(() => ({
         tags: {
             type: 'string',
             description: 'The tags of the post',
+        }, 
+        excerpt: {
+            type: 'string',
+            description: 'The excerpt of the post',
         },
         cover: {
             type: 'string',
