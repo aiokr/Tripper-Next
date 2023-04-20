@@ -1,6 +1,7 @@
 "use client"
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { format, parseISO } from 'date-fns'
 import React, { useRef } from 'react';
 import { allPosts } from 'contentlayer/generated'
@@ -17,23 +18,23 @@ var md = require('markdown-it')({
   linkify: true,
 });
 md.use(emoji).use(footnote).use(tocAndAnchor)
-import Image from 'next/image'
 
 const upyunImg = ({ src, width, quality }) => {
   return `${src}_itp/fw/${width}`
 }
 
 export default async function generateStaticParams(props) {
-  console.log(props.params.slug)
   const post = allPosts.find((post) => post.url == props.params.slug)
   const url = 'https://next.tripper.press/post/' + props.params.slug
   const postCont = post.body.raw
-  const postCover = post.cover
   var result = md.render(postCont);
   return (
     <main>
+      <head>
+        <title>{`${post.title} - Tripper Press`}</title>
+      </head>
       {post.cover ? (
-        <div className={`${style['postCoverHeader']}`} style={{ backgroundImage: 'url("' + postCover + '")' }}>
+        <div className={`${style['postCoverHeader']}`} style={{ backgroundImage: 'url("' + post.cover + '")' }}>
           <div className={`${style['postHeaderLayer']}`}>
             <div className={`${style['info-area']} lg:px-8 max-w-[800px]`}>
               <div className='text-3xl font-medium pt-4'>{post.title}</div>
