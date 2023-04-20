@@ -23,6 +23,15 @@ export default async function Home() {
           </div>
         </div>
       </div>
+      <div className={`${IndexStyle['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
+        <div className="left inline">
+          <div className="text-2xl font-bold">文章</div>
+        </div>
+        <div className="right inline">
+          <Link className='text-main' href="/posts">所有文章</Link>
+        </div>
+      </div>
+      <hr />
       <div className='pt-6 grid grid-cols-1 px-6 gap-6 lg:grid-cols-3 lg:px-0'>
         {posts && posts.map((post) => (
           <div key={post.url}>

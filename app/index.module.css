@@ -5,7 +5,6 @@
 }
 
 .postEntry:hover {
-
     transition: transform 0.3s, box-shadow 0.6s;
     transform: translateY(-1px);
     box-shadow: 1px 5px 15px 0 rgba(0, 0, 0, 0.1);
@@ -17,6 +16,11 @@
     border-radius: 5px;
 }
 
-.postEntryInfo {
-    
+.postEntryInfo {}
+
+.postHeader {
+    color: var(--main-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
