@@ -28,6 +28,7 @@
     "tailwindcss": "3.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "markdown-it-highlightjs": "^4.0.1"
   }
 }
