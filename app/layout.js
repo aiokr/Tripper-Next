@@ -19,6 +19,20 @@ export default function RootLayout({ children }) {
           <Link className='' href="/about">About</Link>
         </div>
         {children}
+        <footer className={`${styles.footer} container lg:px-8 px-6 max-w-[1280px]`}>
+          <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <div>
+              <p className='opacity-80'>© Tripper Press 2016-2023 <br />
+                <a className='text-main' href='https://github.com/aiokr/Tripper-Next' target='blank'>Design and Code by aiokr</a> <br />
+                Beta Version at <Link className='text-main' href="https://next.tripper.press">Next-Tripper-Press</Link>
+              </p>
+            </div>
+            <div>
+              <p>
+              </p>
+            </div>
+          </div>
+        </footer>
         <Analytics />
       </body>
     </html>
