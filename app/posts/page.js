@@ -14,8 +14,8 @@ async function fetchBlogData() {
 async function BlogPage() {
   const { posts } = await fetchBlogData()
   return (
-    <main className="container px-6 lg:px-8 max-w-[1280px]">
-      <div className={`${style['postHeader']} pt-8 pb-4`}>
+    <main className="container lg:px-8 max-w-[1280px]">
+      <div className={`${style['postHeader']} px-6 pt-8 pb-4`}>
         <div className="left inline">
           <div className="text-2xl font-bold">文章</div>
         </div>
