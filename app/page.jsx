@@ -18,7 +18,7 @@ export default async function Home() {
       <div className={`${heroStyle['hero-area']}`}>
         <div className={`${heroStyle['hero-img']} h-[300px] lg:h-[400px]`}>
           <div className={`${heroStyle['hero-layer']}`}>
-            <div className={`${heroStyle['hero-title']} text-4xl font-bold`}>前行有风</div>
+            <div className={`${heroStyle['hero-title']} text-4xl font-bold`}>靡不有初 鲜克有终</div>
             <div className={`${heroStyle['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
           </div>
         </div>

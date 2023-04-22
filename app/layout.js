@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
         </div>
         {children}
         <footer className={`${styles.footer} container lg:px-8 px-6 max-w-[1280px]`}>
+        <hr />
           <div className='grid grid-cols-1 lg:grid-cols-3'>
             <div>
               <p className='opacity-80'>© Tripper Press 2016-2023 <br />

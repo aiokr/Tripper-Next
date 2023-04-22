@@ -15,3 +15,9 @@
     transform: translateY(-1px);
     box-shadow: 1px 5px 15px 0 rgba(0, 0, 0, 0.1);
 }
+
+.postEntryCover {
+background-position: center;
+background-size: cover;
+border-radius: 5px;
+}
