@@ -21,6 +21,7 @@ export const Post = defineDocumentType(() => ({
         category: {
             type: 'string',
             description: 'The category of the post',
+            default: '未分类'
         },
         tags: {
             type: 'list',

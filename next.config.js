@@ -5,6 +5,6 @@ module.exports = withContentlayer({
     appDir: true,
   },
   images: {
-    domains: ['imgur.lzmun.com'],
+    domains: ['imgur.lzmun.com','ooo.0o0.ooo','images.unsplash.com','raw.githubusercontent.com'],
   },
 });
