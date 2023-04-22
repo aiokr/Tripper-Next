@@ -1,5 +1,5 @@
 ---
-title: 宣布 Tripper Press V2
+title: 宣布全新 Tripper Press
 date: 2023-05-01
 type: Post
 cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan'
@@ -8,9 +8,18 @@ url: release-tr-v2
 
 经过一段时间的开发，全新的 Tripper Press 网站终于上线了。
 
-## 架构
+新的站点使用 Next.js 搭建，部署在 Vercel 上。文章和站点的源代码暂时还储存在同一个仓库中，由 [Contentlayer](https://www.contentlayer.dev/) 对文章数据进行管理。相比起之前使用 Hexo 驱动的静态博客，Next.js 可以更方便地添加 React 的插件，使用 npm 管理依赖项，也能更方便地使用 Vercel 提供的各种功能。
 
-目前网站的架构是，由 Next.JS 驱动的，部署在 Vercel 上的静态网站。文章储存在同仓库的 `/posts/` 文件夹中，由 [contentlayer](https://www.contentlayer.dev/) 对文章数据进行管理。
+和之前的站点一样，新的站点也同样开源在 [aiokr/Tripper-Next: New Tripper Press Website](https://github.com/aiokr/Tripper-Next)，欢迎 Star。
+
+## 后续需要补全的功能
+
+- 文章评论挂件
+- 夜间模式支持
+
+- RSS Feed 的输出
+- Sitemap 的输出
+- 照片集的功能
 
 
 ## 碎碎念

@@ -12,8 +12,6 @@ async function fetchBlogData() {
   return { posts, categories }
 }
 
-
-
 async function BlogPage() {
   const { posts } = await fetchBlogData()
   const { categories } = await fetchBlogData()
@@ -69,7 +67,6 @@ async function BlogPage() {
           {categories.map(category => (
             <Link href={`/category/${category}`} key={category} className="block py-2 hover:underline">{category}</Link>
           ))}
-
         </div>
       </div>
     </main>
