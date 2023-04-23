@@ -74,13 +74,18 @@ h6 {
 
 h1 {
     font-style: normal;
-    font-size: 1.8em;
+    font-size: 2.4em;
     line-height: 140%;
-    text-align: left !important;
 }
 
 h2 {
-    font-size: 1.6em !important;
+    font-size: 2.2em !important;
+    border-bottom: var(--main-color) solid 8px;
+    line-height: .6em;
+    display: inline-block;
+    padding-right: 8px;
+    letter-spacing: 1px;
+    font-weight: 800;
 }
 
 h3 {
@@ -135,12 +140,12 @@ img {
 blockquote {
     padding: 0 0px 0 10px;
     margin: 1.5em 0px !important;
-    border-left: 2px solid #71afdd;
+    border-left: 6px solid #71afdd;
     quotes: none;
 }
 
 blockquote p {
-    color: 767676;
+    color: #767676;
     margin-top: 0 !important;
 }
 

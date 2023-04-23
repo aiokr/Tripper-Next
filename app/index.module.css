@@ -1,13 +1,14 @@
 .postEntry {
-    /*box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, 0.03);*/
-    transition: transform 0.3s, box-shadow 0.6s;
     border-radius: 5px;
 }
 
-.postEntry:hover {
-    transition: transform 0.3s, box-shadow 0.6s;
-    transform: translateY(-1px);
-    box-shadow: 1px 5px 15px 0 rgba(0, 0, 0, 0.1);
+.postEntry .postEntryTitle {
+    transition: all 0.3s ease-in-out;
+}
+
+.postEntry:hover .postEntryTitle {
+    transition: all 0.3s ease-in-out;
+    color: var(--main-color);
 }
 
 .postEntryCover {
@@ -23,4 +24,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.postEntryExcerpt {
+    line-height: 22px;
+    max-height: 44px;
+    overflow-y: hidden;
+}
+
+.postEntryExcerptNoCover {
+    line-height: 22px;
+    max-height: calc(22px * 12);
+    overflow-y: hidden;
 }
