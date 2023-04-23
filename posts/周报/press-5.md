@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: '瞬间 Press #5'
 url: '501'
 date: 2022-04-09 19:31:54
