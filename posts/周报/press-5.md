@@ -1,7 +1,7 @@
 ---
-type: post
+type: Post
 title: '瞬间 Press #5'
-url: '501'
+url: press-5
 date: 2022-04-09 19:31:54
 excerpt: 瞬间 Press 是一档由 aiokr 制作的非定期 Newsletter，主要介绍近期以来我所浏览的一些值得记录的内容。
 category: 瞬间周报
