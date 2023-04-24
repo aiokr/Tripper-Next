@@ -1,7 +1,7 @@
 ---
 title: Test Post
 date: 2021-12-24
-type: Post
+type: Draft
 url: test-post
 ---
 
