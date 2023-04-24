@@ -1,7 +1,7 @@
 ---
 title: 宣布全新 Tripper Press
 date: 2023-05-01
-type: Post
+type: Draft
 cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan'
 url: release-tr-v2
 ---
