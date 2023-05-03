@@ -56,16 +56,17 @@ async function BlogPage() {
                   <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
                     <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium`}>{post.title}</div>
                     <div className='opacity-60'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
-                     <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block`}>{post.excerpt}</div>
+                    <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block`}>{post.excerpt}</div>
                   </div>
                 </Link>
               )}
             </div>
           ))}
         </div>
-        <div>
+        <div className='mt-5'>
+          <div className='text-xl font-bold mb-2'>分类</div>
           {categories.map(category => (
-            <Link href={`/category/${category}`} key={category} className="block py-2 hover:underline">{category}</Link>
+            <Link href={`/category/${category}`} key={category} className={`${style['categoriesLink']} block py-2 opacity-60 hover:opacity-100`}>{category}</Link>
           ))}
         </div>
       </div>
