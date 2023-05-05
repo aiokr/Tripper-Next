@@ -2,7 +2,7 @@
 title: 巡礼 柳州
 tags:
   - 课程笔记
-category: 随笔
+category: 读立写生
 cover: 'https://imgur.lzmun.com/picgo/20191015130824.jpg'
 style: cover
 url: f6d5
