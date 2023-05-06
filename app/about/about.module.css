@@ -1,0 +1,17 @@
+.aboutCard {
+  border-radius: 12px;
+}
+
+.aboutLink {
+  border-radius: 50%;
+  height: 72px;
+  width: 72px;
+}
+
+@media (max-width: 1024px) {
+  .aboutLink {
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+  }
+}

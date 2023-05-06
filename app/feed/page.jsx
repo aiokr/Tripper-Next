@@ -25,8 +25,9 @@ export default async function generateRSS() {
   allPosts.forEach((post) => {
     feed.addItem({
       title: post.title,
-      link: `/post/${post.url}`,
+      link: `https://tripper.press/post/${post.url}`,
       date: new Date(post.date),
+      author: 'author',
     });
   });
 

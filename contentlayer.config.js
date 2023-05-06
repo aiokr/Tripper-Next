@@ -17,6 +17,7 @@ export const Post = defineDocumentType(() => ({
         author: {
             type: 'string',
             description: 'The author of the post',
+            default: 'aiokr'
         },
         category: {
             type: 'string',

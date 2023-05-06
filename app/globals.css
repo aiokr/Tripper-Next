@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 body {
-    --radius: 5px;
-    --main-color: #71afdd;
-    --main-black: #222831;
     color: #222831;
 }
 
@@ -20,7 +17,7 @@ Photup Article Style
 :root {
     --main-color: #71afdd;
     --main-black: #222831;
-    --radius: 5px;
+    --radius: 12px;
 }
 
 p {
