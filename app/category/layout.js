@@ -15,8 +15,8 @@ async function fetchBlogData() {
 export default async function RootLayout({ children }) {
   const { categories } = await fetchBlogData()
   return (
-    <main className='container lg:px-8 max-w-[1280px]'>
-      <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
+    <main className='container px-4 lg:px-8 max-w-[1280px]'>
+      <div className={`${style['postHeader']} pt-8 pb-4`}>
         <div className="left inline">
           <div className="text-2xl font-bold">分类</div>
         </div>
@@ -30,7 +30,7 @@ export default async function RootLayout({ children }) {
       <hr />
       <div className='grid py-6 gap-2 grid-cols-2 lg:grid-cols-6'>
         {categories.map(category => (
-          <Link href={`/category/${category}`} key={category} className="block py-2 text-center rounded-full bg-slate-300">{category}</Link>
+          <Link href={`/category/${category}`} key={category} className="block py-2 text-center rounded-full border hover:text-white hover:bg-slate-300 transition-all ease-in-out">{category}</Link>
         ))}
       </div>
       {children}

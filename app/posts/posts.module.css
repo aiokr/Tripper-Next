@@ -8,7 +8,7 @@
 .postEntry {
     /*box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, 0.03);*/
     transition: all 0.3s ease-in-out;
-    border-radius: 5px;
+    border-radius: var(--radius);
 }
 
 .postEntry .postEntryTitle {
@@ -23,7 +23,7 @@
 .postEntryCover {
     background-position: center;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: var(--radius);
     width: 100%;
 }
 

@@ -24,7 +24,7 @@
 }
 
 .hero-layer {
-    background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
+    background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.32) 100%);
     position: absolute;
     top: 0;
     bottom: 0;

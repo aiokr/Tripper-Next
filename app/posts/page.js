@@ -16,8 +16,8 @@ async function BlogPage() {
   const { posts } = await fetchBlogData()
   const { categories } = await fetchBlogData()
   return (
-    <main className="container lg:px-8 max-w-[1280px]">
-      <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
+    <main className="container px-4 lg:px-8 max-w-[1280px]">
+      <div className={`${style['postHeader']} pt-8 pb-4`}>
         <div className="left inline">
           <div className="text-2xl font-bold">文章</div>
         </div>
@@ -47,7 +47,7 @@ async function BlogPage() {
                   </div>
                 </Link>
               ) : (
-                <Link href={`/post/${post.url}`} className={`${style['postEntry']}  my-6 grid grid-cols-3`}>
+                <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
                   <div className={`${style['postEntryCover']} aspect-video`}>
                     <Image src='https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp' width={600} height={300} alt={post.title}
                       className={`${style['postEntryImage']} object-cover  h-full w-full`}
