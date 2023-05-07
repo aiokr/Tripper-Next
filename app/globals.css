@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 body {
-    --radius: 5px;
-    --main-color: #71afdd;
-    --main-black: #222831;
     color: #222831;
 }
 
@@ -20,7 +17,7 @@ Photup Article Style
 :root {
     --main-color: #71afdd;
     --main-black: #222831;
-    --radius: 5px;
+    --radius: 12px;
 }
 
 p {
@@ -37,13 +34,13 @@ p {
   aiokr learn from https://blog.csdn.net/qq_23375733/article/details/99975659
   */
 
-article p,
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
+.article p,
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
     table-layout: fixed !important;
     /*文字避首尾 -- 防止撑开*/
     word-wrap: break-word !important;
@@ -81,7 +78,7 @@ h1 {
 h2 {
     font-size: 2.2em !important;
     border-bottom: var(--main-color) solid 8px;
-    line-height: .6em;
+    line-height: 1.2em;
     display: inline-block;
     padding-right: 8px;
     letter-spacing: 1px;
@@ -160,29 +157,29 @@ blockquote::before,
     line-height: 30px;
 }
 
-article a {
+.article a {
     color: var(--main-black);
     text-decoration: underline;
     text-decoration-color: var(--main-color);
 }
 
-article mark {
+.article mark {
     background: #71afdd80;
 }
 
-article ol li,
-article ul li {
+.article ol li,
+.article ul li {
     font-size: 16px;
     line-height: 1.8em;
     letter-spacing: 0;
 }
 
-article .footnotelist ol li span {
+.article .footnotelist ol li span {
     display: contents !important;
 }
 
 
-article hr {
+.article hr {
     margin: 24px auto;
     padding: 12px;
     border: 0;
@@ -191,19 +188,19 @@ article hr {
     background-repeat: no-repeat;
 }
 
-article pre {
+.article pre {
     margin: 1em 0px !important;
 }
 
-article code {
+.article code {
     line-height: 16px;
 }
 
-article section.footnotes ol {
+.article section.footnotes ol {
     list-style: decimal;
 }
 
-article .footnote-ref a {
+.article .footnote-ref a {
     color: var(--main-black) !important;
     text-decoration: none;
     font-size: .2em;

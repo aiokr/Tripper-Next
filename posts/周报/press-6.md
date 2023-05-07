@@ -1,7 +1,7 @@
 ---
-layout: post
+type: Post
 title: '瞬间 Press #6'
-url: 83d6
+url: press-6
 excerpt: 瞬间 Press 是一档由 aiokr 制作的非定期 Newsletter，主要介绍近期以来我所浏览的一些值得记录的内容。
 category: 瞬间周报
 date: 2022-08-27 19:31:54

@@ -2,7 +2,7 @@
 title: 为自己的生存作出思考 | 1982 夏娃义务
 tags:
   - 测评
-category: 随笔
+category: 读立写生
 url: 93b9
 date: 2018-09-10 00:00:00
 ---

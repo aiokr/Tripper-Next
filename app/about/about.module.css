@@ -1,0 +1,24 @@
+.aboutCard {
+  border-radius: 12px;
+}
+
+.aboutLink {
+  border-radius: 50%;
+  height: 72px;
+  width: 72px;
+}
+
+@media (max-width: 1024px) {
+  .aboutLink {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.earthCard {
+  background-image: url('https://stars.tripper.press/api/himawari8');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}

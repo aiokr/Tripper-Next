@@ -16,6 +16,7 @@
     "date-fns": "^2.29.3",
     "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
+    "feed": "^4.2.2",
     "markdown-it": "^13.0.1",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-footnote": "^3.0.3",

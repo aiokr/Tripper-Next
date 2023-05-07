@@ -2,7 +2,7 @@
 title: 关于 M43 的一些碎碎念
 tags:
   - 摄影
-category: 随笔
+category: 读立写生
 url: '5549'
 date: 2019-04-02 20:44:09
 cover:
