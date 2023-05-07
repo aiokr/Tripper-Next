@@ -26,7 +26,8 @@ export default function RootLayout({ children }) {
             <div>
               <p className='opacity-80'>© Tripper Press 2016-2023 <br />
                 <a className='text-main' href='https://github.com/aiokr/Tripper-Next' target='blank'>Design and Code by aiokr</a> <br />
-                Beta Version at <Link className='text-main' href="https://next.tripper.press">Next-Tripper-Press</Link>
+                Beta Version at <Link className='text-main' href="https://next.tripper.press">Next-Tripper-Press</Link><br />
+                <span>Build: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</span>
               </p>
             </div>
             <div>
