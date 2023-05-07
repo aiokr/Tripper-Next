@@ -17,12 +17,12 @@ var md = require('markdown-it')({
   highlight: (str, lang) => {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs"><code>' +
+        return '<pre className="hljs"><code>' +
           hljs.highlight(lang, str, true).value +
           '</code></pre>';
       } catch (__) { }
     }
-    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+    return '<pre className="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
   }
 });
 md.use(emoji).use(footnote).use(tocAndAnchor).use(highlightjs);

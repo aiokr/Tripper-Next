@@ -5,7 +5,7 @@ import styles from './hero.module.css'
 import Script from 'next/script'
 
 export const metadata = {
-  title: 'Next Tripper Press',
+  title: '按下瞬间 - Tripper Press',
   description: 'Tripper Press Website',
 }
 
