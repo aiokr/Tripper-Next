@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <div className={`${styles.header}`}>
           <Link className='' href="/">Home</Link>
           <Link className='' href="/posts">Posts</Link>
-          <Link className='' href="/photo">Photo</Link>
+          <Link className='' href="/garden">Garden</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}
@@ -49,6 +49,17 @@ export default function RootLayout({ children }) {
               gtag('js', new Date());
 
               gtag('config', 'G-HFH67WJVKQ');
+            `}
+          </Script>
+          <Script id='baidu-tongji' strategy="afterInteractive">
+            {`
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                  hm.src = "https://hm.baidu.com/hm.js?acac2ca4fc52e0837ff6871a59135737";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
             `}
           </Script>
         </div>

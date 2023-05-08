@@ -1,5 +1,5 @@
 .aboutCard {
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .aboutLink {

@@ -9,9 +9,10 @@ import tocAndAnchor from 'markdown-it-toc-and-anchor';
 import emoji from 'markdown-it-emoji';
 import footnote from 'markdown-it-footnote';
 import highlightjs from 'markdown-it-highlightjs';
+import iterator from 'markdown-it-for-inline'
 var md = require('markdown-it')({
   breaks: true,
-  breaks: true,
+  linkify: true,
   langPrefix: 'language-',
   linkify: true,
   highlight: (str, lang) => {
@@ -25,7 +26,10 @@ var md = require('markdown-it')({
     return '<pre className="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
   }
 });
-md.use(emoji).use(footnote).use(tocAndAnchor).use(highlightjs);
+md.use(emoji).use(footnote).use(tocAndAnchor).use(highlightjs).use(
+  iterator, 'url_new_win', 'link_open', function (tokens, idx) {
+    tokens[idx].attrPush(['target', '_blank']);
+  });
 
 const upyunImg = ({ src, width, quality }) => {
   return `${src}_itp/fw/${width}`

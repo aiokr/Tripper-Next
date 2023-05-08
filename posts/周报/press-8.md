@@ -3,19 +3,19 @@ title: 瞬间 Press 8
 url: press-8
 excerpt: 瞬间 Press 是一档由 aiokr 制作的非定期 Newsletter，主要介绍近期以来我所浏览的一些值得记录的内容。
 category: 瞬间周报
-date: 2023-04-23
+date: 2023-05-23
 cover: 'https://stars.tripper.press/api/himawari8'
-type: draft
+type: Post
 ---
 
 ## 👏 Recently Recommend
 
-**ChatGPT畅聊插件，让 ChatGPT 不再需要频繁刷新**
+### ChatGPT畅聊插件，让 ChatGPT 不再需要频繁刷新
 [xcanwin/KeepChatGPT](https://github.com/xcanwin/KeepChatGPT?utm_source=gold_browser_extension) 
 
 完美解决 ChatGPT 网络错误，不再需要频繁地刷新网页，还可以取消 OpenAI 的后台监管审计。
 
-**获取向日葵8号卫星图像**
+### 获取向日葵8号卫星图像
 [向日葵-8号即時網頁 - NICT](https://himawari8.nict.go.jp/zh/himawari8-image.htm)
 
 ![](https://stars.tripper.press/api/himawari8)
@@ -26,3 +26,8 @@ type: draft
 https://stars.tripper.press/api/himawari8
 
 或许你也能发现，这篇文章的封面图就是向日葵8号的卫星图像。在不同的时间打开这个网页，这张图都是不同的。
+
+## 💡 Recently Read
+
+[焦虑症自救指北 - 少数派](https://sspai.com/post/79559)
+焦虑症不完全是一种失败，但它也像偶尔的失败一样，让人保持清醒，保持谦逊，以及思考如何继续向前。
