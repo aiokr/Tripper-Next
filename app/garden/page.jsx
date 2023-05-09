@@ -2,7 +2,7 @@ import style from './garden.module.css'
 import Link from 'next/link'
 
 export const metadata = {
-  title: '🪸 Garden - Tripper Press',
+  title: 'Garden - Tripper Press',
   description: 'Tripper Press Website',
 }
 
@@ -19,7 +19,7 @@ export default async function DigitalGarden() {
         </Link>
         <Link href='/category/瞬间周报' target='_blank'
               className={`${style['Card']} col-span-4 md:col-span-3 lg:col-span-3 p-3 lg:p-8 bg-white`}>
-          <div className='text-2xl lg:text-3xl py-4 font-[500] text-center '>📨<br />Newsletter</div>
+          <div className='text-2xl lg:text-3xl py-4 font-[500] text-center '>📨<br />Weekly</div>
         </Link>
         <Link href='https://www.notion.so/photup/Tripper-Workplace-4ba7c5bcbcc14571a1e40ece084d5cb9' target='_blank'
               className={`${style['Card']} col-span-4 md:col-span-3 lg:col-span-3 p-3 lg:p-8 bg-white`}>
