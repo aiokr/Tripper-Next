@@ -3,11 +3,17 @@ import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import styles from './hero.module.css'
 import Script from 'next/script'
-
+import Image from 'next/image';
+ 
 export const metadata = {
   title: '按下瞬间 - Tripper Press',
-  description: 'Tripper Press Website',
+  description: 'Tripper Press Website',itp
 }
+
+const upyun = ({ src, width }) => {
+  return `${src}_itp/fw/${width}`;
+};
+
 
 export default function RootLayout({ children }) {
   return (
