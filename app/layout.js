@@ -3,17 +3,11 @@ import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import styles from './hero.module.css'
 import Script from 'next/script'
-import Image from 'next/image';
  
 export const metadata = {
   title: '按下瞬间 - Tripper Press',
-  description: 'Tripper Press Website',itp
+  description: 'Tripper Press Website',
 }
-
-const upyun = ({ src, width }) => {
-  return `${src}_itp/fw/${width}`;
-};
-
 
 export default function RootLayout({ children }) {
   return (
@@ -61,17 +55,6 @@ export default function RootLayout({ children }) {
               gtag('js', new Date());
 
               gtag('config', 'G-HFH67WJVKQ');
-            `}
-          </Script>
-          <Script id='baidu-tongji' strategy="afterInteractive">
-            {`
-              var _hmt = _hmt || [];
-              (function() {
-                var hm = document.createElement("script");
-                  hm.src = "https://hm.baidu.com/hm.js?acac2ca4fc52e0837ff6871a59135737";
-                  var s = document.getElementsByTagName("script")[0];
-                  s.parentNode.insertBefore(hm, s);
-                })();
             `}
           </Script>
         </div>

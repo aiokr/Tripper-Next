@@ -36,7 +36,7 @@ async function BlogPage() {
               {post.cover ? (
                 <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
                   <div className={`${style['postEntryCover']} aspect-square`} >
-                    <Image src={post.cover} width={600} height={600} alt={post.title}
+                    <Image src={post.cover} width={600} height={600} alt={post.title} unoptimized
                       className={`${style['postEntryImage']} object-cover h-full w-full`}
                     />
                   </div>
@@ -49,7 +49,7 @@ async function BlogPage() {
               ) : (
                 <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
                   <div className={`${style['postEntryCover']} aspect-video`}>
-                    <Image src='https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp' width={600} height={300} alt={post.title}
+                    <Image src='https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp' width={600} height={300} alt={post.title} unoptimized
                       className={`${style['postEntryImage']} object-cover  h-full w-full`}
                     />
                   </div>
