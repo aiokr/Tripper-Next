@@ -31,9 +31,15 @@ export default function RootLayout({ children }) {
           <div className='grid grid-cols-1 lg:grid-cols-3'>
             <div>
               <p className='opacity-80'>© Tripper Press 2016-2023 <br />
-                <a className='text-main' href='https://github.com/aiokr/Tripper-Next' target='blank'>Design and Code by aiokr</a> <br />
+                <Link className='text-main' href='https://github.com/aiokr/Tripper-Next' target='_blank'>Design and Code by aiokr</Link> <br />
                 Beta Version at <Link className='text-main' href="https://next.tripper.press">Next-Tripper-Press</Link><br />
-                <span>Build: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</span>
+                {
+                  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ? (
+                    <Link className='truncate' href={`https://github.com/aiokr/Tripper-Next/commit/`+`${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}`} target='_blank'>Build: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</Link>
+                  ):(
+                    <span>Build By Vercel CLI</span>
+                  )
+                }
               </p>
             </div>
             <div>
