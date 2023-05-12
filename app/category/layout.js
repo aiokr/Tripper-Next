@@ -15,7 +15,8 @@ async function fetchBlogData() {
 export default async function RootLayout({ children }) {
   const { categories } = await fetchBlogData()
   return (
-    <main className='container px-4 lg:px-8 max-w-[1280px]'>
+    <main className='lg:pt-[65px] pb-12'>
+    <div className='container px-4 lg:px-8 max-w-[1280px]'>
       <div className={`${style['postHeader']} pt-8 pb-4`}>
         <div className="left inline">
           <div className="text-2xl font-bold">分类</div>
@@ -34,6 +35,7 @@ export default async function RootLayout({ children }) {
         ))}
       </div>
       {children}
+      </div>
     </main>
   )
 }

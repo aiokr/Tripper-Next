@@ -5,7 +5,7 @@ import friends from './links.json'
 
 export default async function AboutPage() {
   return (
-    <main className="bg-slate-50">
+    <main>
       <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 grid-rows-7 gap-4 pt-[65px]'>
         <div className={`${style['aboutCard']} row-span-2 col-span-6 p-3 lg:p-8 bg-gradient-to-br from-[#71afdd50] to-[#71afdd]`}>
           <div className='text-xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] text-white'>👋 Hey,</div>
@@ -14,7 +14,7 @@ export default async function AboutPage() {
         <div className={`${style['aboutCard']} row-span-5 col-span-6 p-6 lg:p-12 bg-black`}>
           <div className={`${style['earthCard']} h-full`}></div>
         </div>
-        <div className={`${style['aboutCard']} row-span-3 col-span-6 p-4 lg:p-8 bg-white`}>
+        <div className={`${style['aboutCard']} row-span-3 col-span-6 p-4 lg:p-8 border`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>🏳️‍🌈 I am</div>
           <div className='py-1 lg:py-4'>
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#71afdd70] to-[#71afdd]'>Always as a Student</span><br />
@@ -35,8 +35,8 @@ export default async function AboutPage() {
           </div>
         </div>
       </div>
-      <div className='container px-4 lg:px-0 max-w-[1000px] grid grid-cols-12 pt-4'>
-        <div className={`${style['aboutCard']} flex flex-col lg:flex-row justify-between items-center row-span-2 col-span-12 p-4 lg:p-8 bg-white`}>
+      <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 pt-4'>
+        <div className={`${style['aboutCard']} flex flex-col lg:flex-row justify-between items-center row-span-2 col-span-12 p-4 lg:p-8 border`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[60px] '>🔎 Find me @</div>
           <div className='grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-5'>
             <a href='https://github.com/aiokr' target='_blank' className={`${style['aboutLink']} flex justify-center items-center  drop-shadow-lg shadow-slate-300 bg-gradient-to-br from-slate-800 to-slate-950`} >
@@ -57,7 +57,7 @@ export default async function AboutPage() {
           </div>
         </div>
       </div>
-      <div className='container px-4 lg:px-0 max-w-[1000px] grid grid-cols-12 pt-4'>
+      <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 pt-4'>
         <div className={`${style['aboutCard']} col-span-12 p-4 lg:p-8 bg-gradient-to-br from-green-200 to-blue-500`}>
           <div className='text-xl lg:text-3xl font-[500] leading-[48px] lg:leading-[60px] text-white'>🧑‍💻 My Friends</div>
           <div className='py-4 text-white grid grid-cols-2 lg:grid-cols-4'>

@@ -30,7 +30,7 @@ export default async function Home() {
           <div className="text-2xl font-bold">文章</div>
         </div>
         <div className="right inline">
-          <Link className='text-main' href="/posts">所有文章</Link>
+          <Link className='text-main' href="/posts/1">所有文章</Link>
         </div>
       </div>
       <hr />

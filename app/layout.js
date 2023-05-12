@@ -15,14 +15,13 @@ export default function RootLayout({ children }) {
       <body>
         <div className={`${styles.header}`}>
           <Link className='' href="/">Home</Link>
-          <Link className='' href="/posts">Posts</Link>
+          <Link className='' href="/posts/1">Posts</Link>
           <Link className='' href="/garden">Garden</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}
-        <footer className={`${styles.footer} container lg:px-8 px-6 max-w-[1280px]`}>
-          <hr />
-          <div className='grid grid-cols-1 lg:grid-cols-3'>
+        <footer className={`${styles.footer}`}>
+          <div className='container max-w-[1280px] px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3'>
             <div>
               <p className='opacity-80'>© Tripper Press 2016-2023 <br />
                 <Link className='text-main' href='https://github.com/aiokr/Tripper-Next' target='_blank'>Design and Code by aiokr</Link> <br />
