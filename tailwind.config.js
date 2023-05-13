@@ -18,6 +18,7 @@ module.exports = {
       },
       colors: {
         'main': '#71afdd',
+        'text': '#222831',
       },
     },
   },

@@ -1,5 +1,5 @@
 .postHeader {
-    color: var(--main-black);
+    color: var(--textColor);
     display: flex;
     justify-content: space-between;
     align-items: center;

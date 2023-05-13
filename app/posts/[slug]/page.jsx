@@ -23,11 +23,11 @@ async function BlogPage(props) {
   const nextPageNum = String(parseInt(props.params.slug) + 1)
   const prevPageNum = props.params.slug - 1
   return (
-    <main className='lg:pt-[65px] pb-12'>
+    <main className='dark:bg-zinc-900 lg:pt-[65px] pb-12'>
       <div className="container px-4 lg:px-8 max-w-[1280px]">
         <div className={`${style['postHeader']} pt-8 pb-4`}>
           <div className="left inline">
-            <div className="text-2xl font-bold">文章</div>
+            <div className="text-2xl font-bold dark:text-white">文章</div>
           </div>
           <div className="right inline">
             <Image className="article-avatar" src="https://imgur.lzmun.com/picgo/after2022/tripper2whitefull.png_avatar"
@@ -48,10 +48,10 @@ async function BlogPage(props) {
                         className={`${style['postEntryImage']} object-cover h-full w-full`}
                       />
                     </div>
-                    <div className={`${style['postEntryInfo']} px-6 lg:p-8 col-span-2`} >
-                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium`}>{post.title}</div>
-                      <div className='opacity-60 py-3'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block`}>{post.excerpt}</div>
+                    <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
+                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
+                      <div className='opacity-60 py-2 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
                     </div>
                   </Link>
                 ) : (
@@ -62,9 +62,9 @@ async function BlogPage(props) {
                       />
                     </div>
                     <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
-                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium`}>{post.title}</div>
-                      <div className='opacity-60'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block`}>{post.excerpt}</div>
+                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
+                      <div className='opacity-60 py-2 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
                     </div>
                   </Link>
                 )}
@@ -72,9 +72,9 @@ async function BlogPage(props) {
             ))}
           </div>
           <div className='mt-5'>
-            <div className='text-xl font-bold mb-2'>分类</div>
+            <div className='text-xl font-bold mb-2 dark:text-white'>分类</div>
             {categories.map(category => (
-              <Link href={`/category/${category}`} key={category} className={`${style['categoriesLink']} block py-2 opacity-60 hover:opacity-100`}>{category}</Link>
+              <Link href={`/category/${category}`} key={category} className={`${style['categoriesLink']} block py-2 opacity-60 hover:opacity-100 dark:text-slate-100`}>{category}</Link>
             ))}
           </div>
           <div className='col-span-3 grid grid-cols-3 text-center pb-6'>
@@ -83,7 +83,7 @@ async function BlogPage(props) {
                 <Link href={`/posts/${prevPageNum}`} className={`${style['pageBtn']} `}>Prev Page</Link>
               }
             </div>
-            <div>
+            <div className='dark:text-white'>
               {props.params.slug}
             </div>
             <div>

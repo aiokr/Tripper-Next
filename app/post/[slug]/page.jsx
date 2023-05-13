@@ -58,13 +58,13 @@ export function generateMetadata(props) {
 export default function generateStaticParams(props) {
   const { post, result } = fetchPost(props);
   return (
-    <main>
+    <main className='dark:bg-zinc-900'>
       {post.cover ? (
         <div className={`${style['postCoverHeader']}`} style={{ backgroundImage: 'url("' + post.cover + '")' }}>
           <div className={`${style['postHeaderLayer']}`}>
             <div className={`${style['info-area']} px-6 lg:px-8 max-w-[800px]`}>
-              <div className='text-3xl font-medium pt-4'>{post.title}</div>
-              <div className='opacity-60 pt-4'>{format(parseISO(post.date), 'yyyy-MM-dd')}{post.category ? ` · ${post.category}` : ''}{post.tags ? ` · ${post.tags}` : ''}</div>
+              <div className='text-3xl font-medium pt-4 dark:text-white'>{post.title}</div>
+              <div className='opacity-60 pt-4 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}{post.category ? ` · ${post.category}` : ''}{post.tags ? ` · ${post.tags}` : ''}</div>
             </div>
           </div>
         </div>
@@ -72,8 +72,8 @@ export default function generateStaticParams(props) {
         <div className={`${style['postDefaultHeader']}`}>
           <div className={`${style['postHeaderLayer']}`}>
             <div className={`${style['info-area']} px-6 lg:px-8 max-w-[800px]`}>
-              <div className='text-3xl font-medium pt-4'>{post.title}</div>
-              <div className='opacity-60 pt-4'>{format(parseISO(post.date), 'yyyy-MM-dd')}{post.category ? ` · ${post.category}` : ''}{post.tags ? ` · ${post.tags}` : ''}</div>
+              <div className='text-3xl font-medium pt-4 dark:text-white'>{post.title}</div>
+              <div className='opacity-60 pt-4 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}{post.category ? ` · ${post.category}` : ''}{post.tags ? ` · ${post.tags}` : ''}</div>
             </div>
           </div>
         </div>
