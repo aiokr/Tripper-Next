@@ -30,7 +30,11 @@ async function BlogPage(props) {
             <div className="text-2xl font-bold dark:text-white">文章</div>
           </div>
           <div className="right inline">
-            <Image className="article-avatar" src="https://imgur.lzmun.com/picgo/after2022/tripper2whitefull.png_avatar"
+            <Image className="article-avatar hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
+              width={32} height={32}
+              alt="logo" automatically="true" provided="true"
+            />
+            <Image className="article-avatar inline dark:hidden" src="https://imgur.lzmun.com/picgo/logo/tripper2blackfull.png_avatar"
               width={32} height={32}
               alt="logo" automatically="true" provided="true"
             />
@@ -50,8 +54,8 @@ async function BlogPage(props) {
                     </div>
                     <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
                       <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-2 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
+                      <div className='opacity-60 py-2 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </Link>
                 ) : (
@@ -63,8 +67,8 @@ async function BlogPage(props) {
                     </div>
                     <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
                       <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-2 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
+                      <div className='opacity-60 py-2 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </Link>
                 )}
@@ -74,13 +78,13 @@ async function BlogPage(props) {
           <div className='mt-5'>
             <div className='text-xl font-bold mb-2 dark:text-white'>分类</div>
             {categories.map(category => (
-              <Link href={`/category/${category}`} key={category} className={`${style['categoriesLink']} block py-2 opacity-60 hover:opacity-100 dark:text-slate-100`}>{category}</Link>
+              <Link href={`/category/${category}`} key={category} className={`${style['categoriesLink']} block py-2 opacity-60 hover:opacity-100 dark:text-zinc-100`}>{category}</Link>
             ))}
           </div>
           <div className='col-span-3 grid grid-cols-3 text-center pb-6'>
             <div>
               {props.params.slug !== '1' &&
-                <Link href={`/posts/${prevPageNum}`} className={`${style['pageBtn']} `}>Prev Page</Link>
+                <Link href={`/posts/${prevPageNum}`} className={`${style['pageBtn']} dark:bg-zinc-800`}>Prev Page</Link>
               }
             </div>
             <div className='dark:text-white'>
@@ -88,7 +92,7 @@ async function BlogPage(props) {
             </div>
             <div>
               {props.params.slug !== String(pagesCount) &&
-                <Link href={`/posts/${nextPageNum}`} className={`${style['pageBtn']} `}>Next Page</Link>
+                <Link href={`/posts/${nextPageNum}`} className={`${style['pageBtn']} dark:bg-zinc-800`}>Next Page</Link>
               }
             </div>
           </div>

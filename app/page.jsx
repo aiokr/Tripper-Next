@@ -47,24 +47,24 @@ export default async function Home() {
                     </div>
                     <div className={`${IndexStyle['postEntryInfo']} h-[167px] py-6`}>
                       <div className={`${IndexStyle['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
+                      <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${IndexStyle['postEntryExcerpt']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
+                      <div className={`${IndexStyle['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 ) : (
                   <div className={`${IndexStyle['postEntry']}`}>
                     <div className={`${IndexStyle['postEntryInfo']} h-[200px] lg:h-[400px] py-4`}>
                       <div className={`${IndexStyle['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 dark:text-slate-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
+                      <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${IndexStyle['postEntryExcerptNoCover']} opacity-60 hidden md:block dark:text-slate-100`}>{post.excerpt}</div>
+                      <div className={`${IndexStyle['postEntryExcerptNoCover']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 )}

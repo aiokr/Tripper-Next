@@ -92,4 +92,8 @@
         border-bottom-right-radius: var(--radius);
         border-bottom-left-radius: var(--radius);
     }
+
+    .footer {
+        padding-bottom: 60px;
+    }
 }
