@@ -1,7 +1,7 @@
 ---
 title: 宣布全新 Tripper Press
-date: 2023-05-01
-type: Draft
+date: 2023-06-01
+type: Posts
 cover: 'https://imgur.lzmun.com/picgo/after2022/apple-store-wuhan'
 url: release-tr-v2
 ---
@@ -14,12 +14,11 @@ url: release-tr-v2
 
 ## 后续需要补全的功能
 
-- 文章评论挂件
-- 夜间模式支持
-
-- RSS Feed 的输出
-- Sitemap 的输出
-- 照片集的功能
+- [ ] 文章评论挂件
+- [x] 夜间模式支持
+- [x] RSS Feed 的输出
+- [ ] Sitemap 的输出
+- [ ] 照片集的功能
 
 
 ## 碎碎念
