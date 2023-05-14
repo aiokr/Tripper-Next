@@ -3,35 +3,52 @@ import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import styles from './hero.module.css'
 import Script from 'next/script'
+import Image from 'next/image'
 
 export const metadata = {
   title: '按下瞬间 - Tripper Press',
   description: 'Tripper Press Website',
+  viewport: 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="zh-cn">
       <body>
-        <div className={`${styles.header}`}>
+        <div className={`${styles.header} dark:text-white`}>
           <Link className='' href="/">Home</Link>
-          <Link className='' href="/posts">Posts</Link>
-          <Link className='' href="/garden">Garden</Link>
+          <Link className='' href="/posts/1">Posts</Link>
+          <Link className='' href="/photo">Photos</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}
-        <footer className={`${styles.footer} container lg:px-8 px-6 max-w-[1280px]`}>
-          <hr />
-          <div className='grid grid-cols-1 lg:grid-cols-3'>
-            <div>
-              <p className='opacity-80'>© Tripper Press 2016-2023 <br />
-                <a className='text-main' href='https://github.com/aiokr/Tripper-Next' target='blank'>Design and Code by aiokr</a> <br />
+        <footer className={`${styles.footer} bg-zinc-200 dark:bg-zinc-800`}>
+          <div className='container max-w-[1280px] p-8'>
+          <div className='inline-block py-4 ease-in-out transition hover:text-main'>
+            <Image className="hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
+              width={32} height={32}
+              alt="logo" automatically="true" provided="true"
+            />
+            <Image className="inline dark:hidden" src="https://imgur.lzmun.com/picgo/logo/tripper2blackfull.png_avatar"
+              width={32} height={32}
+              alt="logo" automatically="true" provided="true"
+            />
+            <span className='text-lg lg:text-2xl text-bold leading-[32px] align-middle pl-4'>Tripper Press<span className='px-3'>·</span>按下瞬间</span>
+          </div>
+            <div className='grid grid-cols-1 lg:grid-cols-3'>
+              <p className='block opacity-80 dark:text-white'>
+                <Link className='text-main' href='https://github.com/aiokr/Tripper-Next' target='_blank'>Design and Code by aiokr</Link> <br />
                 Beta Version at <Link className='text-main' href="https://next.tripper.press">Next-Tripper-Press</Link><br />
-                <span>Build: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</span>
-              </p>
-            </div>
-            <div>
-              <p>
+                {
+                  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ? (
+                    <Link className='block text-ellipsis overflow-hidden' href={`https://github.com/aiokr/Tripper-Next/commit/` + `${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}`} target='_blank'>
+                      Build by Github Commit
+                    </Link>
+                  ) : (
+                    <span className='block text-ellipsis overflow-hidden'>Build By Vercel CLI</span>
+                  )
+                }
+                © Tripper Press 2016-2023 <br />
               </p>
             </div>
           </div>
@@ -49,17 +66,6 @@ export default function RootLayout({ children }) {
               gtag('js', new Date());
 
               gtag('config', 'G-HFH67WJVKQ');
-            `}
-          </Script>
-          <Script id='baidu-tongji' strategy="afterInteractive">
-            {`
-              var _hmt = _hmt || [];
-              (function() {
-                var hm = document.createElement("script");
-                  hm.src = "https://hm.baidu.com/hm.js?acac2ca4fc52e0837ff6871a59135737";
-                  var s = document.getElementsByTagName("script")[0];
-                  s.parentNode.insertBefore(hm, s);
-                })();
             `}
           </Script>
         </div>

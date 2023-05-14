@@ -23,7 +23,7 @@ export async function categoryPage(props) {
     <div className='col-span-3 lg:col-span-2'>
       {posts && posts.map((post) => (
         <div key={post.url}>
-          <Link href={`/post/${post.url}`} className={`${style['postEntry']}  my-12 grid grid-cols-3`}>
+          <Link href={`/post/${post.url}`} className={`${style['postEntry']}  mt-12 grid grid-cols-3`}>
             <div className={`${style['postEntryInfo']} px-6 lg:px-0 col-span-2`} >
               <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium`}>{post.title}</div>
               <div className='opacity-60'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>

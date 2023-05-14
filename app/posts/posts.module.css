@@ -1,5 +1,5 @@
 .postHeader {
-    color: var(--main-black);
+    color: var(--textColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,4 +39,18 @@
 
 .categoriesLink {
     transition: all 0.3s ease-in-out;
+}
+
+.pageBtn {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+    padding: 16px;
+    border-radius: var(--radius);
+    background-color: #fff;
+}
+
+.pageBtn:hover {
+    transition: all 0.3s ease-in-out;
+    border-radius: var(--radius);
+    color: var(--main-color);
 }
