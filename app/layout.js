@@ -8,6 +8,7 @@ import Image from 'next/image'
 export const metadata = {
   title: '按下瞬间 - Tripper Press',
   description: 'Tripper Press Website',
+  viewport: 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
 }
 
 export default function RootLayout({ children }) {
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
         <div className={`${styles.header} dark:text-white`}>
           <Link className='' href="/">Home</Link>
           <Link className='' href="/posts/1">Posts</Link>
-          <Link className='' href="/garden">Garden</Link>
+          <Link className='' href="/photo">Photos</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}

@@ -28,12 +28,15 @@ export default async function AboutPage() {
             </span><br />
           </div>
         </div>
-        <div className={`${style['aboutCard']} row-span-2 col-span-12 px-6 py-4 lg:px-10 lg:py-8 text-white bg-gradient-to-br from-[#71DEF5] to-[#7199F5]`}>
+        <div className={`${style['aboutCard']} row-span-2 col-span-12 lg:col-span-8 px-6 py-4 lg:px-10 lg:py-8 text-white bg-gradient-to-br from-[#71DEF5] to-[#7199F5]`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>💡 Intersted in</div>
           <div className='py-1 lg:py-4 flex justify-center'>
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2'>Digital Nomad</span>
           </div>
         </div>
+        <Link href='https://tripper.super.site/' target='_blank' className={`${style['aboutCard']} flex justify-center items-center row-span-2 col-span-12 lg:col-span-4 px-6 py-4 lg:px-10 lg:py-8 text-white bg-gradient-to-br from-[#71afdd50] to-[#71afdd]`}>
+          <span className='text-2xl lg:text-3xl py-4 font-[500] text-center text-white'>Digital Garden</span>
+        </Link>
       </div>
       <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 pt-4'>
         <div className={`${style['aboutCard']} flex flex-col lg:flex-row justify-between items-center row-span-2 col-span-12 p-4 lg:p-8 border`}>
