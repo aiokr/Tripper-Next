@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 export default async function AboutPage() {
   return (
-    <main className='dark:dark:bg-zinc-900'>
+    <main className='dark:bg-zinc-900'>
       <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 grid-rows-2 gap-4 pt-[65px]'>
         <div className={`${style['aboutCard']} relative row-span-1 col-span-6 px-6 py-4 lg:px-10 lg:py-8 bg-main`}>
           <div className='text-xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] text-white'>👋 Hey,</div>
