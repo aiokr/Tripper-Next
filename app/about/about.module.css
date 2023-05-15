@@ -1,5 +1,6 @@
 .aboutCard {
   border-radius: var(--radius);
+  min-height: 174px
 }
 
 .aboutLink {
@@ -28,7 +29,7 @@
   bottom: 0;
   right: 0;
   margin: 25px 22px 17px 25px;
-  padding: 8px;
+  padding-top: 8px;
   z-index: 999;
   color: white;
   background-color: black;

@@ -5,8 +5,8 @@ import Script from 'next/script'
 
 export default async function AboutPage() {
   return (
-    <main className='dark:dark:bg-zinc-900'>
-      <div className={`${style['aboutCard']} container max-w-[1000px] mt-[65px] px-6 py-4 lg:px-10 lg:py-8 border`}>
+    <main className='dark:bg-zinc-900 lg:pt-[65px]'>
+      <div className={`${style['aboutCard']} container max-w-[1000px] px-6 py-4 lg:px-10 lg:py-8 lg:border`}>
         <h2>陈王健平</h2>
         <p>
           邮箱: chenwjp@foxmail.com<br />
