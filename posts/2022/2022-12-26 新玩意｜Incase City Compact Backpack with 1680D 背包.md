@@ -4,6 +4,7 @@ category: 新玩意
 cover: 'https://imgur.lzmun.com/picgo/after2022/202212261617507.jpg_itp'
 author: aiokr
 url: 5f36
+type: Post
 date: 2022-12-26 08:18:52
 ---
 

@@ -3,6 +3,7 @@ title: '瞬间 Press #2'
 author: aiokr
 category: 瞬间周报
 url: 40d7
+type: Post
 date: 2022-03-21 12:18:02
 ---
 

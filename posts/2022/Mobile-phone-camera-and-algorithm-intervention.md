@@ -3,6 +3,7 @@ title: 手机拍照与算法介入
 cover: 'https://imgur.lzmun.com/picgo/20190425232808.jpg_itp'
 tags:
   - 摄影
+type: Post
 category: 读立写生
 url: 345f
 date: 2019-04-24 00:00:00

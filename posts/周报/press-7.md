@@ -4,6 +4,7 @@ url: press-7
 excerpt: 瞬间 Press 是一档由 aiokr 制作的非定期 Newsletter，主要介绍近期以来我所浏览的一些值得记录的内容。
 category: 瞬间周报
 date: 2023-01-20
+type: Post
 cover: https://raw.githubusercontent.com/lxgw/LxgwNeoXiHei/main/documentation/images/neoxihei-2.png
 ---
 
