@@ -11,13 +11,6 @@
     .header {
         top: 0px;
         left: 0px;
-        background-color: #ffffffcc;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .header {
-            background-color: #161617cc;
-        }
     }
 }
 
@@ -27,16 +20,9 @@
         bottom: 0px;
         left: 0px;
         justify-content: center;
-        background-color: #ffffffcc;
         border-top-left-radius: var(--radius);
         border-top-right-radius: var(--radius);
         box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.02), 1px 1px 15px 10px rgba(0, 0, 0, 0.03);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .header {
-            background-color: #161617cc;
-        }
     }
 }
 
@@ -46,6 +32,7 @@
     line-height: 52px;
     padding: 0 12px;
 }
+
 
 .hero-img {
     background-image: url('https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp');
@@ -96,4 +83,44 @@
     .footer {
         padding-bottom: 60px;
     }
+}
+
+.postEntry {
+    border-radius: 5px;
+}
+
+.postEntry .postEntryTitle {
+    transition: all 0.3s ease-in-out;
+}
+
+.postEntry:hover .postEntryTitle {
+    transition: all 0.3s ease-in-out;
+    color: var(--main-color);
+}
+
+.postEntryCover {
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--radius);
+}
+
+.postEntryInfo {}
+
+.postHeader {
+    color: var(--textColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postEntryExcerpt {
+    line-height: 22px;
+    max-height: 44px;
+    overflow-y: hidden;
+}
+
+.postEntryExcerptNoCover {
+    line-height: 22px;
+    max-height: calc(22px * 12);
+    overflow-y: hidden;
 }

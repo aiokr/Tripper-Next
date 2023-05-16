@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    -webkit-backdrop-filter: saturate(180%) blur(50px) !important;
+    backdrop-filter: saturate(180%) blur(50px) !important;
+    z-index: 9999;
+    width: 100vw;
+    display: flex;
+}
+
+@media (min-width: 1024px) {
+    .header {
+        top: 0px;
+        left: 0px;
+        background-color: #161617cc;
+        color: white;
+    }
+}
+
+@media (max-width: 1022px) {
+    .header {
+        bottom: 0px;
+        left: 0px;
+        justify-content: center;
+        background-color: #161617cc;
+        color: white;
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.02), 1px 1px 15px 10px rgba(0, 0, 0, 0.03);
+    }
+}
+
+.header a {
+    height: 52px;
+    display: inline-block;
+    line-height: 52px;
+    padding: 0 12px;
+}
