@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import style from '../photo.module.css'
+import style from './photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPhotos } from 'contentlayer/generated';
 
