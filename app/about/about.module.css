@@ -1,5 +1,6 @@
 .aboutCard {
   border-radius: var(--radius);
+  min-height: 174px
 }
 
 .aboutLink {
@@ -21,4 +22,31 @@
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 12px;
+}
+
+.cardBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 25px 22px 17px 25px;
+  padding-top: 8px;
+  z-index: 999;
+  color: white;
+  background-color: black;
+  height: 36px;
+  width: 36px;
+  font-size: 22px;
+  line-height: 22px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+}
+
+.cardBtn:hover {
+  background-color: #3e3e3e;
+  transition: 0.2s ease-in-out;
+}
+
+.dialogueBox {
+  border-radius: var(--radius);
 }

@@ -3,6 +3,7 @@ title: '瞬间 Press #3 reboot 重新开始'
 author: aiokr
 category: 瞬间周报
 url: 572d
+type: Post
 date: 2022-03-22 09:41:32
 ---
 

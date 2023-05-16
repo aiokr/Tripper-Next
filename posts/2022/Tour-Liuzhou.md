@@ -1,4 +1,5 @@
 ---
+type: Post
 title: 巡礼 柳州
 tags:
   - 课程笔记

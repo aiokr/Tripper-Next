@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 export const Post = defineDocumentType(() => ({
     name: 'Post',
-    filePathPattern: `**/*.md`,
+    filePathPattern: `posts/**/*.md`,
     fields: {
         title: {
             type: 'string',
@@ -49,7 +49,48 @@ export const Post = defineDocumentType(() => ({
     },
 }))
 
+export const Photo = defineDocumentType(() => ({
+    name: 'Photo',
+    filePathPattern: `posts/photos/**/*.md`,
+    fields: {
+        title: {
+            type: 'string',
+            description: 'The title of the photo',
+            required: true,
+        },
+        date: {
+            type: 'date',
+            description: 'The date of the photo',
+        },
+        cover: {
+            type: 'string',
+            description: 'The cover of the photos',
+        },
+        url: {
+            type: 'string',
+            description: 'The url of the photos',
+        },
+        location: {
+            type: 'list',
+            of: { type: 'string' },
+            description: 'The location of the photos',
+        },
+        photos: {
+            type: 'list',
+            of: { type: 'string' },
+            description: 'The photos',
+            required: true,
+        }
+    },
+    computedFields: {
+        url: {
+            type: 'string',
+            resolve: (photo) => `${photo.url}`,
+        },
+    },
+}))
+
 export default makeSource({
     contentDirPath: 'posts',
-    documentTypes: [Post],
+    documentTypes: [Post, Photo],
 })
