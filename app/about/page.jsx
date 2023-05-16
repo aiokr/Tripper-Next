@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 export default async function AboutPage() {
   return (
-    <main className='dark:dark:bg-zinc-900'>
+    <main className='dark:bg-zinc-900'>
       <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 grid-rows-2 gap-4 pt-[65px]'>
         <div className={`${style['aboutCard']} relative row-span-1 col-span-6 px-6 py-4 lg:px-10 lg:py-8 bg-main`}>
           <div className='text-xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] text-white'>👋 Hey,</div>
@@ -34,11 +34,11 @@ export default async function AboutPage() {
         </div>
         <div className={`${style['aboutCard']} relative row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 text-white bg-gradient-to-br from-[#71DEF5] to-[#7199F5]`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>💡 Intersted in</div>
-          <div className='py-1 lg:py-4 flex justify-center'>
-            <div className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 text-center justify-center'>
-              Digital Nomad<br />
-              Frontend
-            </div>
+          <div className='py-1 lg:py-4'>
+          <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 '>
+            Digital Nomad<br />
+            Frontend<br />
+          </span>
             <Link href='https://tripper.super.site/' target='_blank' className={`${style['cardBtn']}`}>
               <Image src="../plus.svg" width="20" height="20" />
             </Link>

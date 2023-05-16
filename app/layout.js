@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <div className={`${styles.header} dark:text-white`}>
           <Link className='' href="/">Home</Link>
           <Link className='' href="/posts/1">Posts</Link>
-          <Link className='' href="/photo">Photos</Link>
+          <Link className='' href="/photo/works">Photos</Link>
           <Link className='' href="/about">About</Link>
         </div>
         {children}

@@ -140,7 +140,7 @@ ul li {
     line-height: 31px;
 }
 
-img {
+.article img {
     display: block;
     margin: auto;
     border-radius: 4px;
