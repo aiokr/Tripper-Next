@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fancyapps/ui": "^5.0.17",
     "@headlessui/react": "^1.7.14",
     "@next/bundle-analyzer": "^13.3.0",
     "@vercel/analytics": "^0.1.11",
