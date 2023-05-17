@@ -2,8 +2,10 @@
 
 import { allPhotos } from 'contentlayer/generated';
 import Image from 'next/image.js';
+import { compareDesc, format, parseISO } from 'date-fns'
 import Link from 'next/link';
 import style from './album.module.css'
+import Script from 'next/script';
 
 export function fetchAlbum(params) {
   const album = allPhotos.find((photos) => photos.url == params.slug) //获取一个相册的所有数据
@@ -28,13 +30,24 @@ export async function albumPage({ params, children }) {
               ))}
             </div>
           </div>
-          <div className='col-span-3 md:col-span-1'>
-            <div className='text-2xl lg:text-3xl font-semibold p-2'>
+          <div className='col-span-3 md:col-span-1 md:p-2'>
+            <Link href={`/photo/#${params.slug}`}>Back To </Link>
+            <div className='text-2xl lg:text-3xl font-semibold py-2'>
               {album.title}
             </div>
+            <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
           </div>
         </div>
       </div>
+      <Script id='photoScrollToTop'>
+        {`
+          window.scrollTo({
+          left: 0,
+          top: 0,
+          behavior: 'smooth'
+          })
+       `}
+      </Script>
     </section>
   )
 }

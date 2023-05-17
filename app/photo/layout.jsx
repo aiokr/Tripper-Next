@@ -14,10 +14,13 @@ export default function PressPage({ children }) {
           <div className='text-center'>The Moment Forever</div>
         </div>
       </div>
-      <div className={`${style['navbar']} container max-w-[600] grid grid-cols-3`}>
+      <div className={`${style['navbar']} container max-w-[600] grid grid-cols-4`}>
         <div></div>
         <div className='text-center'>
-          <Link href='/photo/works'>Recently Works</Link>
+          <Link href='/photo'>Recently Works</Link>
+        </div>
+        <div className='text-center'>
+          <Link href='/photo/glass'>Glass</Link>
         </div>
         <div></div>
       </div>

@@ -20,8 +20,6 @@ export default function Header() { // 必须以大写开头
 
   // 根据当前页面的 pathname 选择要使用的样式
   const currentPageStyle = getPageStyle(pathname);
-
-  console.log(pathname)
   return (
     <div className={`${currentPageStyle.header} bg-[#ffffff55] dark:text-white dark:bg-[#161617cc]`}>
       <Link className='' href="/">Home</Link>
