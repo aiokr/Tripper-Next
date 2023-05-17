@@ -1,5 +1,6 @@
 .hero {
-  background-image: url('https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp');
+  background-image: url('/cool-background.svg');
+  background-color: rgba(24, 24, 27, 0.5);
   background-position: center;
   background-size: cover;
   display: block;
@@ -9,12 +10,12 @@
 
 @media (max-width: 1024px) {
   .hero {
-    height: 50vh;
+    height: calc(100vh - 52px);
   }
 }
 
 .heroLayer {
-  background: linear-gradient(rgba(24, 24, 27, 1) 15%, rgba(24, 24, 27, 0.9) 60%, rgba(24, 24, 27, 1) 100%);
+  background: linear-gradient(rgba(24, 24, 27, 1) 10%, rgba(24, 24, 27, 0.1) 50%, rgba(24, 24, 27, 1) 100%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -41,7 +42,9 @@
   left: 0;
 }
 
-.darkAnchor {
-    height: 65px;
-    margin-top: -65px;
+.heroText {
+}
+
+.topLight {
+  box-shadow: 0px 0px 10px white;
 }

@@ -22,10 +22,10 @@ export default function Header() { // 必须以大写开头
   const currentPageStyle = getPageStyle(pathname);
   return (
     <div className={`${currentPageStyle.header} bg-[#ffffff55] dark:text-white dark:bg-[#161617cc]`}>
-      <Link className='' href="/">Home</Link>
-      <Link className='' href="/posts/1">Posts</Link>
-      <Link className='' href="/photo">Photos</Link>
-      <Link className='' href="/about">About</Link>
+      <Link className='' scroll={false} href="/">Home</Link>
+      <Link className='' scroll={false}  href="/posts/1">Posts</Link>
+      <Link className='' scroll={false}  href="/photo">Photos</Link>
+      <Link className='' scroll={false}  href="/about">About</Link>
     </div>
   )
 }

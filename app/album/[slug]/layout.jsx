@@ -31,7 +31,12 @@ export async function albumPage({ params, children }) {
             </div>
           </div>
           <div className='col-span-3 md:col-span-1 md:p-2'>
-            <Link href={`/photo/#${params.slug}`}>Back To </Link>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="inline w-6 h-6 pr-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+            <Link className='inline-block align-middle leading-6' href={`/photo/#${params.slug}`}>
+              Back To Works
+            </Link>
             <div className='text-2xl lg:text-3xl font-semibold py-2'>
               {album.title}
             </div>
