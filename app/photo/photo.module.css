@@ -10,7 +10,7 @@
 
 @media (max-width: 1024px) {
   .hero {
-    height: calc(100vh - 52px);
+    height: 50vh;
   }
 }
 
