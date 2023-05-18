@@ -6,11 +6,6 @@
   background-size: cover;
 }
 
-.bgLayer {
-  background: linear-gradient(rgba(24, 24, 27, 1) 10%, rgba(24, 24, 27, 0.1) 50%, rgba(24, 24, 27, 1) 100%);
-  background-attachment: fixed;
-}
-
 .hero {
   display: flex;
   height: 60vh;
