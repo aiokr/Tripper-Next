@@ -1,21 +1,28 @@
 // 此目录下的 layout 显示一个集合中的所有图片，children 显示单张图片及信息。
 
 import { allPhotos } from 'contentlayer/generated';
-import Image from 'next/image.js';
-import { compareDesc, format, parseISO } from 'date-fns'
+import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import style from './album.module.css'
 import Script from 'next/script';
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 export function fetchAlbum(params) {
   const album = allPhotos.find((photos) => photos.url == params.slug) //获取一个相册的所有数据
   const photos = album.photos //提取出相册中的照片列表
+  const albumCode = album.body.code
   const title = album.title + ' - Tripper Press'
-  return { photos, album }
+  return { photos, album, albumCode }
 }
 
-export async function albumPage({ params, children }) {
-  const { photos, album } = fetchAlbum(params);
+const MDXComponents = {
+  // Override the default <a> element to use the next/link component.
+  // Add a custom component.
+}
+
+export default function AlbumPage({ params, children }) {
+  const { photos, album, albumCode } = fetchAlbum(params);
+  const MDXContent = useMDXComponent(albumCode)
   return (
     <section className='bg-zinc-900 text-white pt-6 lg:pt-[65px] p-6'>
       <div className='container max-w-[1200px]'>
@@ -43,6 +50,9 @@ export async function albumPage({ params, children }) {
             <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
           </div>
         </div>
+        <div className='container pt-8 px-6 lg:px-8 max-w-[800px] article'>
+          <MDXContent />
+        </div>
       </div>
       <Script id='photoScrollToTop'>
         {`
@@ -56,5 +66,3 @@ export async function albumPage({ params, children }) {
     </section>
   )
 }
-
-export default albumPage

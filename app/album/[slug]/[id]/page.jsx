@@ -13,7 +13,7 @@ export async function albumPhoto(props) {
   const photo = await fetchPhoto(props.params.slug, props.params.id)
   return (
     <section className='pb-6'>
-      <Image src={photo} width={1500} height={1000} alt={props.params.slug} className='object-cover object-center w-full aspect-[4/3] rounded' unoptimized />
+      <Image src={photo} width={1500} height={1000} alt={props.params.slug} className='object-cover object-center w-full aspect-[3/2] rounded' unoptimized />
     </section>
   )
 }

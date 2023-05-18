@@ -67,7 +67,7 @@ export function generateMetadata(props) {
 }
 
 export default function PostPage(props) {
-  const { post, result, postCode } = fetchPost(props);
+  const { post, postCode } = fetchPost(props);
   const MDXContent = useMDXComponent(postCode)
   return (
     <main className='dark:bg-zinc-900'>
