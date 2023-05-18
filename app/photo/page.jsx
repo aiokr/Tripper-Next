@@ -13,7 +13,7 @@ async function fetchPhoto() {
 export default async function PressPage({ children }) {
   const { album } = await fetchPhoto()
   return (
-    <main className='bg-zinc-900 text-white'>
+    <main className='text-white'>
       <div className={`container max-w-[1000] pt-16 py-16 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6`}>
         {album && album.map((album) => (
           <div key={album.url}>

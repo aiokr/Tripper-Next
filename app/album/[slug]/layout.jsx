@@ -6,6 +6,7 @@ import Link from 'next/link';
 import style from './album.module.css'
 import Script from 'next/script';
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Image from 'next/image';
 
 export function fetchAlbum(params) {
   const album = allPhotos.find((photos) => photos.url == params.slug) //获取一个相册的所有数据
@@ -31,10 +32,11 @@ export default function AlbumPage({ params, children }) {
         <div className='grid grid-cols-3 gap-4'>
           <div className='col-span-3 md:col-span-2'>
             {children}
-            <div className='flex flex-row gap-4 overflow-x-scroll rounded'>
+            <div className='flex flex-row gap-4 overflow-x-scroll rounded  overscroll-none'>
               {photos && photos.map((photo, index) => ( //index 是数组的索引，从 0 开始
                 <Link key={photo} href={`/album/${params.slug}/${index}`}
-                  className={`${style['albumItem']} h-20 lg:h-36 aspect-square rounded`} style={{ backgroundImage: 'url("' + photo + '")' }}>
+                  className={`${style['albumItem']} h-20 lg:h-36 aspect-square`}>
+                  <Image src={photo} width={200} height={200} className='aspect-square object-cover rounded' unoptimized/>
                 </Link>
               ))}
             </div>
@@ -52,7 +54,7 @@ export default function AlbumPage({ params, children }) {
             <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
           </div>
         </div>
-        <div className='container pt-8 px-6 lg:px-8 article'>
+        <div className='container pt-8 px-6 lg:px-8 article postArticle'>
           <MDXContent components={MDXComponents}/>
         </div>
       </div>

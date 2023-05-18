@@ -225,3 +225,11 @@ blockquote::before,
 .markdownIt-Anchor {
     display: none;
 }
+
+.postArticle a {
+    color: #f5f5f5 !important;
+}
+
+.postArticle .footnote-ref a {
+    color: #f5f5f5 !important;
+}
