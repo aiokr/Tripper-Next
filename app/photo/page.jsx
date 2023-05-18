@@ -18,9 +18,10 @@ export default async function PressPage({ children }) {
         {album && album.map((album) => (
           <div key={album.url}>
             <Link className='scroll-my-12' href={`/album/${album.url}/0`} id={`${album.url}`}>
-              <div className={`${style['protfolioEntryImg']} aspect-[16/10]`} style={{ backgroundImage: 'url("' + album.cover + '")' }}>
-                <div className={`${style['protfolioEntryLayer']} flex flex-col justify-center items-center opacity-0 hover:opacity-80 backdrop-blur ease-in-out transition bg-zinc-950`} >
-                  <div className='text-lg font-medium uppercase'>{album.title}</div>
+              <div className={`${style['protfolioEntryImg']} aspect-[16/10]`}>
+                <Image src={album.cover} className='aspect-[16/10] object-cover' width={800} height={600} alt={album.title} unoptimized />
+                <div className={`${style['protfolioEntryLayer']} flex flex-col justify-center items-center opacity-0 hover:opacity-80 ease-in-out transition bg-zinc-950`} >
+                  <div className='text-xl font-medium uppercase'>{album.title}</div>
                   <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
                 </div>
               </div>

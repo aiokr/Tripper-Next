@@ -17,6 +17,8 @@ export function fetchAlbum(params) {
 
 const MDXComponents = {
   // Override the default <a> element to use the next/link component.
+  a: ({ href, children }) => <Link href={href}>{children}</Link>,
+  pre: ({ children }) => <pre className='overflow-x-scroll'>{children}</pre>,
   // Add a custom component.
 }
 
@@ -24,7 +26,7 @@ export default function AlbumPage({ params, children }) {
   const { photos, album, albumCode } = fetchAlbum(params);
   const MDXContent = useMDXComponent(albumCode)
   return (
-    <section className='bg-zinc-900 text-white pt-6 lg:pt-[65px] p-6'>
+    <section className='bg-zinc-900 text-[#f5f5f5] pt-6 lg:pt-[65px] p-6'>
       <div className='container max-w-[1200px]'>
         <div className='grid grid-cols-3 gap-4'>
           <div className='col-span-3 md:col-span-2'>
@@ -38,8 +40,8 @@ export default function AlbumPage({ params, children }) {
             </div>
           </div>
           <div className='col-span-3 md:col-span-1 md:p-2'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="inline w-6 h-6 pr-1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="inline w-6 h-6 pr-1">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
             <Link className='inline-block align-middle leading-6' href={`/photo/#${params.slug}`}>
               Back To Works
@@ -50,8 +52,8 @@ export default function AlbumPage({ params, children }) {
             <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
           </div>
         </div>
-        <div className='container pt-8 px-6 lg:px-8 max-w-[800px] article'>
-          <MDXContent />
+        <div className='container pt-8 px-6 lg:px-8 article'>
+          <MDXContent components={MDXComponents}/>
         </div>
       </div>
       <Script id='photoScrollToTop'>
