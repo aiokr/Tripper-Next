@@ -2,17 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns'
 import style from './hero.module.css'
-import { allPosts } from 'contentlayer/generated'
+import { allPosts, allPhotos } from 'contentlayer/generated'
 
 async function fetchBlogData() {
   const posts = allPosts
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    .slice(0, 3)
+  const album = allPhotos
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
     .slice(0, 6)
-  return { posts }
+  return { posts, album }
 }
 
 export default async function Home() {
-  const { posts } = await fetchBlogData()
+  const { posts, album } = await fetchBlogData()
   return (
     <main className='bg-white dark:bg-zinc-900'>
       <div className='container lg:px-8 max-w-[1280px]'>
@@ -72,8 +75,29 @@ export default async function Home() {
           ))
           }
         </div>
-        <div className='pt-6'>
-
+        <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
+          <div className="left inline">
+            <div className="text-2xl font-bold dark:text-white">影像</div>
+          </div>
+          <div className="right inline">
+            <Link className='text-main' href="/photo">所有影像</Link>
+          </div>
+        </div>
+        <hr />
+        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-6 md:grid-cols-3 lg:px-0 gap-2 lg:gap-4`}>
+          {album && album.map((album) => (
+            <div key={album.url}>
+              <Link className='scroll-my-12' href={`/album/${album.url}/0`} id={`${album.url}`}>
+                <div className={`${style['protfolioEntryImg']} aspect-square`}>
+                  <Image src={album.cover} className='rounded aspect-square object-cover' width={800} height={600} alt={album.title} unoptimized />
+                  <div className={`${style['protfolioEntryLayer']} flex flex-col justify-center items-center opacity-0 hover:opacity-80 bg-zinc-950 text-white`} >
+                    <div className='text-xl font-medium uppercase'>{album.title}</div>
+                    <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </main >

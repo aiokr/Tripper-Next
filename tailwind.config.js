@@ -6,6 +6,9 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    borderRadius: {
+      DEFAULT: 'var(--radius)',
+    },
     container:
     {
       center: true,
