@@ -11,9 +11,6 @@ export default async function AboutPage() {
         <div className={`${style['aboutCard']} relative row-span-1 col-span-6 px-6 py-4 lg:px-10 lg:py-8 bg-main`}>
           <div className='text-xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] text-white'>👋 Hey,</div>
           <div className='text-2xl leading-5 lg:text-[48px] py-1 lg:py-8 font-[500] text-white'>I am aiokr</div>
-          <Link href='/about/me' className={`${style['cardBtn']}`}>
-            <Image src="../plus.svg" width="20" height="20" />
-          </Link>
         </div>
         <div className={`${style['aboutCard']} row-span-1 col-span-6 p-6 lg:p-12 bg-black`}>
           <div className={`${style['earthCard']} h-full`}></div>
@@ -32,16 +29,13 @@ export default async function AboutPage() {
             </span><br />
           </div>
         </div>
-        <div className={`${style['aboutCard']} relative row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 text-white bg-gradient-to-br from-[#71DEF5] to-[#7199F5]`}>
+        <div className={`${style['aboutCard']} relative row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 text-white bg-[#A3B4BF]`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>💡 Intersted in</div>
           <div className='py-1 lg:py-4'>
-          <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 '>
-            Digital Nomad<br />
-            Frontend<br />
-          </span>
-            <Link href='https://tripper.super.site/' target='_blank' className={`${style['cardBtn']}`}>
-              <Image src="../plus.svg" width="20" height="20" />
-            </Link>
+            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 '>
+              Digital Nomad<br />
+              Frontend<br />
+            </span>
           </div>
         </div>
       </div>
