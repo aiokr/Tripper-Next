@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './hero.module.css'
 import Script from 'next/script'
 import Image from 'next/image'
+import Header from './header'
 
 export const metadata = {
   title: '按下瞬间 - Tripper Press',
@@ -15,12 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh-cn">
       <body>
-        <div className={`${styles.header} dark:text-white`}>
-          <Link className='' href="/">Home</Link>
-          <Link className='' href="/posts/1">Posts</Link>
-          <Link className='' href="/photo">Photos</Link>
-          <Link className='' href="/about">About</Link>
-        </div>
+        <Header />
         {children}
         <footer className={`${styles.footer} bg-zinc-200 dark:bg-zinc-800`}>
           <div className='container max-w-[1280px] p-8'>

@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns'
-import heroStyle from './hero.module.css'
+import style from './hero.module.css'
 import { allPosts } from 'contentlayer/generated'
-import IndexStyle from './index.module.css'
 
 async function fetchBlogData() {
   const posts = allPosts
@@ -17,15 +16,15 @@ export default async function Home() {
   return (
     <main className='bg-white dark:bg-zinc-900'>
       <div className='container lg:px-8 max-w-[1280px]'>
-        <div className={`${heroStyle['hero-area']} lg:pt-[65px]`}>
-          <div className={`${heroStyle['hero-img']} h-[300px] lg:h-[400px]`}>
-            <div className={`${heroStyle['hero-layer']}`}>
-              <div className={`${heroStyle['hero-title']} text-2xl lg:text-4xl font-bold px-8`}>人类无可救药地留在柏拉图的洞穴里</div>
-              <div className={`${heroStyle['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
+        <div className={`${style['hero-area']} lg:pt-[65px]`}>
+          <div className={`${style['hero-img']} h-[300px] lg:h-[400px]`}>
+            <div className={`${style['hero-layer']}`}>
+              <div className={`${style['hero-title']} text-2xl lg:text-4xl font-bold px-8`}>人类无可救药地留在柏拉图的洞穴里</div>
+              <div className={`${style['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
             </div>
           </div>
         </div>
-        <div className={`${IndexStyle['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
+        <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
           <div className="left inline">
             <div className="text-2xl font-bold dark:text-white">文章</div>
           </div>
@@ -39,32 +38,32 @@ export default async function Home() {
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >
                 {post.cover ? (
-                  <div className={`${IndexStyle['postEntry']}`}>
-                    <div className={`${IndexStyle['postEntryCover']} h-[233px]`}>
+                  <div className={`${style['postEntry']}`}>
+                    <div className={`${style['postEntryCover']} h-[233px]`}>
                       <Image src={post.cover} width={600} height={400} alt={post.title}
-                        className={`${IndexStyle['postEntryCover']} object-cover h-full w-full`}
+                        className={`${style['postEntryCover']} object-cover h-full w-full`}
                       />
                     </div>
-                    <div className={`${IndexStyle['postEntryInfo']} h-[167px] py-6`}>
-                      <div className={`${IndexStyle['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
+                    <div className={`${style['postEntryInfo']} h-[167px] py-6`}>
+                      <div className={`${style['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
                       <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${IndexStyle['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 ) : (
-                  <div className={`${IndexStyle['postEntry']}`}>
-                    <div className={`${IndexStyle['postEntryInfo']} h-[200px] lg:h-[400px] py-4`}>
-                      <div className={`${IndexStyle['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
+                  <div className={`${style['postEntry']}`}>
+                    <div className={`${style['postEntryInfo']} h-[200px] lg:h-[400px] py-4`}>
+                      <div className={`${style['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
                       <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${IndexStyle['postEntryExcerptNoCover']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                      <div className={`${style['postEntryExcerptNoCover']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 )}

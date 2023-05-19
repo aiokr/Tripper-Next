@@ -23,12 +23,12 @@
 .postEntryCover {
     background-position: center;
     background-size: cover;
-    border-radius: var(--radius);
     width: 100%;
 }
 
 .postEntryImage {
     position: static !important;
+    border-radius: 4px;
 }
 
 .postEntryExcerpt {
