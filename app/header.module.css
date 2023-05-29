@@ -1,48 +1,42 @@
 .header {
     position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     -webkit-backdrop-filter: saturate(180%) blur(50px) !important;
     backdrop-filter: saturate(180%) blur(50px) !important;
     z-index: 9999;
-    width: 100vw;
-    display: flex;
+    width: 100%;
 }
 
 @media (min-width: 1024px) {
     .header {
-        top: 0px;
-        left: 0px;
+        top: 0;
         background-color: #ffffffcc;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .header {
-            background-color: #161617cc;
-        }
     }
 }
 
 @media (max-width: 1022px) {
-
     .header {
-        bottom: 0px;
-        left: 0px;
+        left: 0;
+        right: 0;
+        bottom: 12px;
+        width: 90%;
         justify-content: center;
         background-color: #ffffffcc;
-        border-top-left-radius: var(--radius);
-        border-top-right-radius: var(--radius);
+        border-radius: var(--radius);
         box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.02), 1px 1px 15px 10px rgba(0, 0, 0, 0.03);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .header {
-            background-color: #161617cc;
-        }
     }
 }
 
 .header a {
-    height: 52px;
-    display: inline-block;
-    line-height: 52px;
+    height: 60px;
+    line-height: 60px;
     padding: 0 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: #161617cc;
+    }
 }

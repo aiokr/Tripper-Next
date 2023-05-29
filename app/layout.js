@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
-        <footer className={`${styles.footer} bg-zinc-200 dark:bg-zinc-800`}>
+        <footer className={`${styles.footer} bg-zinc-200 dark:bg-zinc-800 pb-24`}>
           <div className='container max-w-[1280px] p-8'>
           <div className='inline-block py-4 ease-in-out transition hover:text-main'>
             <Image className="hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
