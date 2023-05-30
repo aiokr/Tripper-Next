@@ -18,15 +18,15 @@ export default async function Home() {
   const { posts, album } = await fetchBlogData()
   return (
     <main className='bg-white dark:bg-zinc-900'>
-      <div className='container lg:px-8 max-w-[1280px]'>
-        <div className={`${style['hero-area']} lg:pt-[65px]`}>
-          <div className={`${style['hero-img']} h-[300px] lg:h-[400px]`}>
-            <div className={`${style['hero-layer']}`}>
-              <div className={`${style['hero-title']} text-2xl lg:text-4xl font-bold px-8`}>人类无可救药地留在柏拉图的洞穴里</div>
-              <div className={`${style['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
-            </div>
+      <div className={`${style['hero-area']} lg:pt-[65px]`}>
+        <div className={`${style['hero-img']} h-[300px] lg:h-[400px]`}>
+          <div className={`${style['hero-layer']}`}>
+            <div className={`${style['hero-title']} text-2xl lg:text-4xl font-bold px-8`}>前行有风</div>
+            <div className={`${style['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
           </div>
         </div>
+      </div>
+      <div className='container lg:px-8 max-w-[1280px]'>
         <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
           <div className="left inline">
             <div className="text-2xl font-bold dark:text-white">文章</div>

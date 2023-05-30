@@ -64,14 +64,6 @@
     min-height: 240px;
 }
 
-@media (min-width: 1024px) {
-
-    .hero-img,
-    .hero-layer {
-        border-radius: var(--radius);
-    }
-}
-
 @media (max-width: 1022px) {
 
     .hero-img,
