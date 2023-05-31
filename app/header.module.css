@@ -26,6 +26,7 @@
     opacity: 1;
 }
 
+/* Desktop ＆ Tablet */
 @media (min-width: 1024px) {
     .header {
         top: 0;
@@ -44,6 +45,19 @@
     .headerLink:hover::after {
         width: 100%;
     }
+}
+
+.activeLink {
+    opacity: 1;
+    color: var(--main-color);
+}
+
+.activeLink::after {
+    content: "";
+    display: block;
+    transition: width .2s;
+    width: 100%;
+    border-bottom: solid 2px var(--main-color);
 }
 
 @media (max-width: 1022px) {

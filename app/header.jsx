@@ -15,7 +15,7 @@ export default function Header() { // 必须以大写开头
     // 检查路径的开头是否匹配 darkPages 中的任何一个
     const isDarkPage = darkPages.some(page => pathname.startsWith(page));
 
-    return isDarkPage ? darkNavStyle : 0;
+    return isDarkPage ? darkNavStyle : ''; // 如果页面路径匹配 darkPages，则应用暗色样式，否则返回 undefined
   };
 
   // 根据当前页面的 pathname 选择要使用的样式
@@ -29,10 +29,10 @@ export default function Header() { // 必须以大写开头
           />
         </Link>
         <div className='flex justify-center'>
-          <Link className={`${style.headerLink}`} scroll={false} href="/">Home</Link>
-          <Link className={`${style.headerLink}`} scroll={false} href="/posts/1">Posts</Link>
-          <Link className={`${style.headerLink}`} scroll={false} href="/photo">Photography</Link>
-          <Link className={`${style.headerLink}`} scroll={false} href="/about">About</Link>
+          <Link className={`${style.headerLink} ${pathname === '/' ? style.activeLink : ''} `} scroll={false} href="/">Home</Link>
+          <Link className={`${style.headerLink} ${pathname.startsWith('/post') ? style.activeLink : ''}`} scroll={false} href="/posts/1">Posts</Link>
+          <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') ? style.activeLink : ''}`} scroll={false} href="/photo">Photography</Link>
+          <Link className={`${style.headerLink} ${pathname === '/about' ? style.activeLink : ''}`} scroll={false} href="/about">About</Link>
         </div>
         <div></div>
       </div>
