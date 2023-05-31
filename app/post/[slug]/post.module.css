@@ -20,9 +20,18 @@
     }
 }
 
-.info-area {
-    margin: 0 auto;
-    padding-top: 148px;
-    padding-bottom: 96px;
+@media (max-width: 1022px) {
+    .info-area {
+        margin: 0 auto;
+        padding-top: 96px;
+        padding-bottom: 48px;
+    }
+}
 
+@media (min-width: 1022px) {
+    .info-area {
+        margin: 0 auto;
+        padding-top: 148px;
+        padding-bottom: 96px;
+    }
 }

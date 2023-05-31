@@ -1,0 +1,12 @@
+.footer {
+    min-height: 240px;
+}
+
+@media (max-width: 1022px) {
+
+    .hero-img,
+    .hero-layer {
+        border-bottom-right-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+    }
+}
