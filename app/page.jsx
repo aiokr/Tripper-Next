@@ -36,7 +36,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-6 gap-6 lg:grid-cols-3 lg:px-0'>
+        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-4 gap-6 lg:grid-cols-3 lg:px-0'>
           {posts && posts.map((post) => (
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >
@@ -84,7 +84,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-6 md:grid-cols-3 lg:px-0 gap-2 lg:gap-4`}>
+        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-4 md:grid-cols-3 lg:px-0 gap-2 lg:gap-4`}>
           {album && album.map((album) => (
             <div key={album.url}>
               <Link className='scroll-my-12' href={`/album/${album.url}/0`} id={`${album.url}`}>
