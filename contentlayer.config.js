@@ -68,6 +68,11 @@ export const Photo = defineDocumentType(() => ({
             type: 'string',
             description: 'The cover of the photos',
         },
+        category: {
+            type: 'string',
+            description: 'The category of the post',
+            default: '纪行'
+        },
         url: {
             type: 'string',
             description: 'The url of the photos',

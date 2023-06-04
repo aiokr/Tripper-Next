@@ -1,20 +1,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import style from './photo.module.css'
+import style from '../../photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPhotos } from 'contentlayer/generated';
 
-async function fetchPhoto() {
-  const album = allPhotos
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))).slice(0, 10)
+async function fetchAlbumData(category) {
+  const categoryDecodedStr = decodeURIComponent(category)
+  let categoryStr = ''
+  for (let i = 0; i < categoryDecodedStr.length;) {
+    const code = categoryDecodedStr.codePointAt(i)
+    categoryStr += String.fromCodePoint(code)
+    i += code > 0xffff ? 2 : 1 // 处理 Unicode 码位
+  }
+  const album = allPhotos.filter(album => album.category === categoryStr)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
   return { album }
 }
 
-export default async function PressPage({ children }) {
-  const { album } = await fetchPhoto()
+export default async function PressAllPage(props) {
+  var category = props.params.slug
+  const { album } = await fetchAlbumData(category || '') // 传入空字符串来获取无分类的文章
   return (
     <main className='text-white'>
-      <div className={`container max-w-[1000] pt-16 py-16 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6`}>
+      <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6`}>
         {album && album.map((album) => (
           <div key={album.url}>
             <Link className='scroll-my-12' href={`/album/${album.url}/0`} id={`${album.url}`}>
