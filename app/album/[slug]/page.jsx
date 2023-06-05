@@ -1,9 +1,11 @@
-// 此目录下的 layout 显示一个集合中的所有图片，children 显示单张图片及信息。
+"use client"
 
+// 此目录下的 layout 显示一个集合中的所有图片，children 显示单张图片及信息。
 import { allPhotos } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import style from './album.module.css'
+import { useState } from "react";
 import Script from 'next/script';
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image';
@@ -23,23 +25,22 @@ const MDXComponents = {
   // Add a custom component.
 }
 
-export default function AlbumPage({ params, searchParams }) {
+export default function AlbumPage({ params }) {
   const { photos, album, albumCode } = fetchAlbum(params);
+  const [activeIndex, setActiveIndex] = useState(0);
   const MDXContent = useMDXComponent(albumCode)
-  const queryParams = new URLSearchParams(searchParams)
-  const photoNum = queryParams.get("photoid") || 0; 
-  var photo = album.photos[photoNum]
   return (
     <section className='bg-zinc-900 text-[#f5f5f5] pt-6 lg:pt-[65px] p-6'>
       <div className='container max-w-[1200px]'>
         <div className='grid grid-cols-3 gap-4'>
           <div className='col-span-3 md:col-span-2'>
             <section className='pb-6'>
-              <Image src={photo} width={1500} height={1000} alt={album.title} className='object-cover object-center w-full aspect-[3/2] rounded' unoptimized />
+              <Image src={photos[activeIndex]} width={1500} height={1000} alt={album.title} className='object-cover object-center w-full aspect-[3/2] rounded' unoptimized />
             </section>
             <div className='flex flex-row gap-4 overflow-x-scroll rounded  overscroll-none'>
               {photos && photos.map((photo, index) => ( //index 是数组的索引，从 0 开始
-                <Link key={photo} href={`/album/${params.slug}/?photoid=${index}`}
+                <Link key={index} href={`/album/${params.slug}/`}
+                  onClick={() => setActiveIndex(index)}
                   className={`${style['albumItem']} h-20 lg:h-36 aspect-square`}>
                   <Image src={photo} width={200} height={200} className='aspect-square object-cover rounded' unoptimized />
                 </Link>
