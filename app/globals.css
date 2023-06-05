@@ -28,7 +28,7 @@ Photup Article Style
     --main-color: #71afdd;
     --main-black: #222831;
     --textColor: #222831;
-    --radius: 12px;
+    --radius: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
