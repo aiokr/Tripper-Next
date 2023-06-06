@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import style from './photo.module.css'
+
 export default function PressPage({ children }) {
   return (
     <main className='bg-zinc-900 text-white font-semibold'>

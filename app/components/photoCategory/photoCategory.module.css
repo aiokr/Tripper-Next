@@ -1,0 +1,15 @@
+.photoCategory {
+  opacity: 0.8;
+}
+
+.photoCategory::after {
+  content: "";
+  display: block;
+  transition: width .2s;
+  width: 0%;
+  border-bottom: solid 2px #f5f5f550;
+}
+
+.photoCategory:hover::after {
+  width: 30%;
+}

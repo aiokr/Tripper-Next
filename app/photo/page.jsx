@@ -3,6 +3,7 @@ import Link from 'next/link'
 import style from './photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPhotos } from 'contentlayer/generated';
+import PhotoCategoryLink from '../components/photoCategory/photoCagegory';
 
 async function fetchPhoto() {
   const album = allPhotos
@@ -17,11 +18,8 @@ export default async function PressPage({ children }) {
   return (
     <main className='text-white'>
       <div className={`text-white container max-w-[1280px] grid grid-cols-12 gap-4`}>
-        <div className={`col-span-12 md:col-span-2 px-8 md:px-0 py-16 flex flex-col gap-4 sticky`}>
-          <Link href={`/photo`} key='all' className={`${style.photoCategory}`}>全部</Link>
-          {categories.map(category => (
-            <Link href={`/photo/category/${category}`} key={category} className={`${style.photoCategory}`}>{category}</Link>
-          ))}
+        <div className={`col-span-12 md:col-span-2 py-16 flex flex-col gap-4 sticky`}>
+          <PhotoCategoryLink />
         </div>
         <div className={`col-span-12 md:col-span-10`}>
           <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4`}>

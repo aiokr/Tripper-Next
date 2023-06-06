@@ -2,7 +2,7 @@ const { withContentlayer } = require('next-contentlayer');
 module.exports = withContentlayer({
   /* 其他配置 */
   experimental: {
-    appDir: true,
+    serverActions: true,
   },
   webpack(config) {
     config.experiments = { ...config.experiments, topLevelAwait: true }
