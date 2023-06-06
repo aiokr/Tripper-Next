@@ -32,22 +32,25 @@ export default async function GlassPage() {
     <main className='text-white'>
       <div className={`text-white container max-w-[1280px] py-8 grid grid-cols-2 md:grid-cols-4 gap-2`}>
         {notionData.map((item) => (
-          <div key={item.id} className='md:aspect-[6/9]'>
-            <Image className='aspect-square object-cover'
-              src={item.properties.Image.files[0].file.url} alt={item.properties.Name.title[0].plain_text} width={600} height={600} />
-            <div className='hidden md:flex py-4 md:py-8 flex-col gap-2'>
-              <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
-              <div className='text-xl'>
-                {item.properties.Name.title[0].plain_text}
+          item.properties.Image.files[0] && (
+            <div key={item.id} className='md:aspect-[6/9]'>
+              <Image className='aspect-square object-cover'
+                src={item.properties.Image.files[0].file.url} alt={item.properties.Name.title[0].plain_text} width={600} height={600} />
+              <div className='hidden md:flex py-4 md:py-8 flex-col gap-2'>
+                <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
+                {item.properties.Name.title[0] && (
+                  <div className='text-xl'>
+                    {item.properties.Name.title[0].plain_text}
+                  </div>
+                )}
+                {item.properties.Text.rich_text[0] && (
+                  <div className='text-sm opacity-60'>
+                    {item.properties.Text.rich_text[0].plain_text}
+                  </div>
+                )}
               </div>
-              {item.properties.Text.rich_text[0] && (
-                <div className='text-sm opacity-60'>
-                  {item.properties.Text.rich_text[0].plain_text}
-                </div>
-              )}
             </div>
-          </div>
-        ))}
+          )))}
       </div>
       <div className='text-center pb-16 opacity-60 font-light'>
         <div className='py-6'>Come to Instagram and follow me to see more</div>
