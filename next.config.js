@@ -16,6 +16,10 @@ module.exports = withContentlayer({
       },
       {
         protocol: 'https',
+        hostname: '**.amazonaws.com',
+      },
+      {
+        protocol: 'https',
         hostname: '**.tripper.press',
       },
       {

@@ -22,7 +22,7 @@ export default async function PressAllPage(props) {
   const { album } = await fetchAlbumData(category || '') // 传入空字符串来获取无分类的文章
   return (
     <main className='text-white'>
-      <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4`}>
+      <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2`}>
         {album && album.map((album) => (
           <div key={album.url}>
             <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>

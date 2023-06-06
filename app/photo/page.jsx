@@ -22,7 +22,7 @@ export default async function PressPage({ children }) {
           <PhotoCategoryLink />
         </div>
         <div className={`col-span-12 md:col-span-10`}>
-          <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4`}>
+          <div className={`container max-w-[1000] md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2`}>
             {album && album.map((album) => (
               <div key={album.url}>
                 <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>
