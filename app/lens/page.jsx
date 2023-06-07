@@ -35,9 +35,12 @@ export default async function GlassPage() {
           item.properties.Image.files[0] && (
             <div key={item.id} className='md:aspect-[6/9]'>
               <Image className='aspect-square object-cover'
-                src={item.properties.Image.files[0].file.url} alt={item.properties.Name.title[0].plain_text} width={600} height={600} />
+                alt={item.properties.Name.title[0] ? (item.properties.Name.title[0].plain_text) : ('Tripper Lens Image')}
+                src={item.properties.Image.files[0].file.url} width={600} height={600} />
               <div className='hidden md:flex py-4 md:py-8 flex-col gap-2'>
-                <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
+                {item.properties.Date.date && (
+                  <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
+                )}
                 {item.properties.Name.title[0] && (
                   <div className='text-xl'>
                     {item.properties.Name.title[0].plain_text}
