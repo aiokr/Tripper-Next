@@ -17,16 +17,6 @@ export default function PressPage({ children }) {
           </div>
         </div>
       </div>
-      <div className={`${style['navbar']} container max-w-[600] grid grid-cols-4`}>
-        <div></div>
-        <div className='text-center'>
-          <Link href='/photo'>All Works</Link>
-        </div>
-        <div className='text-center'>
-          <Link href='/photo/glass'>Lens</Link>
-        </div>
-        <div></div>
-      </div>
       <div className='px-4'>
         {children}
       </div>

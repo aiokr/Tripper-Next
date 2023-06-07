@@ -10,7 +10,7 @@ export default function Header() { // 必须以大写开头
   const pathname = usePathname();
 
   const getPageStyle = (pathname) => {
-    const darkPages = ['/album', '/photo'];
+    const darkPages = ['/album', '/photo', '/lens'];
 
     // 检查路径的开头是否匹配 darkPages 中的任何一个
     const isDarkPage = darkPages.some(page => pathname.startsWith(page));
@@ -31,6 +31,7 @@ export default function Header() { // 必须以大写开头
         <div className='flex justify-center'>
           <Link className={`${style.headerLink} ${pathname === '/' ? style.activeLink : ''} `} scroll={false} href="/">Home</Link>
           <Link className={`${style.headerLink} ${pathname.startsWith('/post') ? style.activeLink : ''}`} scroll={false} href="/posts/1">Posts</Link>
+          <Link className={`${style.headerLink} ${pathname.startsWith('/lens') ? style.activeLink : ''}`} scroll={false} href="/lens">Lens</Link>
           <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') ? style.activeLink : ''}`} scroll={false} href="/photo">Photography</Link>
           <Link className={`${style.headerLink} ${pathname === '/about' ? style.activeLink : ''}`} scroll={false} href="/about">About</Link>
         </div>

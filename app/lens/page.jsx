@@ -1,7 +1,7 @@
 "use server"
 import Image from 'next/image'
 import Link from 'next/link'
-import style from '../photo.module.css'
+import style from '../photo/photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 
@@ -29,8 +29,8 @@ export async function FetchNotionDb() {
 export default async function GlassPage() {
   const notionData = await FetchNotionDb()
   return (
-    <main className='text-white'>
-      <div className={`text-white container max-w-[1280px] py-8 grid grid-cols-2 md:grid-cols-4 gap-2`}>
+    <main className='bg-zinc-900 text-white'>
+      <div className={`text-white container max-w-[1280px] md:pt-[120px] pb-8 grid grid-cols-2 md:grid-cols-4 gap-2`}>
         {notionData.map((item) => (
           item.properties.Image.files[0] && (
             <div key={item.id} className='md:aspect-[6/9]'>
