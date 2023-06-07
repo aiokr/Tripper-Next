@@ -1,11 +1,12 @@
-"use server"
 import Image from 'next/image'
 import Link from 'next/link'
 import style from '../photo/photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 
-export async function FetchNotionDb() {
+export const revalidate = 600; // revalidate every 10 mins
+
+async function FetchNotionDb() {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
