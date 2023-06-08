@@ -60,11 +60,11 @@ export default function AlbumPage({ params }) {
             
             <div className='flex flex-row gap-4 overflow-x-scroll rounded  overscroll-none'>
               {photos && photos.map((photo, index) => ( //index 是数组的索引，从 0 开始
-                <Link key={index} href={`/album/${params.slug}/`}
+                <button key={index} href={`/album/${params.slug}/`}
                   onClick={() => setActiveIndex(index)}
                   className={`${style['albumItem']} h-20 lg:h-36 aspect-square`}>
                   <Image src={photo} width={200} height={200} className='aspect-square object-cover rounded' unoptimized />
-                </Link>
+                </button>
               ))}
             </div>
           </div>
