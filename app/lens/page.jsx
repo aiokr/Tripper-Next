@@ -1,12 +1,11 @@
+"use server"
 import Image from 'next/image'
 import Link from 'next/link'
 import style from '../photo/photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 
-// export const revalidate = 600; // revalidate every 10 mins // notion 每小时会更新图片链接，缓存会造成无法加载图片。
-
-async function FetchNotionDb() {
+export async function FetchNotionDb() {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
