@@ -6,8 +6,8 @@ export default function PressPage({ children }) {
   return (
     <main className='bg-zinc-900 text-white font-semibold'>
       <div className={`${style['hero']}`} >
-        <div className={`${style['heroLayer']} px-12 py-16 lg:pt-48 lg:pb-36`}>
-          <Image className="pb-16" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
+        <div className={`${style['heroLayer']} px-12 py-8 lg:pt-48 lg:pb-36`}>
+          <Image className="pb-10" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
             width={64} height={64}
             alt="logo" automatically="true" provided="true"
           />

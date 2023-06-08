@@ -27,7 +27,8 @@ export default async function generateRSS() {
       title: post.title,
       link: `https://tripper.press/post/${post.url}`,
       date: new Date(post.date),
-      author: 'author',
+      author: post.author,
+      content: post.body.html,
     });
   });
 
