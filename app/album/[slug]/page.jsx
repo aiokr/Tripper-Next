@@ -14,35 +14,55 @@ import Image from 'next/image';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+//Markdown
+import tocAndAnchor from 'markdown-it-toc-and-anchor';
+import emoji from 'markdown-it-emoji';
+import footnote from 'markdown-it-footnote';
+import highlightjs from 'markdown-it-highlightjs';
+import iterator from 'markdown-it-for-inline'
+var md = require('markdown-it')({
+  breaks: true,
+  linkify: true,
+  langPrefix: 'language-',
+  linkify: true,
+  highlight: (str, lang) => {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return '<pre className="hljs"><code>' +
+          hljs.highlight(lang, str, true).value +
+          '</code></pre>';
+      } catch (__) { }
+    }
+    return '<pre className="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+  }
+});
+md.use(emoji).use(footnote).use(tocAndAnchor).use(highlightjs).use(
+  iterator, 'url_new_win', 'link_open', function (tokens, idx) {
+    tokens[idx].attrPush(['target', '_blank']);
+  });
+
 export function fetchAlbum(params) {
   const album = allPhotos.find((photos) => photos.url == params.slug) //获取一个相册的所有数据
   const photos = album.photos //提取出相册中的照片列表
-  const albumCode = album.body.code //获取相册正文
+  const albumPost = album.body.raw //获取相册正文
+  const result = md.render(albumPost); //转换正文
   const title = album.title + ' - Tripper Press'
-  return { photos, album, albumCode }
-}
-
-const MDXComponents = {
-  // Override the default <a> element to use the next/link component.
-  a: ({ href, children }) => <Link href={href}>{children}</Link>,
-  pre: ({ children }) => <pre className='overflow-x-scroll'>{children}</pre>,
-  // Add a custom component.
+  return { photos, album, result }
 }
 
 export default function AlbumPage({ params }) {
   const [open, setOpen] = React.useState(false);
-  const { photos, album, albumCode } = fetchAlbum(params);
+  const { photos, album, result } = fetchAlbum(params);
   const [activeIndex, setActiveIndex] = useState(0);
-  const MDXContent = useMDXComponent(albumCode)
   return (
     <section className='bg-zinc-900 text-[#f5f5f5] pt-6 lg:pt-[65px] p-6'>
-    <Lightbox
-              open={open}
-              close={() => setOpen(false)}
-              slides={[
-                { src: photos[activeIndex] },
-              ]}
-            />
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={[
+          { src: photos[activeIndex] },
+        ]}
+      />
       <div className='container max-w-[1200px]'>
         <div className='grid grid-cols-3 gap-4'>
           <div className='col-span-3 md:col-span-2'>
@@ -57,7 +77,7 @@ export default function AlbumPage({ params }) {
                 <span> Full Screen </span>
               </button>
             </div>
-            
+
             <div className='flex flex-row gap-4 overflow-x-scroll rounded  overscroll-none'>
               {photos && photos.map((photo, index) => ( //index 是数组的索引，从 0 开始
                 <button key={index} href={`/album/${params.slug}/`}
@@ -75,19 +95,8 @@ export default function AlbumPage({ params }) {
             <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
           </div>
         </div>
-        <div className='container pt-8 px-6 lg:px-8 article postArticle'>
-          <MDXContent components={MDXComponents} />
-        </div>
+        <div className='container pt-8 px-6 lg:px-8 article postArticle' dangerouslySetInnerHTML={{ __html: result }} />
       </div>
-      <Script id='photoScrollToTop'>
-        {`
-          window.scrollTo({
-          left: 0,
-          top: 0,
-          behavior: 'smooth'
-          })
-       `}
-      </Script>
     </section>
   )
 }

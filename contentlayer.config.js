@@ -53,7 +53,7 @@ export const Post = defineDocumentType(() => ({
 export const Photo = defineDocumentType(() => ({
     name: 'Photo',
     filePathPattern: `posts/photos/**/*.md`,
-    contentType: 'markdown ',
+    contentType: 'markdown',
     fields: {
         title: {
             type: 'string',

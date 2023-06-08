@@ -1,5 +1,3 @@
-'use client';
-
 import style from './photoCategory.module.css'
 import { compareDesc} from 'date-fns'
 import Link from 'next/link';
@@ -13,7 +11,6 @@ async function fetchPhoto() {
 }
 
 export default async function PhotoCategoryLink() { // 必须以大写开头
-
   const { categories } = await fetchPhoto()
   return (
     <>
