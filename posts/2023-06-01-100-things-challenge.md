@@ -1,7 +1,7 @@
 ---
 type: Post
 title: 100 件物品挑战
-date: 2023-06-01
+date: 2023-06-08
 author: aiokr
 category: 读立写生
 excerpt: 总结一些平时用过的，值得长期使用或重复购买的物件，减少不必要的支出。
@@ -14,22 +14,44 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 想法来源：[极简主义探索 | 我的「100件物品挑战」 - 少数派](https://sspai.com/post/38222)
 
 ## 服饰
-
 ### 上衣
-- 偏正式服饰
-  - 优衣库 U 系列 Airism 棉混纺 T 恤
-- 运动健身
+
+### 偏正式服饰
+
+- 优衣库 U AIRism 棉混纺 T 恤
+  - 五分袖的设计，其实不算正式。
+  - 但是反正我通常没有 Dress Code，随便穿啥都行
+- 优衣库 BLOCKTECH 风衣
+  - 防水防风不保暖，春秋季可以穿，冬季不行。
+  - 我买的那一款下架了，类似的 BLOCKTECH 的都差不多。
+
+日常穿的裤子，目前还没有哪条能让我感觉值得回购的。可能裤子比衣服耐用，也通常没啥特点。
+
+### 运动健身
+
+- 上衣
   - Nike Pro 无袖紧身衣
   - OMG 无袖背心
+- 裤子
+  - 迪卡侬 79 款短裤 [男士跑步直筒快干短裤](https://www.decathlon.com.cn/zh/p/dry-men-s-running-breathable-shorts/_/R-p-333374/)
+  - 迪卡侬 29 款泳裤 [TRUNKS 100 BASIC](https://www.decathlon.com.cn/zh/p/100-men-s-swimming-briefs-basic-grey/)
 
-### 鞋子
-- Nike AF1 
-  - 在任何场合都合适的鞋子
-- Nike AirMax 270
-- Converse All Star / 1970s
+### 鞋袜
+
+- 鞋
+  - Nike AF1
+    - 在任何场合都合适的鞋子
+  - Nike AirMax 270
+  - Converse All Star / 1970s
+- 袜
+  - Nike Everyday Plus
+  - JORDAN ESSENTIALS
 
 ## 数码设备
 
-- 通用设备
-  - Logi MX Master 3s 鼠标
+- 通用设备 
+ - Logi MX Master 3s 鼠标
+    - Logi 的办公鼠标在同一网段的多个设备下，还能使用 Logi Flow，多设备协同比较方便
+    - 罗技的驱动很垃圾，新版驱动比旧版的更垃圾
 - 摄影
+  - 三星 Pro Plus 储存卡
