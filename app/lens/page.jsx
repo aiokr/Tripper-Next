@@ -34,9 +34,15 @@ export default async function GlassPage() {
         {notionData.map((item) => (
           item.properties.Image.files[0] && (
             <div key={item.id} className='md:aspect-[6/9]'>
-              <Image className='aspect-square object-cover'
-                alt={item.properties.Name.title[0] ? (item.properties.Name.title[0].plain_text) : ('Tripper Lens Image')}
-                src={item.properties.Image.files[0].file.url} width={600} height={600} unoptimized/>
+              {item.properties.Image.files[0].type === 'file' ? (
+                <Image className='aspect-square object-cover'
+                  alt={item.properties.Name.title[0] ? (item.properties.Name.title[0].plain_text) : ('Tripper Lens Image')}
+                  src={item.properties.Image.files[0].file.url} width={600} height={600} unoptimized />
+              ) : (
+                <Image className='aspect-square object-cover'
+                  alt={item.properties.Name.title[0] ? (item.properties.Name.title[0].plain_text) : ('Tripper Lens Image')}
+                  src={item.properties.Image.files[0].external.url} width={600} height={600} unoptimized />
+              )}
               <div className='hidden md:flex py-4 md:py-8 flex-col gap-2'>
                 {item.properties.Date.date && (
                   <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
