@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     borderRadius: {
       DEFAULT: 'var(--radius)',
+      'full': '9999px',
     },
     container:
     {
@@ -21,7 +22,10 @@ module.exports = {
       },
       colors: {
         'main': '#71afdd',
+        'sub': '#A3B4BF',
         'text': '#222831',
+        'dtext': '#E2E2E2',
+        'dbg': '#18181B',
       },
     },
   },

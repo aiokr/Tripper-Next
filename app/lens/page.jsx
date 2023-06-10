@@ -45,7 +45,7 @@ export default async function GlassPage() {
               )}
               <div className='hidden md:flex py-4 md:py-8 flex-col gap-2'>
                 {item.properties.Date.date && (
-                  <div className='text-sm opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
+                  <div className='text-sm text-sub opacity-60'>{format(parseISO(item.properties.Date.date.start), 'yyyy-MM-dd')}</div>
                 )}
                 {item.properties.Name.title[0] && (
                   <div className='text-xl'>
@@ -53,7 +53,7 @@ export default async function GlassPage() {
                   </div>
                 )}
                 {item.properties.Text.rich_text[0] && (
-                  <div className='text-sm opacity-60'>
+                  <div className='text-sm text-sub opacity-60'>
                     {item.properties.Text.rich_text[0].plain_text}
                   </div>
                 )}

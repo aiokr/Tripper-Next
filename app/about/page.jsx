@@ -18,7 +18,7 @@ export default async function AboutPage() {
         <div className={`${style['aboutCard']} row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 border`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] dark:text-white'>🏳️‍🌈 I am</div>
           <div className='py-1 lg:py-4'>
-            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#71afdd70] to-[#71afdd]'>Always as a Student</span><br />
+            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#71afdd70] to-main'>Always as a Student</span><br />
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-sky-500'>Photographer</span><br />
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] bg-clip-text text-transparent bg-gradient-to-r from-sky-700 to-sky-950'>Blogger</span><br />
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-400'>
@@ -62,14 +62,23 @@ export default async function AboutPage() {
         </div>
       </div>
       <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 pt-4'>
-        <div className={`${style['aboutCard']} col-span-12 px-6 py-4 lg:px-10 lg:py-8 bg-gradient-to-br from-green-200 to-blue-500`}>
-          <div className='text-xl lg:text-3xl font-[500] leading-[48px] lg:leading-[60px] text-white'>🧑‍💻 My Friends</div>
+        <div className={`${style['aboutCard']} col-span-12 px-6 py-4 lg:px-10 lg:py-8 bg-gradient-to-br from-[#6BE1AE] to-[#71afdd]`}>
+          <div className='text-xl lg:text-3xl font-[500] leading-[48px] lg:leading-[60px] text-white'>🔗 My Friends</div>
           <div className='py-4 text-white grid grid-cols-2 lg:grid-cols-4'>
             {friends.map((friends) => (
               <a key={friends.title} href={`${friends.url}`} target='_blank'>
                 {friends.title}
               </a>
-            ))}
+            ))}🔗
+          </div>
+        </div>
+      </div>
+      <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 pt-4'>
+        <div className={`${style['aboutCard']} ${style['labCard']} col-span-12 px-6 py-4 lg:px-10 lg:py-8 bg-[#121212]`}>
+          <div className='text-xl lg:text-3xl font-[500] leading-[48px] lg:leading-[60px] text-white'>🧑‍💻 Labs</div>
+          <div className='py-4 text-white grid grid-cols-2 lg:grid-cols-4'>
+            <Link href='/labs/css' c>CSS 新特性</Link>
+            <Link href='/labs/color' c>Tripper Color</Link>
           </div>
         </div>
       </div>

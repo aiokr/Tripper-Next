@@ -55,7 +55,7 @@ export default function AlbumPage({ params }) {
   const { photos, album, result } = fetchAlbum(params);
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <section className='bg-zinc-900 text-[#f5f5f5] pt-6 lg:pt-[65px] p-6'>
+    <section className='bg-zinc-900 text-[#E2E2E2] pt-6 lg:pt-[65px] p-6'>
       <Lightbox
         open={open}
         close={() => setOpen(false)}

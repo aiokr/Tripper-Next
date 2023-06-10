@@ -1,0 +1,4 @@
+.Card {
+  border-radius: var(--radius);
+  min-height: 174px
+}

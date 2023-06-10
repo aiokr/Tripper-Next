@@ -1,0 +1,26 @@
+.initialLetter:first-letter {
+  initial-letter: 2 2;
+  color: var(--main-color);
+}
+
+
+.nth:nth-child(5) {
+  /* = Select the element with the class .highlight that is also the 2nd child */
+  outline: 0.3rem dashed var(--main-color);
+  outline-offset: 0.2rem;
+}
+
+:nth-child(2 of .nthof) {
+  /* = Select the 2nd child element that has the class .highlight applied to it */
+  outline: 0.3rem dashed pink;
+  outline-offset: 0.2rem;
+}
+
+.colorMix {
+  background-color: color-mix(in srgb, var(--main-color), var(--submain-color));
+  display: inline-block;
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+}
+

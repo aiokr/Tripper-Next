@@ -24,6 +24,14 @@
   border-radius: 12px;
 }
 
+.labCard {
+  background-image: url(/cool-background.svg);
+  background-position: center;
+  background-size: cover;
+  display: block;
+  position: relative;
+}
+
 .cardBtn {
   position: absolute;
   bottom: 0;
