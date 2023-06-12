@@ -5,13 +5,8 @@ import style from './header.module.css'
 import darkNavStyle from './headerDark.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton
-} from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 
 export default function Header() { // 必须以大写开头
   const pathname = usePathname();
@@ -78,7 +73,7 @@ export default function Header() { // 必须以大写开头
             </span>
           </Link>
         </div>
-        <div className='hidden md:flex flex-row-reverse items-center ml-2'>
+        <div className='hidden md:flex flex-row justify-self-end items-center ml-2'>
           <SignedIn>
             {/* Mount the UserButton component */}
             <UserButton afterSignOutUrl="/" />
