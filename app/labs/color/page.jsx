@@ -13,8 +13,8 @@ export async function ColorPage() {
                 <div className='inline-block w-8 h-8 rounded-full shadow bg-main'></div>
                 <div className='inline-block h-8 leading-8'>#71AFDD Main Color</div>
               </div>
-              <div className='bg-white text-[#222831] p-6 m-6 border-l-4 border-sub rounded'>
-                <h2 className='bg-white text-[#222831] inline-block m-1'>
+              <div className='p-6 m-6 border-l-4 border-sub rounded'>
+                <h2 className='inline-block m-1'>
                   文章内标题
                 </h2>
               </div>

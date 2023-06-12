@@ -10,9 +10,10 @@ import { ClerkProvider } from '@clerk/nextjs'
 
 
 export const metadata = {
-  title: '按下瞬间 - Tripper Press',
-  description: 'Tripper Press Website',
-  viewport: 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
+  'title': '按下瞬间 - Tripper Press',
+  'description': 'Tripper Press Website',
+  'viewport': 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
+  'theme-color': '#71AFDD',
 }
 
 export default function RootLayout({ children }) {
