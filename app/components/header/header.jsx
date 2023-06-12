@@ -5,6 +5,13 @@ import style from './header.module.css'
 import darkNavStyle from './headerDark.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton
+} from "@clerk/nextjs";
 
 export default function Header() { // 必须以大写开头
   const pathname = usePathname();
@@ -23,9 +30,9 @@ export default function Header() { // 必须以大写开头
   return (
     <div className={`${currentPageStyle.header} ${style.header} bg-[#ffffff55] dark:text-white dark:bg-[#161617cc]`}>
       <div className='container grid grid-cols-1 md:grid-cols-3'>
-        <Link href="/" className='hidden md:block'>
+        <Link href="/" className='hidden md:flex items-center'>
           <Image src='https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar' width={32} height={32} unoptimized alt='LOGO'
-            className='inline-block align-center mr-2'
+            className='block mr-2'
           />
         </Link>
         <div className='flex place-content-evenly gap-2'>
@@ -71,7 +78,16 @@ export default function Header() { // 必须以大写开头
             </span>
           </Link>
         </div>
-        <div></div>
+        <div className='hidden md:flex flex-row-reverse items-center ml-2'>
+          <SignedIn>
+            {/* Mount the UserButton component */}
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            {/* Signed out users get sign in button */}
+            <SignInButton />
+          </SignedOut>
+        </div>
       </div>
     </div >
   )

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.20.0",
     "@headlessui/react": "^1.7.14",
     "@next/bundle-analyzer": "^13.4.3",
     "@notionhq/client": "^2.2.5",
