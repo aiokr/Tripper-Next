@@ -3,7 +3,7 @@ import Link from 'next/link'
 import style from '../photo.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPhotos } from 'contentlayer/generated';
-import PhotoCategoryLink from '../../components/photoCategory/photoCagegory';
+import PhotoCategoryLink from '../../../components/photoCategory/photoCagegory';
 
 async function fetchPhoto() {
   const album = allPhotos
