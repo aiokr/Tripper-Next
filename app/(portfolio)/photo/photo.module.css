@@ -5,15 +5,9 @@
   background-size: cover;
   display: block;
   position: relative;
-  height: 60vh;
-  height: 60dvh;
-}
-
-@media (max-width: 1024px) {
-  .hero {
-    height: 38vh;
-    height: 38dvh;
-  }
+  padding-top: 65px;
+  height: 40vh;
+  height: 40dvh;
 }
 
 .heroLayer {

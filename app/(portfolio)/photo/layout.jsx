@@ -9,7 +9,7 @@ export default function PressPage({ children }) {
     <main className='bg-zinc-900 text-white font-semibold'>
       <div className={`${style['hero']}`} >
         <div className={`${style['heroLayer']} px-12 py-8 lg:pt-48 lg:pb-36`}>
-          <Image className="pb-10" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
+          <Image className="pb-10 block md:hidden" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
             width={64} height={64}
             alt="logo" automatically="true" provided="true"
           />
@@ -19,7 +19,7 @@ export default function PressPage({ children }) {
           </div>
         </div>
       </div>
-      <div className='px-4'>
+      <div className='px-4 py-12 md:py-0'>
         {children}
       </div>
     </main>

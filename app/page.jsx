@@ -18,13 +18,9 @@ export default async function Home() {
   const { posts, album } = await fetchBlogData()
   return (
     <main className='bg-white dark:bg-zinc-900'>
-      <div className={`${style['hero-area']} lg:pt-[65px]`}>
-        <div className={`${style['hero-img']} h-[300px] lg:h-[400px]`}>
-          <div className={`${style['hero-layer']}`}>
-            <div className={`${style['hero-title']} text-2xl lg:text-4xl font-bold px-8`}>衔枝筑巢，栽花种树。</div>
-            <div className={`${style['hero-subtitle']} text-white opacity-80 pt-3`}>Tripper Press</div>
-          </div>
-        </div>
+      <div className='container px-6 lg:px-8 max-w-[1280px] pt-16 md:pt-20 lg:pt-36 pb-6'>
+        <div className="text-3xl lg:text-4xl font-bold dark:text-white pt-12 pb-4">衔枝筑巢，栽花种树。</div>
+        <div className="md:text-lg lg:text-xl text-sub dark:text-white pb-6">我在这里向内生长，向外探索。</div>
       </div>
       <div className='container lg:px-8 max-w-[1280px]'>
         <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
@@ -40,36 +36,27 @@ export default async function Home() {
           {posts && posts.map((post) => (
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >
-                {post.cover ? (
-                  <div className={`${style['postEntry']}`}>
-                    <div className={`${style['postEntryCover']} h-[200px]`}>
-                      <Image src={post.cover} width={600} height={400} alt={post.title}
-                        className={`${style['postEntryCover']} object-cover h-full w-full`}
-                      />
-                    </div>
-                    <div className={`${style['postEntryInfo']} h-[100px] py-4`}>
-                      <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 text-sm font-medium dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
-                        {post.category && (
-                          ' · ' + post.category
-                        )}
-                      </div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 text-sm font-medium hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
-                    </div>
+                <div className={`${style['postEntry']}`}>
+                  <div className={`${style['postEntryCover']} h-[200px]`}>{post.cover ? (
+                    <Image src={post.cover} width={300} height={200} alt={post.title}
+                      className={`${style['postEntryCover']} object-cover h-full w-full`}
+                    />
+                  ) : (
+                    <Image src='https://imgur.lzmun.com/picgo/after2022/202204091513971.jpeg_itp' width={300} height={200} alt={post.title}
+                      className={`${style['postEntryCover']} object-cover h-full w-full`}
+                    />
+                  )}
                   </div>
-                ) : (
-                  <div className={`${style['postEntry']}`}>
-                    <div className={`${style['postEntryInfo']} h-[200px] lg:h-[300px] py-2`}>
-                      <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 text-sm font-medium dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
-                        {post.category && (
-                          ' · ' + post.category
-                        )}
-                      </div>
-                      <div className={`${style['postEntryExcerptNoCover']} opacity-60 text-sm font-medium hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                  <div className={`${style['postEntryInfo']} h-[100px] py-4`}>
+                    <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
+                    <div className='opacity-60 py-1 text-sm dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
+                      {post.category && (
+                        ' · ' + post.category
+                      )}
                     </div>
+                    <div className={`${style['postEntryExcerpt']} opacity-60 text-sm hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                   </div>
-                )}
+                </div>
               </Link>
             </div>
           ))
@@ -84,7 +71,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-4 md:grid-cols-4 lg:px-0 gap-2 lg:gap-4`}>
+        <div className={`container max-w-[1000] pt-6 grid grid-cols-2 px-4 md:grid-cols-4 lg:px-0 gap-2 lg:gap-4`}>
           {album && album.map((album) => (
             <div key={album.url}>
               <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>
@@ -98,6 +85,9 @@ export default async function Home() {
               </Link>
             </div>
           ))}
+        </div>
+        <div className='container px-6 lg:px-8 max-w-[1280px] pt-20 pb-24'>
+          <div className="text-xl text-center text-sub dark:text-white pt-12 pb-4">生活沉闷，前行有风</div>
         </div>
       </div>
     </main >

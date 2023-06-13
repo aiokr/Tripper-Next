@@ -29,16 +29,6 @@ async function BlogPage(props) {
           <div className="left inline">
             <div className="text-2xl font-bold dark:text-white">文章</div>
           </div>
-          <div className="right inline">
-            <Image className="article-avatar hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
-              width={32} height={32}
-              alt="logo" automatically="true" provided="true"
-            />
-            <Image className="article-avatar inline dark:hidden" src="https://imgur.lzmun.com/picgo/logo/tripper2blackfull.png_avatar"
-              width={32} height={32}
-              alt="logo" automatically="true" provided="true"
-            />
-          </div>
         </div>
         <hr />
         <div className='grid grid-cols-3 gap-6'>
