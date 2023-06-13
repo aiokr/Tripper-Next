@@ -1,0 +1,81 @@
+.header {
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    -webkit-backdrop-filter: saturate(180%) blur(50px) !important;
+    backdrop-filter: saturate(180%) blur(50px) !important;
+    z-index: 9999;
+    width: 100%;
+    padding: 12px;
+}
+
+.header a {
+    height: 41px;
+    line-height: 41px;
+}
+
+.headerLink {
+    opacity: 0.6;
+    font-weight: 500;
+    transition: ease-in-out .2s;
+    margin: 0 12px;
+}
+
+.headerLink:hover {
+    opacity: 1;
+}
+
+/* Desktop ＆ Tablet */
+@media (min-width: 1024px) {
+    .header {
+        top: 0;
+        background-color: #ffffffcc;
+    }
+
+    /* 桌面端，鼠标悬浮在导航栏链接中的动画 */
+    .headerLink::after {
+        content: "";
+        display: block;
+        transition: width .2s;
+        width: 0;
+        border-bottom: solid 2px var(--main-color);
+    }
+
+    .headerLink:hover::after {
+        width: 100%;
+    }
+}
+
+.activeLink {
+    opacity: 1;
+    color: var(--main-color);
+}
+
+.activeLink::after {
+    content: "";
+    display: block;
+    transition: width .2s;
+    width: 100%;
+    border-bottom: solid 2px var(--main-color);
+}
+
+@media (max-width: 1022px) {
+    .header {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        justify-content: center;
+        background-color: #ffffffcc;
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.02), 1px 1px 15px 10px rgba(0, 0, 0, 0.03);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: #161617cc;
+    }
+}

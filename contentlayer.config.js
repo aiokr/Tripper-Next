@@ -2,8 +2,8 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 export const Post = defineDocumentType(() => ({
     name: 'Post',
-    filePathPattern: `posts/**/*.mdx`,
-    contentType: 'mdx',
+    filePathPattern: `posts/**/*.md`,
+    contentType: 'markdown',
     fields: {
         title: {
             type: 'string',
@@ -52,8 +52,8 @@ export const Post = defineDocumentType(() => ({
 
 export const Photo = defineDocumentType(() => ({
     name: 'Photo',
-    filePathPattern: `posts/photos/**/*.mdx`,
-    contentType: 'mdx',
+    filePathPattern: `posts/photos/**/*.md`,
+    contentType: 'markdown',
     fields: {
         title: {
             type: 'string',
@@ -67,6 +67,11 @@ export const Photo = defineDocumentType(() => ({
         cover: {
             type: 'string',
             description: 'The cover of the photos',
+        },
+        category: {
+            type: 'string',
+            description: 'The category of the post',
+            default: '纪行'
         },
         url: {
             type: 'string',

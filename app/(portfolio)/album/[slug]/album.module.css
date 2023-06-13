@@ -1,0 +1,14 @@
+.albumItem {
+    background-size: cover;
+    background-position: center;
+}
+
+button.photoAction {
+
+    transform: translateY(calc(-0.2em))
+}
+
+.photoAction svg {
+    vertical-align: baseline;
+    transform: translateY(calc(50% - 0.38em))
+}

@@ -6,6 +6,10 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    borderRadius: {
+      DEFAULT: 'var(--radius)',
+      'full': '9999px',
+    },
     container:
     {
       center: true,
@@ -18,7 +22,10 @@ module.exports = {
       },
       colors: {
         'main': '#71afdd',
+        'sub': '#A3B4BF',
         'text': '#222831',
+        'dtext': '#E2E2E2',
+        'dbg': '#18181B',
       },
     },
   },
