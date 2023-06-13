@@ -10,7 +10,7 @@ async function fetchBlogData() {
     .slice(0, 3)
   const album = allPhotos
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    .slice(0, 6)
+    .slice(0, 8)
   return { posts, album }
 }
 
@@ -42,31 +42,31 @@ export default async function Home() {
               <Link href={`/post/${post.url}`} >
                 {post.cover ? (
                   <div className={`${style['postEntry']}`}>
-                    <div className={`${style['postEntryCover']} h-[233px]`}>
+                    <div className={`${style['postEntryCover']} h-[200px]`}>
                       <Image src={post.cover} width={600} height={400} alt={post.title}
                         className={`${style['postEntryCover']} object-cover h-full w-full`}
                       />
                     </div>
-                    <div className={`${style['postEntryInfo']} h-[167px] py-6`}>
-                      <div className={`${style['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
+                    <div className={`${style['postEntryInfo']} h-[100px] py-4`}>
+                      <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
+                      <div className='opacity-60 py-1 text-sm font-medium dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                      <div className={`${style['postEntryExcerpt']} opacity-60 text-sm font-medium hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 ) : (
                   <div className={`${style['postEntry']}`}>
-                    <div className={`${style['postEntryInfo']} h-[200px] lg:h-[400px] py-4`}>
-                      <div className={`${style['postEntryTitle']} text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-1 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
+                    <div className={`${style['postEntryInfo']} h-[200px] lg:h-[300px] py-2`}>
+                      <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
+                      <div className='opacity-60 py-1 text-sm font-medium dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
                         {post.category && (
                           ' · ' + post.category
                         )}
                       </div>
-                      <div className={`${style['postEntryExcerptNoCover']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                      <div className={`${style['postEntryExcerptNoCover']} opacity-60 text-sm font-medium hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
                     </div>
                   </div>
                 )}
@@ -84,7 +84,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-4 md:grid-cols-3 lg:px-0 gap-2 lg:gap-4`}>
+        <div className={`container max-w-[1000] py-6 grid grid-cols-2 px-4 md:grid-cols-4 lg:px-0 gap-2 lg:gap-4`}>
           {album && album.map((album) => (
             <div key={album.url}>
               <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>
