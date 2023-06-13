@@ -13,7 +13,7 @@ export const metadata = {
   'title': '按下瞬间 - Tripper Press',
   'description': 'Tripper Press Website',
   'viewport': 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
-  'theme-color': '#71AFDD',
+  'manifest': '/manifest.json',
 }
 
 export default function RootLayout({ children }) {
