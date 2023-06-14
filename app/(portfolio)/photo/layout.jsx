@@ -19,7 +19,7 @@ export default function PressPage({ children }) {
           </div>
         </div>
       </div>
-      <div className='px-4 py-12 md:py-0'>
+      <div className='px-4 mt-12 md:pt-0 md:pb-12'>
         {children}
       </div>
     </main>

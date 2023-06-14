@@ -48,16 +48,8 @@ export default function Header() { // 必须以大写开头
 
             </span>
           </Link>
-          <Link className={`${style.headerLink} ${pathname.startsWith('/lens') ? style.activeLink : ''}`} scroll={false} href="/lens">
-            <span className='hidden md:inline-block'>Lens</span>
-            <span className='inline-block md:hidden translate-y-1'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </span>
-          </Link>
           <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') ? style.activeLink : ''}`} scroll={false} href="/photo">
-            <span className='hidden md:inline-block'>Photography</span>
+            <span className='hidden md:inline-block'>Portfolio</span>
             <span className='inline-block md:hidden translate-y-1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
