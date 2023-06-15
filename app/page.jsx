@@ -84,7 +84,7 @@ export default async function Home() {
             <div key={album.url}>
               <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>
                 <div className={`${style['protfolioEntryImg']} aspect-square`}>
-                  <Image src={album.cover} className='rounded aspect-square object-cover' width={800} height={600} alt={album.title} unoptimized />
+                  <Image src={album.cover} className='rounded aspect-square object-cover' width={400} height={400} alt={album.title} />
                   <div className={`${style['protfolioEntryLayer']} flex flex-col justify-center items-center opacity-0 lg:hover:opacity-80 bg-zinc-950 text-white`} >
                     <div className='text-xl font-medium uppercase'>{album.title}</div>
                     <div className='text-sm opacity-75'>{format(parseISO(album.date), 'yyyy-MM-dd')}</div>
