@@ -1,5 +1,4 @@
 import './globals.css'
-import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import styles from './hero.module.css'
 import Script from 'next/script'
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
-          <Analytics />
           <div className="container">
             <Script
               src="https://www.googletagmanager.com/gtag/js?id=G-HFH67WJVKQ"
