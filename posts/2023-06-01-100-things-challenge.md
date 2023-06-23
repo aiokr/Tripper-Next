@@ -18,11 +18,13 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 ### 偏正式服饰
 
 - 优衣库 U AIRism 棉混纺 T 恤
-  - 五分袖的设计，其实不算正式
-  - 但是反正我通常没有 Dress Code，随便穿啥都行
+- 优衣库棉麻条纹衬衫 457775
 - 优衣库 BLOCKTECH 风衣
-  - 防水防风不保暖，春秋季可以穿，冬季不行。
-  - 我买的那一款下架了，类似的 BLOCKTECH 的都差不多。
+
+> 6月24日更新
+> 
+> 1. 优衣库的棉麻材质的条纹衬衫，就是好看，而且凉快。
+
 
 日常穿的裤子，目前还没有哪条能让我感觉值得回购的。可能裤子比衣服耐用，通常也没啥特点。
 
@@ -33,9 +35,16 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
   - OMG 无袖背心
 - 裤子
   - 迪卡侬 79 款短裤 [KALENJI 男士跑步直筒快干短裤](https://www.decathlon.com.cn/zh/p/dry-men-s-running-breathable-shorts/_/R-p-333374/)
-  - 迪卡侬 99 款短裤 [KIPRUN 男式跑步开叉短裤](https://www.decathlon.com.cn/zh/p/athletics-shorts/_/R-p-165475)
-  - 迪卡侬 29 款泳裤 [TRUNKS 100 BASIC](https://www.decathlon.com.cn/zh/p/men-s-swimming-briefs-trunks-100-basic-blue/_/R-p-333670)
+  - OMG 带内衬短裤
+  - ZOKE 三角泳裤
   - Nike Pro 紧身裤
+
+> 6月24日更新
+> 
+> 1. OMG 的内衬运动短裤替换掉了迪卡侬的 99 元的内衬运动短裤
+>   - 一个是迪卡侬现在买不到这个裤子了，二个是感觉迪卡侬这一款的内衬质量稍微差点
+>   - OMG 的服饰虽然比迪卡侬的贵一些，但是确实好看 ~~（典同）~~ 很多，质量也感觉好些
+> 2. ZOKE 的泳裤替换掉了迪卡侬的
 
 ### 鞋袜
 

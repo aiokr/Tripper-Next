@@ -69,7 +69,7 @@ export default async function AboutPage() {
               <a key={friends.title} href={`${friends.url}`} target='_blank'>
                 {friends.title}
               </a>
-            ))}🔗
+            ))}
           </div>
         </div>
       </div>

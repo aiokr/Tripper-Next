@@ -3,30 +3,9 @@
   background-color: rgba(24, 24, 27, 0.5);
   background-position: center;
   background-size: cover;
+ background-attachment:fixed;
   display: block;
-  position: relative;
-  height: 60vh;
-  height: 60dvh;
-}
-
-@media (max-width: 1024px) {
-  .hero {
-    height: 38vh;
-    height: 38dvh;
-  }
-}
-
-.heroLayer {
-  background: linear-gradient(rgba(24, 24, 27, 0.1) 60%, rgba(24, 24, 27, 1) 100%);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  min-height: 100dvh;
 }
 
 .protfolioEntryImg {
