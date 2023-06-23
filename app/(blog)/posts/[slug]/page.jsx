@@ -35,33 +35,26 @@ async function BlogPage(props) {
           <div className='col-span-3 lg:col-span-2'>
             {posts && posts.map((post) => (
               <div key={post.url}>
-                {post.cover ? (
-                  <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
+                <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
+                  {post.cover ? (
                     <div className={`${style['postEntryCover']} aspect-square`} >
                       <Image src={post.cover} width={600} height={600} alt={post.title} unoptimized
                         className={`${style['postEntryImage']} object-cover h-full w-full`}
                       />
                     </div>
-                    <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
-                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-2 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
-                    </div>
-                  </Link>
-                ) : (
-                  <Link href={`/post/${post.url}`} className={`${style['postEntry']} my-6 grid grid-cols-3`}>
+                  ) : (
                     <div className={`${style['postEntryCover']} aspect-video`}>
                       <Image src='https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp' width={600} height={300} alt={post.title} unoptimized
                         className={`${style['postEntryImage']} object-cover  h-full w-full`}
                       />
                     </div>
-                    <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
-                      <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
-                      <div className='opacity-60 py-2 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}</div>
-                      <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
-                    </div>
-                  </Link>
-                )}
+                  )}
+                  <div className={`${style['postEntryInfo']} px-6 col-span-2`} >
+                    <div className={`${style['postEntryTitle']} text-lg lg:text-2xl font-medium dark:text-white`}>{post.title}</div>
+                    <div className='opacity-60 py-2 dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')} · {post.category}</div>
+                    <div className={`${style['postEntryExcerpt']} opacity-60 hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
