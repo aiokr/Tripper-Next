@@ -56,7 +56,7 @@ export default async function Home() {
                       className={`${style['postEntryCover']} object-cover h-full w-full`}
                     />
                   ) : (
-                    <Image src='https://imgur.lzmun.com/picgo/after2022/202204091513971.jpeg_itp' width={300} height={200} alt={post.title}
+                    <Image src={'https://tripper.press/api/og?title='+post.title} width={300} height={200} alt={post.title} unoptimized
                       className={`${style['postEntryCover']} object-cover h-full w-full`}
                     />
                   )}
