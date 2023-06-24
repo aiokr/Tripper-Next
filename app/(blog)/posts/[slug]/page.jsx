@@ -4,6 +4,12 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import style from '../posts.module.css'
 
+export const metadata = {
+  'title': '文章 - Tripper Press',
+  'og:title': '文章 - Tripper Press',
+  'og:image': 'https://tripper.press/api/og?title=文章',
+}
+
 async function fetchBlogListByPage(pageNum) {
   const postsStartNum = 10 * (pageNum - 1)
   const postEndNum = postsStartNum + 10

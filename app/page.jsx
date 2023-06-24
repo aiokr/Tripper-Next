@@ -4,6 +4,12 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import style from './hero.module.css'
 import { allPosts, allPhotos } from 'contentlayer/generated'
 
+export const metadata = {
+  'title': '按下瞬间 - Tripper Press',
+  'og:title': '按下瞬间 - Tripper Press',
+  'og:image': 'https://tripper.press/api/og?title=按下瞬间&subtitle=衔枝筑巢，栽花种树。生活沉闷，前行有风。',
+}
+
 async function fetchBlogData() {
   const posts = allPosts
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
