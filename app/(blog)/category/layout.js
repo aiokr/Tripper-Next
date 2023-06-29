@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link';
-import { compareDesc, format, parseISO } from 'date-fns'
+import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated';
 import style from './categoryLayout.module.css';
+
+export const metadata = {
+  'title': '分类 - Tripper Press',
+  'og:title': '文章分类 - Tripper Press',
+  'og:image': 'https://tripper.press/api/og?title=文章分类',
+}
 
 async function fetchBlogData() {
   const posts = allPosts.sort((a, b) => {

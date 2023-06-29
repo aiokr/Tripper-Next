@@ -4,6 +4,12 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import style from '../posts.module.css'
 
+export const metadata = {
+  'title': '文章 - Tripper Press',
+  'og:title': '文章 - Tripper Press',
+  'og:image': 'https://tripper.press/api/og?title=文章',
+}
+
 async function fetchBlogListByPage(pageNum) {
   const postsStartNum = 10 * (pageNum - 1)
   const postEndNum = postsStartNum + 10
@@ -44,7 +50,7 @@ async function BlogPage(props) {
                     </div>
                   ) : (
                     <div className={`${style['postEntryCover']} aspect-video`}>
-                      <Image src='https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp' width={600} height={300} alt={post.title} unoptimized
+                      <Image src={'https://tripper.press/api/og?title='+post.title} width={600} height={300} alt={post.title} unoptimized
                         className={`${style['postEntryImage']} object-cover  h-full w-full`}
                       />
                     </div>

@@ -41,18 +41,23 @@ export function fetchPost(props) {
   const url = 'https://next.tripper.press/post/' + props.params.slug
   const postCont = post.body.raw
   const title = post.title + ' - Tripper Press'
+  const cleanTitle = post.title
   const result = md.render(postCont);
   return {
     post,
     result,
     title,
+    cleanTitle,
   };
 }
 
 export function generateMetadata(props) {
-  const { title } = fetchPost(props);
+  const { title, cleanTitle } = fetchPost(props);
   return {
-    title,
+    title: title,
+    openGraph: {
+      images: ['https://tripper.press/api/og?title=' + cleanTitle],
+    },
   }
 }
 

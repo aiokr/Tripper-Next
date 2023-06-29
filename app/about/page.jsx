@@ -2,7 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import style from './about.module.css'
 import friends from './links.json'
-import Script from 'next/script'
+
+export const metadata = {
+  'title': '关于 - Tripper Press',
+  'og:title': '关于 - Tripper Press',
+  'og:image': 'https://tripper.press/api/og?title=按下瞬间&subtitle=衔枝筑巢，栽花种树。',
+}
 
 export default async function AboutPage() {
   return (
