@@ -38,8 +38,7 @@ export default async function AboutPage() {
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>💡 Intersted in</div>
           <div className='py-1 lg:py-4'>
             <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 '>
-              Digital Nomad<br />
-              Frontend<br />
+              Motion Graphics
             </span>
           </div>
         </div>
