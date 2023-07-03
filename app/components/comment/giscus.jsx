@@ -3,7 +3,6 @@
 import Giscus from '@giscus/react';
 
 export default function GiscusComment(post) {
-  console.log(post.id.url)
   return (
     <Giscus
       id="comments"
