@@ -3,24 +3,21 @@ import style from '../wiki.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 import { NotionRenderer } from '@notion-render/client';
-import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
 
 export default async function WikiPage(props) {
-  const client = new Client({
+  const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
 
   const pageId = props.params.slug; //Wiki Page ID
 
-  const blocks = await client.blocks.children
-    .list({
-      block_id: pageId,
-    })
-    .then((res) => res.results, BlockObjectResponse);
+  const { results } = await notion.blocks.children.list({
+    block_id: pageId,
+  });
 
   const renderer = new NotionRenderer();
-  const html = await renderer.render(...blocks);
+  const html = await renderer.render(...results);
+
 
   return (
     <div className="py-[120px] flex justify-center">
