@@ -12,6 +12,7 @@
     "@giscus/react": "^2.2.8",
     "@headlessui/react": "^1.7.14",
     "@next/bundle-analyzer": "^13.4.3",
+    "@notion-render/client": "^0.0.2",
     "@notionhq/client": "^2.2.5",
     "@vercel/og": "^0.5.8",
     "autoprefixer": "10.4.14",
