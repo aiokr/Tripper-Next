@@ -38,7 +38,7 @@ export default async function Home() {
             <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M36 24C36 17.3726 30.6274 12 24 12C17.3726 12 12 17.3726 12 24C12 30.6274 17.3726 36 24 36V36" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </Link>
 
-          <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='/wiki'>
+          <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='/flipbox'>
             <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 44C8.89543 44 8 43.1046 8 42V6C8 4.89543 8.89543 4 10 4H38C39.1046 4 40 4.89543 40 6V42C40 43.1046 39.1046 44 38 44H10Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M21 22V4H33V22L27 15.7273L21 22Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /><path d="M10 4H38" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /></svg>
           </Link>
         </div>
