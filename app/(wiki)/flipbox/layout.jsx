@@ -3,7 +3,7 @@ import style from '../wiki.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 
-export async function FetchNotionDb() {
+export default async function WikiPageLayout({ children }) {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
@@ -14,17 +14,13 @@ export async function FetchNotionDb() {
   });
 
   const notionData = response.properties.Tags
-  return (notionData)
-}
 
-export default async function WikiPageLayout({ children }) {
-  const notionData = await FetchNotionDb()
   return (
     <div className="container dark:bg-zinc-900">
       <div className="pt-[125px] pb-[65px] text-2xl font-bold text-center">Tripper FlipBox</div>
       <div className="pb-8">
         {notionData.multi_select.options.map((tag) => (
-          <Link key={tag.id} href={'/flipbox/?tags='+tag.name} className="inline-block pr-2 opacity-60 text-sm">
+          <Link key={tag.id} href={'/flipbox/?tags=' + tag.name} className="inline-block pr-2 opacity-60 text-sm">
             {tag.name}
           </Link>
         ))}

@@ -4,7 +4,7 @@ import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 import { NotionRenderer } from '@notion-render/client';
 
-export default async function WikiPage(props) {
+export default async function TermPage(props) {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });

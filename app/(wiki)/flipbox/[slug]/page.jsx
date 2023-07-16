@@ -1,9 +1,10 @@
 import Link from "next/link";
-import style from '../wiki.module.css'
+import style from '../../wiki.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
+import { NotionRenderer } from '@notion-render/client';
 
-export async function FetchNotionDb(searchParams) {
+export default async function FlipboxPage(searchParams) {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
@@ -11,16 +12,18 @@ export async function FetchNotionDb(searchParams) {
   const databaseId = 'be7578485c594866b80a7f70ec072f01'; //Wiki Database ID
   const response = await notion.databases.query({
     database_id: databaseId,
-    page_size: 60,
+    page_size: 40,
+    sorts: [
+      {
+        timestamp: 'last_edited_time',
+        direction: 'descending',
+      },
+    ]
   });
-
+  
   const notionData = response.results
-  console.log(searchParams)
-  return (notionData)
-}
+  console.log(notionData)
 
-export default async function WikiPage(searchParams) {
-  const notionData = await FetchNotionDb(searchParams)
   return (
     <div className="pb-[65px] grid grid-cols-6 gap-2 justify-center">
       {notionData.map((item) => (
