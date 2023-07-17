@@ -1,5 +1,6 @@
+'use server'
+
 import Link from "next/link";
-import style from '../../wiki.module.css'
 import { compareDesc, format, parseISO } from 'date-fns'
 const { Client } = require("@notionhq/client")
 import { NotionRenderer } from '@notion-render/client';
