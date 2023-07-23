@@ -13,7 +13,7 @@ export const metadata = {
 async function fetchBlogData() {
   const posts = allPosts
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    .slice(0, 3)
+    .slice(0, 4)
   const album = allPhotos
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
     .slice(0, 8)
@@ -24,26 +24,30 @@ export default async function Home() {
   const { posts, album } = await fetchBlogData()
   return (
     <main className='bg-white dark:bg-zinc-900'>
-      <div className='container px-6 lg:px-8 max-w-[1280px] pt-16 md:pt-20 lg:pt-36 pb-6'>
-        <div className="inline-block text-3xl lg:text-5xl font-bold dark:text-white pt-12 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#9DCBEE] to-main ">Tripper Press</div>
-        <div className="md:text-lg lg:text-lg text-sub dark:text-white pb-4">撑住小鸟的不是它脚下脆弱的树枝，而是它随时能张开的翅膀。</div>
-        <div className='pb-4 flex gap-6'>
-          <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://twitter.com/skomobi' target='_black'>
-            <svg viewBox="0 0 48 48" height="1.2em" fill='currentColor' xmlns="http://www.w3.org/2000/svg"><path d="M5 35.7622C6.92886 36.8286 20.8914 44.8773 30.8199 38.674C40.7483 32.4707 40.2006 21.7833 40.2006 16.886C41.1 15.0018 43 14.0439 43 8.9438C41.1337 10.6678 39.2787 11.2544 37.435 10.7036C35.6287 7.94957 33.1435 6.73147 29.9794 7.04934C25.2333 7.52614 23.4969 12.1825 24.0079 18.2067C16.6899 21.9074 10.9515 15.524 7.99418 10.7036C7.00607 14.4999 6.0533 19.0576 7.99418 24.0995C9.2881 27.4607 12.3985 30.3024 17.3254 32.6246C12.3323 35.3308 8.22382 36.3766 5 35.7622Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" /></svg>
-          </Link>
-          <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://space.bilibili.com/11597001' target='_black'>
-            <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="14" width="38" height="28" rx="2" stroke="currentColor" strokeWidth="4" /><path d="M24 14L38 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M23 14L10 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M35 20L35 26" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><rect x="33" y="32" width="4" height="4" rx="2" fill="currentColor" /></svg>
-          </Link>
-          <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='https://m.cmx.im/@tripper' target='_black'>
-            <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M36 24C36 17.3726 30.6274 12 24 12C17.3726 12 12 17.3726 12 24C12 30.6274 17.3726 36 24 36V36" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </Link>
-
-          <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='/flipbox'>
-            <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 44C8.89543 44 8 43.1046 8 42V6C8 4.89543 8.89543 4 10 4H38C39.1046 4 40 4.89543 40 6V42C40 43.1046 39.1046 44 38 44H10Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M21 22V4H33V22L27 15.7273L21 22Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /><path d="M10 4H38" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /></svg>
-          </Link>
+      <div className='container px-6 lg:px-8 pt-16 md:pt-20 lg:pt-28 pb-4 flex flex-col'>
+        <div className='inline-block pb-4 text-4xl lg:text-5xl font-bold dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#9DCBEE] to-main'>
+          Tripper Press
         </div>
+        <div className="inline-block md:text-lg text-sub dark:text-white">撑住小鸟的不是它脚下脆弱的树枝，而是它随时能张开的翅膀。</div>
       </div>
-      <div className='container lg:px-8 max-w-[1280px]'>
+      <div className='container px-6 lg:px-8 pb-12 flex gap-6'>
+        <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://twitter.com/skomobi' target='_black'>
+          <svg viewBox="0 0 48 48" height="1.2em" fill='currentColor' xmlns="http://www.w3.org/2000/svg"><path d="M5 35.7622C6.92886 36.8286 20.8914 44.8773 30.8199 38.674C40.7483 32.4707 40.2006 21.7833 40.2006 16.886C41.1 15.0018 43 14.0439 43 8.9438C41.1337 10.6678 39.2787 11.2544 37.435 10.7036C35.6287 7.94957 33.1435 6.73147 29.9794 7.04934C25.2333 7.52614 23.4969 12.1825 24.0079 18.2067C16.6899 21.9074 10.9515 15.524 7.99418 10.7036C7.00607 14.4999 6.0533 19.0576 7.99418 24.0995C9.2881 27.4607 12.3985 30.3024 17.3254 32.6246C12.3323 35.3308 8.22382 36.3766 5 35.7622Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" /></svg>
+        </Link>
+        <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://space.bilibili.com/11597001' target='_black'>
+          <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="14" width="38" height="28" rx="2" stroke="currentColor" strokeWidth="4" /><path d="M24 14L38 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M23 14L10 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M35 20L35 26" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><rect x="33" y="32" width="4" height="4" rx="2" fill="currentColor" /></svg>
+        </Link>
+        <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='https://m.cmx.im/@tripper' target='_black'>
+          <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><path d="M36 24C36 17.3726 30.6274 12 24 12C17.3726 12 12 17.3726 12 24C12 30.6274 17.3726 36 24 36V36" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </Link>
+        <Link className='inline-block text-sub hover:text-main dark:text-white transition' rel="me" href='/flipbox'>
+          <svg height="1.2em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 44C8.89543 44 8 43.1046 8 42V6C8 4.89543 8.89543 4 10 4H38C39.1046 4 40 4.89543 40 6V42C40 43.1046 39.1046 44 38 44H10Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M21 22V4H33V22L27 15.7273L21 22Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /><path d="M10 4H38" stroke="currentColor" strokeWidth="4" strokeLinecap="round" stroke-linejoin="round" /></svg>
+        </Link>
+      </div>
+      <div className='container px-6 lg:px-8'>
+        <Image src="https://imgur.lzmun.com/picgo/after2022/202204091215137.jpeg" className='aspect-video	object-cover' width={2000} height={1000} />
+      </div>
+      <div className='container lg:px-8'>
         <div className={`${style['postHeader']} px-6 lg:px-0 pt-8 pb-4`}>
           <div className="left inline">
             <div className="text-2xl font-bold dark:text-white">文章</div>
@@ -53,7 +57,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-4 gap-6 lg:grid-cols-3 lg:px-0'>
+        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-6 gap-6 lg:grid-cols-4 lg:px-0'>
           {posts && posts.map((post) => (
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >
@@ -92,7 +96,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className={`container max-w-[1000] pt-6 grid grid-cols-2 px-4 md:grid-cols-4 lg:px-0 gap-2 lg:gap-4`}>
+        <div className={`container max-w-[1000] pt-6 grid grid-cols-2 px-6 md:grid-cols-4 lg:px-0 gap-2 lg:gap-4`}>
           {album && album.map((album) => (
             <div key={album.url}>
               <Link className='scroll-my-12' href={`/album/${album.url}`} id={`${album.url}`}>
