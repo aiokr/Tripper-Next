@@ -2,18 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import style from '../about.module.css'
 import Script from 'next/script'
+import videos from './videos.json'
 
 export default async function AboutPage() {
   return (
     <main className='dark:bg-zinc-900 lg:pt-[65px]'>
-      <div className={`${style['aboutCard']} container max-w-[1000px] px-6 py-4 lg:px-10 lg:py-8 lg:border`}>
+      <div className={`${style['aboutCard']} container max-w-[1200px] px-6 py-4 lg:px-10 lg:py-8`}>
         <h2>陈王健平</h2>
-        <p>
-          邮箱: chenwjp@foxmail.com<br />
-          博客: https://tripper.press<br />
-          Github: github.com/aiokr<br />
-        </p>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          <Link className='block' href="mailto: chenwjp@foxmail.com" target='_black'/>Email: chenwjp@foxmail.com<br />
+        
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
           <div>
             <h3>教育经历</h3>
             <div>
@@ -37,10 +35,14 @@ export default async function AboutPage() {
           </div>
         </div>
         <div>
-          <h3>开源项目</h3>
-          <div>
-            <Link className='block font-bold' href='https://github.com/aiokr/photo-tools' target='_blank'><h4>Tripper-Photo-Tools</h4></Link>
-            <span>基于 Serverless 的图片处理 API</span>
+          <h3>视频项目</h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+            {videos.map((videos) => (
+              <a className='' key={videos.title} href={`${videos.url}`} target='_blank'>
+                <Image className='aspect-video object-cover mb-2 ' src={videos.img} width={1200} height={1200} unoptimized/>
+                <div>{videos.title}</div>
+              </a>
+            ))}
           </div>
         </div>
       </div>

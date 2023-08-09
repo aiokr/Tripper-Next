@@ -117,3 +117,12 @@
     right: 0;
     left: 0;
 }
+
+.behanceLogo {
+    fill: #222831;
+    display: inline !important;
+}
+
+.behanceLogo:hover {
+    fill: #0056ff;
+}
