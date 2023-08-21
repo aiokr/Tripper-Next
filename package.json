@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.20.0",
+    "@giscus/react": "^2.2.8",
     "@headlessui/react": "^1.7.14",
     "@next/bundle-analyzer": "^13.4.3",
-    "@notionhq/client": "^2.2.5",
+    "@notion-render/client": "^0.0.2",
+    "@notionhq/client": "^2.2.6",
     "@vercel/og": "^0.5.8",
     "autoprefixer": "10.4.14",
     "contentlayer": "^0.3.2",
@@ -20,7 +21,6 @@
     "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
     "feed": "^4.2.2",
-    "js-cookie": "^3.0.5",
     "markdown-it": "^13.0.1",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-footnote": "^3.0.3",

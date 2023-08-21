@@ -39,3 +39,4 @@ public/feed.xml
 public/atom.xml
 .gitignore
 public/feed.json
+.env.development

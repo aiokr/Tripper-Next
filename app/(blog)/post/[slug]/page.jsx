@@ -4,6 +4,7 @@ import style from './post.module.css';
 import 'highlight.js/styles/default.css';
 import hljs from 'highlight.js';
 import Link from 'next/link';
+import Comment from '../../../components/comment/giscus'
 
 //Markdown
 import tocAndAnchor from 'markdown-it-toc-and-anchor';
@@ -85,6 +86,9 @@ export default function generateStaticParams(props) {
         </div>
       )}
       <div className='container pt-8 px-6 lg:px-8 max-w-[800px] article' dangerouslySetInnerHTML={{ __html: result }} />
+      <div className='container pt-8 px-6 lg:px-8 max-w-[800px]'>
+        <Comment id={post} />
+      </div>
       <div className={`${style['commentHr']} pt-10 pb-6`}>
       </div>
     </main>

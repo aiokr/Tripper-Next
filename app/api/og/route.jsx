@@ -26,7 +26,7 @@ export async function GET(request) {
     return new ImageResponse(
       (
         <div
-          tw='p-24'
+          tw='py-24 px-28'
           style={{
             backgroundImage: 'linear-gradient(to bottom right, #9DCBEE, #71AFDD)',
             height: '100%',
@@ -45,7 +45,7 @@ export async function GET(request) {
         </div>
       ),
       {
-        width: 1200,
+        width: 900,
         height: 600,
       },
     );

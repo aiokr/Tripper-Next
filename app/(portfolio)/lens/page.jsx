@@ -22,7 +22,6 @@ export async function FetchNotionDb() {
     ]
   });
   const notionData = response.results
-  console.log()
   return (notionData)
 }
 
