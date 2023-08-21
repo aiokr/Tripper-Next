@@ -111,9 +111,7 @@ export default async function Home() {
             provided="true"
           />
           <div className="text-xl text-center text-sub dark:text-white pb-4">前行有风</div>
-          <Link href='mailto:aiokr@outlook.com' target='_blank'>
-            <div className="text-xl text-center text-sub dark:text-white pb-4">aiokr@outlook.com</div>
-          </Link>
+            <div className="text-xl text-center text-sub dark:text-white pb-4">aiokr#outlook.com</div>
         </div>
       </div>
     </main >
