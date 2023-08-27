@@ -11,6 +11,8 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 
 100 件物品挑战是一种极简主义生活方式，通过减少身边的物品来保持专注，把精力留给更有意义的事情。100 也只是一个虚数，没有必要一定将自己手边的物品保持在 100 以内，能让自己开心舒适最好。
 
+这里写的物品多是会长期回购的，一些买一次可以用很久的物品，虽然称得上好物，但是就不在这里列举出来了。
+
 想法来源：[极简主义探索 | 我的「100件物品挑战」 - 少数派](https://sspai.com/post/38222)
 
 ## 服饰
@@ -34,7 +36,6 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
   - Nike Pro 无袖紧身衣
   - OMG 无袖背心
 - 裤子
-  - 迪卡侬 79 款短裤 [KALENJI 男士跑步直筒快干短裤](https://www.decathlon.com.cn/zh/p/dry-men-s-running-breathable-shorts/_/R-p-333374/)
   - OMG 带内衬短裤
   - ZOKE 三角泳裤
   - Nike Pro 紧身裤
@@ -50,14 +51,22 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 
 - 鞋
   - Nike AF1
-    - 在任何场合都合适的鞋子
+    - 在任何场合都合适的鞋子，比 Dunk 穿起来舒服
   - Nike AirMax 270
     - 跑步的时候穿，个人觉得 270 比 270 React 舒服
   - Converse All Star / 1970s
+
+> 8月25日更新
+> 
+> Nike 的价格实在是很离谱，270 和 270 React 我购买的时候都不超过 400 块钱，现在已经要 1k2 了。在这个价位下或许有更好的选择
+
 - 袜
   - Nike Everyday Plus
+    - 一定是毛巾底版本，XL 尺码的
   - JORDAN ESSENTIALS
-    - 写了个 23 那个，比 Everyday 的袜筒再长一点
+    - 写了个 23 那个，比 Everyday 的袜筒再长一点，而且厚实一点
+
+## 护肤品
 
 ## 数码设备
 
