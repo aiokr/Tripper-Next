@@ -18,7 +18,7 @@ export async function GET(request) {
       ],
       "filter": {
         "and": [
-        {
+          {
             "property": "Image",
             "files": {
               "is_not_empty": true
@@ -38,7 +38,7 @@ export async function GET(request) {
     const notionData = notionRes.results;
 
     // 处理数据
-const LensData = await Promise.all(notionData.map(async (item) => {
+    const LensData = await Promise.all(notionData.map(async (item) => {
       const name = item.properties.Name.title[0] ? item.properties.Name.title[0].plain_text : null
       const prefix = item.properties.ID.unique_id.prefix + '-' + item.properties.ID.unique_id.number
       const image = item.properties.Image.files[0].type === 'file' ? item.properties.Image.files[0].file.url : item.properties.Image.files[0].external.url
