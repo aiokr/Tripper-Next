@@ -48,7 +48,6 @@ const LensData = await Promise.all(notionData.map(async (item) => {
       const coordinate = item.properties.Location.rich_text[0] ? item.properties.Location.rich_text[0].plain_text : null
       const locationResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/geo2name/${coordinate}`);
       const locationData = await locationResponse.json();
-      console.log(locationData)
       const location = locationData.country === '中国' ? locationData.province + ' · ' + locationData.city : locationData.country + ' · ' + locationData.province
       return {
         'no': prefix,

@@ -7,7 +7,6 @@ import style from './lens.module.css'
 export default async function LensPage() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/lensapi`);
   const LensData = await response.json();
-  console.log(LensData)
   return (
     <div className='container max-w-[1200px] mt-16'>
       <div className='mh-0 my-auto'>
