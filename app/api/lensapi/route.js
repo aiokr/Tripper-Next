@@ -1,6 +1,8 @@
 const { Client } = require("@notionhq/client")
 
-export async function GET(request) {
+export const runtime = 'edge';
+
+export async function GET() {
   try {
     const notion = new Client({
       auth: process.env.NOTION_TOKEN,

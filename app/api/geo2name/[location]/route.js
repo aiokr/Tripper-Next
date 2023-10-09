@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 
 export async function GET(request, params) {
   const coordinates = params.params.location
@@ -6,7 +7,7 @@ export async function GET(request, params) {
   const longitude = parseFloat(parseFloat(parts[1]).toFixed(6));
 
   async function getCityName(latitude, longitude) {
-    const gmapapi = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyBbdR2JQyrIbZY466_WUALUerhfyBAVN3s&language=zh-cn`);
+    const gmapapi = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyBbdR2JQyrIbZY466_WUALUerhfyBAVN3s&language=zh-cn`, { cache: 'force-cache' });
     const data = await gmapapi.json();
     if (data.status === 'OK') {
       const components = data.results[0].address_components;
