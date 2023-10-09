@@ -29,7 +29,7 @@ export async function GET(request, params) {
 
   const response = new Response(locationNameJson, {
     headers: {
-      cacheControl: 'public, max-age=86400',
+      cacheControl: 'public, min-age=86400',
     },
   });
   return response;

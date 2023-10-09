@@ -1,4 +1,11 @@
-.lensPhoto {
-}
+.lensPhoto {}
+
 .lensPhotoInfo {
+  white-space: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lensPhotoInfo::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari and Opera */
 }

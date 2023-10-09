@@ -13,8 +13,11 @@ export default function LensListView({ data }) {
             <Image src={data.image} className='object-cover max-w-[100%] max-h-[800px]' width={1200} height={800} alt={data.title} unoptimized />
           </div>
         </Link>
-        <div className={`${style['lensPhotoInfo']} mt-4 flex flex-row gap-8 justify-center items-center opacity-60 ease-in-out transition text-sm overflow-y-scroll`} >
-          <div className='text-center p-3 rounded hover:shadow-xl transition-all ease-in-out'>
+        <div className={`${style['lensPhotoInfo']} mt-4 flex flex-row gap-8 justify-center items-center opacity-60 ease-in-out transition text-sm overflow-x-scroll `} style={{
+          scrollbarWidth: 'none', /* For Firefox */
+          msOverflowStyle: 'none' /* For Internet Explorer and Edge */
+        }}>
+          <div className='text-center px-12 py-3 rounded hover:shadow-xl transition-all ease-in-out'>
             <span className='font-bold opacity-40'>拍摄时间</span><br></br>
             {format(parseISO(data.date), 'yyyy-MM-dd')}
           </div>
