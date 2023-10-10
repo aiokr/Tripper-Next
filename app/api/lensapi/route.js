@@ -44,6 +44,10 @@ export async function GET() {
       const name = item.properties.Name.title[0] ? item.properties.Name.title[0].plain_text : null
       const prefix = item.properties.ID.unique_id.prefix + '-' + item.properties.ID.unique_id.number
       const image = item.properties.Image.files[0].type === 'file' ? item.properties.Image.files[0].file.url : item.properties.Image.files[0].external.url
+      const thumb = item.properties.Thumb && item.properties.Thumb.files && item.properties.Thumb.files[0] ?
+        item.properties.Thumb.files[0].type === 'file' ? item.properties.Thumb.files[0].file.url : item.properties.Thumb.files[0].external.url
+        : null
+      const color = item.properties.Color.rich_text[0] ? item.properties.Color.rich_text[0].plain_text : null
       const expiry_time = item.properties.Image.files[0].type === 'file' ? item.properties.Image.files[0].file.expiry_time : null
       const camera = item.properties.Camera.select ? item.properties.Camera.select.name : null
       const lens = item.properties.Lens.select ? item.properties.Lens.select.name : null
@@ -56,6 +60,8 @@ export async function GET() {
         'id': item.id,
         'name': name,
         'image': image,
+        'thumb': thumb,
+        'color': color,
         'expiry_time': expiry_time,
         'coordinate': coordinate,
         'location': location,
