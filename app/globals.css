@@ -16,16 +16,23 @@ Photup Article Style
 
 :root {
     --main-color: #71afdd;
-    --submain-color: #A3B4BF ;
+    --submain-color: #A3B4BF;
     --main-black: #222831;
     --textColor: #222831;
+    --bgColor: #f0f0f0;
     --radius: 4px;
     color: #222831;
 }
 
+:root {
+    background-color: var(--bgColor);
+}
+
+
 @media (prefers-color-scheme: dark) {
     :root {
         --textColor: #E2E2E2;
+        --bgColor: #212121;
         color: #E2E2E2;
     }
 }
