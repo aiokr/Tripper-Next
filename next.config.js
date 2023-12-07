@@ -9,7 +9,7 @@ module.exports = withContentlayer({
     return config
   },
   images: {
-    formats: ['image/webp'],
+    disableStaticImages: true,
     remotePatterns: [
       {
         protocol: 'https',
