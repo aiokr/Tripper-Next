@@ -6,12 +6,11 @@ import Image from 'next/image'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
 
-export function generateMetadata() {
-  return {
-    'description': 'Tripper Press Website',
-    'viewport': 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
-    'manifest': '/manifest.json',
-  }
+export const metadata = {
+  metadataBase: new URL('https://tripper.press'),
+  'description': 'Tripper Press Website',
+  'viewport': 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
+  'manifest': '/manifest.json',
 }
 
 export default function RootLayout({ children }) {

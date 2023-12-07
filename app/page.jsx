@@ -20,15 +20,7 @@ async function fetchBlogData() {
   return { posts, album }
 }
 
-async function fetchLensData() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/lensapi`, { cache: 'no-store' });
-  const LensData = await response.json();
-  return LensData.slice(0, 8)
-}
-
 export default async function Home() {
-  const { posts, album } = await fetchBlogData()
-  const LensData = await fetchLensData()
   return (
     <main>
       <div className='container max-w-[1480px] px-4 lg:px-8 pt-16 md:pt-20 lg:pt-28 pb-4 flex flex-col'>
@@ -52,11 +44,13 @@ export default async function Home() {
         <div className='grid grid-cols-6 gap-6'>
           <Link className='col-span-6 md:col-span-4' href='https://www.behance.net/gallery/176450047/Sspai-Get-started-Ticktick-in-59-mins-PREIVEW' target='_blank'>
             <div className={`${style['protfolioItem']}`}>
-              <Image src='https://imgur.lzmun.com/picgo/2023/202310272338345.png_itp' width={800} height={600} />
-              <Image src='https://imgur.lzmun.com/picgo/2023/202310272341822.png_itp' width={800} height={600} className={`${style['protfolioEntryLayer']}  opacity-0 hover:opacity-100`} />
-              <div className={`${style['protfolioText']} text-2xl mt-4`}>Get Start Ticktick in 59 mins By Sspai</div>
+              <Image src='https://imgur.lzmun.com/picgo/2023/202310272338345.png_itp' width={1200} height={800} />
+              <Image src='https://imgur.lzmun.com/picgo/2023/202310272341822.png_itp' width={1200} height={800} className={`${style['protfolioEntryLayer']}  opacity-0 hover:opacity-100`} />
+              <div className={`${style['protfolioText']} inline-block text-2xl mt-4`}>Get Start Ticktick in 59 mins By Sspai</div>
+              <span> — </span>
+              <div className={`${style['protfolioText']} inline text-2xl mt-4`}>Motion Graphics</div>
             </div>
-          </Link>
+          </Link> 
         </div>
         <div className='pb-24'>
         </div>
