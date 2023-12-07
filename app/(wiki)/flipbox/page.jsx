@@ -23,7 +23,6 @@ export default async function FlipboxPage(searchParams) {
   });
   
   const notionData = response.results
-  console.log(notionData)
 
   return (
     <div className="pb-[65px] grid grid-cols-6 gap-2 justify-center">

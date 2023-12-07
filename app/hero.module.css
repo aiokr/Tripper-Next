@@ -33,33 +33,6 @@
     padding: 0 12px;
 }
 
-
-.hero-img {
-    background-image: url('https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp');
-    background-position: center;
-    background-size: cover;
-    display: block;
-    position: relative;
-}
-
-.hero-layer {
-    background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.32) 100%);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.hero-title,
-.hero-subtitle {
-    color: #fff;
-}
-
 .postEntry {
     border-radius: 5px;
 }
@@ -79,7 +52,6 @@
     border-radius: var(--radius);
 }
 
-.postEntryInfo {}
 
 .postHeader {
     color: var(--textColor);
@@ -100,17 +72,15 @@
     overflow-y: hidden;
 }
 
-.protfolioEntryImg {
+.protfolioItem {
     display: block;
     background-position: center;
     background-size: cover;
     position: relative;
-    border-radius: var(--radius);
 }
 
 .protfolioEntryLayer {
-    border-radius: var(--radius);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.18s ease-in-out;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -118,11 +88,11 @@
     left: 0;
 }
 
-.behanceLogo {
-    fill: #222831;
-    display: inline !important;
+.protfolioItem:hover .protfolioText {
+    transition: all 0.18s ease-in-out;
+    color: var(--main-color);
 }
 
-.behanceLogo:hover {
-    fill: #0056ff;
+.protfolioText {
+    transition: all 0.18s ease-in-out;
 }
