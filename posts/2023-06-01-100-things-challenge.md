@@ -51,8 +51,10 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 - 鞋
   - Nike AF1
     - 在任何场合都合适的鞋子
-  - Nike AirMax 270
-    - 跑步的时候穿，个人觉得 270 比 270 React 舒服
+  - Dunk
+    - 相比起 AF1 鞋底硬一些，不过也是挺好看的
+  - Nike AirMax 270 / 270 React
+    - 跑步的时候穿，个人觉得 270 比 270 React 舒服，入手的时候只要 300 不到，但是现在价格涨得飞起
   - Converse All Star / 1970s
 - 袜
   - Nike Everyday Plus
@@ -71,3 +73,16 @@ cover: https://imgur.lzmun.com/picgo/after2022/202211102157839.jpg_itp
 - 摄影
   - 三星 Pro Plus 储存卡
   - 蔡司镜头纸
+
+## 软件
+
+### macOS
+
+- [PasteNow](https://pastenow.app/) 多重剪贴板工具，还可以自动分类色值、图片、链接，并且可以很方便地粘贴为纯文本
+
+### Windows
+
+- [Quicker](https://getquicker.net/)
+  - 圆盘手势搭配 MX Master 3s 很好用
+- [Everything](https://www.voidtools.com/zh-cn/)
+  - 全盘搜索工具，可以用 Quicker 调起
