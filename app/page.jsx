@@ -32,10 +32,11 @@ export default async function Home() {
   return (
     <main>
       <div className='container max-w-[1480px] px-4 lg:px-8 pt-16 md:pt-20 lg:pt-28 pb-4 flex flex-col'>
-        <div className='pb-6 mb-6 text-5xl lg:text-7xl font-bold dark:text-white text-main border-b-8 border-main max-w-[450px]'>
-          Tripper Press
+        <div className='pb-6 mb-6 text-5xl lg:text-7xl dark:text-white text-main border-b-8 border-main max-w-[450px]'>
+          <span className='font-serif tracking-tight'>Tripper</span>
+          <span className='font-serif tracking-tighter'>Press</span>
         </div>
-        <div className="pb-6md:text-md font-medium text-sub dark:text-white max-w-[450px]">Tripper Press is a personal brand，A creative-led design studio，Here I explore the MG animation and aesthetics.</div>
+        <div className="pb-6md:text-md font-medium text-sub dark:text-white max-w-[450px]">Tripper Press is a <span className='font-mono'>personal brand</span>，A creative-led design studio，Here I explore the <span className='font-mono'>MG animation </span>and aesthetics.</div>
       </div>
       <div className='container max-w-[1480px] px-4 lg:px-8 pb-12 flex gap-6'>
         <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://twitter.com/skomobi' target='_black'>
@@ -52,11 +53,13 @@ export default async function Home() {
         <div className='grid grid-cols-6 gap-6'>
           <Link className='col-span-6 md:col-span-4' href='https://www.behance.net/gallery/176450047/Sspai-Get-started-Ticktick-in-59-mins-PREIVEW' target='_blank'>
             <div className={`${style['protfolioItem']}`}>
-              <Image src='https://imgur.lzmun.com/picgo/2023/202310272338345.png_itp' width={800} height={600} />
-              <Image src='https://imgur.lzmun.com/picgo/2023/202310272341822.png_itp' width={800} height={600} className={`${style['protfolioEntryLayer']}  opacity-0 hover:opacity-100`} />
-              <div className={`${style['protfolioText']} text-2xl mt-4`}>Get Start Ticktick in 59 mins By Sspai</div>
+              <Image src='https://imgur.lzmun.com/picgo/2023/202310272338345.png_itp' width={1200} height={800} />
+              <Image src='https://imgur.lzmun.com/picgo/2023/202310272341822.png_itp' width={1200} height={800} className={`${style['protfolioEntryLayer']}  opacity-0 hover:opacity-100`} />
+              <div className={`${style['protfolioText']} inline-block text-2xl mt-4`}>Get Start Ticktick in 59 mins By Sspai</div>
+              <span> — </span>
+              <div className={`${style['protfolioText']} inline text-2xl mt-4 font-mono`}>Motion Graphics</div>
             </div>
-          </Link>
+          </Link> 
         </div>
         <div className='pb-24'>
         </div>

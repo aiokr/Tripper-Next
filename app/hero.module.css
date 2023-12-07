@@ -92,3 +92,7 @@
     transition: all 0.18s ease-in-out;
     color: var(--main-color);
 }
+
+.protfolioText {
+    transition: all 0.18s ease-in-out;
+}
