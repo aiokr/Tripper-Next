@@ -4,10 +4,6 @@ import { ImageResponse } from 'next/server';
 
 export const runtime = 'edge';
 
-const image = fetch(new URL('/public/icon.png', import.meta.url)).then((res) =>
-  res.arrayBuffer(),
-);
-
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -22,7 +18,6 @@ export async function GET(request) {
       : 'Tripper Press - 按下瞬间';
       
 
-    const imageData = await image;
     return new ImageResponse(
       (
         <div
@@ -39,7 +34,6 @@ export async function GET(request) {
             fontFamily: 'sans',
           }}
         >
-          <img width="64" height="64" src={imageData} />
           <div tw='text-4xl pt-6' style={{ fontWeight: '800' }} lang="zh-CN">{title}</div>
           <div tw='text-2xl pt-4' lang="zh-CN">{subTitle}</div>
         </div>
@@ -51,7 +45,7 @@ export async function GET(request) {
     );
   } catch (e) {
     console.log(`${e.message}`);
-    return new Response(`Failed to generate the image`, {
+    return new Response(`Failed to generate the image ${e.message}`, {
       status: 500,
     });
   }
