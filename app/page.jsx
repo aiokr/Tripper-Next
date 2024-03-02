@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
         </div>
         <hr />
-        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-6 gap-6 lg:grid-cols-4 lg:px-0'>
+        <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-2 gap-6 lg:grid-cols-4 lg:px-0'>
           {posts && posts.map((post) => (
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >

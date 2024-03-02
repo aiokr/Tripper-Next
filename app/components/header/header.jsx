@@ -46,7 +46,7 @@ export default function Header() { // 必须以大写开头
 
             </span>
           </Link>
-          <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') || pathname.startsWith('/lens') || pathname.startsWith('/maps') ? style.activeLink : ''}`} scroll={false} href="/lens">
+          <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') || pathname.startsWith('/lens') || pathname.startsWith('/maps') ? style.activeLink : ''}`} scroll={false} href="/photo">
             <span className='hidden md:inline-block'>Lens</span>
             <span className='inline-block md:hidden translate-y-1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
