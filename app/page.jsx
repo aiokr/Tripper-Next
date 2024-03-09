@@ -51,13 +51,12 @@ export default async function Home() {
             <Link className='text-main' href="/posts/1">All Posts</Link>
           </div>
         </div>
-        <hr />
         <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-2 gap-6 lg:grid-cols-4 lg:px-0'>
           {posts && posts.map((post) => (
             <div key={post.url}>
               <Link href={`/post/${post.url}`} >
                 <div className={`${style['postEntry']}`}>
-                  <div className={`${style['postEntryCover']} h-[180px]`}>{post.cover ? (
+                  <div className={`${style['postEntryCover']} aspect-square`}>{post.cover ? (
                     <Image src={post.cover} width={300} height={200} alt={post.title}
                       className={`${style['postEntryCover']} object-cover h-full w-full`}
                     />

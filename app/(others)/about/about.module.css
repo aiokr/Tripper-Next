@@ -1,6 +1,9 @@
 .aboutCard {
-  border-radius: var(--radius);
-  min-height: 174px
+  border-radius: 24px;
+  min-height: 174px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
 }
 
 .aboutLink {

@@ -11,29 +11,19 @@ export const metadata = {
 
 export default async function AboutPage() {
   return (
-    <main className='dark:bg-zinc-900'>
-      <div className='container px-4 lg:px-2 max-w-[1000px] grid grid-cols-12 grid-rows-2 gap-4 pt-[65px]'>
-        <div className={`${style['aboutCard']} relative row-span-1 col-span-6 px-6 py-4 lg:px-10 lg:py-8 bg-main`}>
-          <div className='text-xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] text-white'>👋 Hey,</div>
-          <div className='text-2xl leading-5 lg:text-[48px] py-1 lg:py-8 font-[500] text-white'>I am aiokr</div>
+    <main className='bg-slate-100 dark:bg-zinc-900'>
+      <div className='container max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-1 pt-[128px]'>
+        <div className={`${style['aboutCard']} justify-between aspect-square col-span-1 bg-main`}>
+          <div className='text-xl font-[500] text-white'>👋 Hey,</div>
+          <div className='text-4xl font-[500] text-white'>I am aiokr</div>
         </div>
-        <div className={`${style['aboutCard']} row-span-1 col-span-6 p-6 lg:p-12 bg-black`}>
+
+
+
+        <div className={`${style['aboutCard']} aspect-square col-span-1 bg-black`}>
           <div className={`${style['earthCard']} h-full`}></div>
         </div>
-        <div className={`${style['aboutCard']} row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 border`}>
-          <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px] dark:text-white'>🏳️‍🌈 I am</div>
-          <div className='py-1 lg:py-4'>
-            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#71afdd70] to-main'>Always as a Student</span><br />
-            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] mr-2 bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-sky-500'>Photographer</span><br />
-            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl font-[500] bg-clip-text text-transparent bg-gradient-to-r from-sky-700 to-sky-950'>Blogger</span><br />
-            <span className='text-lg leading-6 lg:leading-[3rem] lg:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-400'>
-              <span>L</span>
-              <span className='text-indigo-500 font-bold'>G</span>
-              <span>B</span>
-              <span>T</span>
-            </span><br />
-          </div>
-        </div>
+
         <div className={`${style['aboutCard']} relative row-span-1 col-span-12 lg:col-span-6 px-6 py-4 lg:px-10 lg:py-8 text-white bg-[#A3B4BF]`}>
           <div className='text-2xl lg:text-3xl font-[500] leading-[36px] lg:leading-[48px]'>💡 Intersted in</div>
           <div className='py-1 lg:py-4'>
