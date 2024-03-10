@@ -5,6 +5,7 @@ import Script from 'next/script'
 import Image from 'next/image'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   metadataBase: new URL('https://tripper.press'),
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
               gtag('config', 'G-HFH67WJVKQ');
             `}
           </Script>
+          <SpeedInsights />
         </div>
       </body>
     </html>
