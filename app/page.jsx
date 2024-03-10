@@ -29,7 +29,7 @@ export default async function Home() {
         <div className='pb-6 mb-6 text-5xl lg:text-7xl font-bold dark:text-white text-main border-b-8 border-main max-w-[450px]'>
           Tripper Press
         </div>
-        <div className="pb-6md:text-md font-medium text-sub dark:text-white max-w-[450px]">Tripper Press is a personal brand，A creative-led design studio，Here I explore the MG animation and aesthetics.</div>
+        <div className="pb-6md:text-md font-medium text-sub dark:text-white max-w-[450px]">少年没有乌托邦，心向远方自明朗。</div>
       </div>
       <div className='container max-w-[1280px] px-4 lg:px-8 pb-12 flex gap-6'>
         <Link className='inline-block text-sub hover:text-main dark:text-white transition' href='https://twitter.com/skomobi' target='_black'>
