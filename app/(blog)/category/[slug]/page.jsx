@@ -16,7 +16,7 @@ async function fetchBlogData(category) {
   return { posts }
 }
 
-export async function categoryPage(props) {
+export default async function categoryPage(props) {
   var category = props.params.slug
   const { posts } = await fetchBlogData(category || '') // 传入空字符串来获取无分类的文章
   return (
@@ -35,5 +35,3 @@ export async function categoryPage(props) {
     </div>
   )
 }
-
-export default categoryPage

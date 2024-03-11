@@ -37,9 +37,8 @@ const upyunImg = ({ src, width, quality }) => {
   return `${src}_itp/fw/${width}`
 }
 
-export function fetchPost(props) {
+function fetchPost(props) {
   const post = allPosts.find((post) => post.url == props.params.slug)
-  const url = 'https://next.tripper.press/post/' + props.params.slug
   const postCont = post.body.raw
   const title = post.title + ' - Tripper Press'
   const cleanTitle = post.title

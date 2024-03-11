@@ -41,7 +41,7 @@ md.use(emoji).use(footnote).use(tocAndAnchor).use(highlightjs).use(
     tokens[idx].attrPush(['target', '_blank']);
   });
 
-export function fetchAlbum(params) {
+function fetchAlbum(params) {
   const album = allPhotos.find((photos) => photos.url == params.slug) //获取一个相册的所有数据
   const photos = album.photos //提取出相册中的照片列表
   const albumPost = album.body.raw //获取相册正文
@@ -83,7 +83,7 @@ export default function AlbumPage({ params }) {
                 <button key={index} href={`/album/${params.slug}/`}
                   onClick={() => setActiveIndex(index)}
                   className={`${style['albumItem']} h-20 lg:h-36 aspect-square`}>
-                  <Image src={photo} width={200} height={200} className='aspect-square object-cover rounded' unoptimized />
+                  <Image src={photo} width={200} height={200} alt={index} className='aspect-square object-cover rounded' unoptimized />
                 </button>
               ))}
             </div>

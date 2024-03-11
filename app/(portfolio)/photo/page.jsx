@@ -13,7 +13,7 @@ async function fetchPhoto() {
   return { album, categories }
 }
 
-export default async function PressPage({ children }) {
+export default async function PressPage() {
   const { album, categories } = await fetchPhoto()
   return (
     <main className='text-white'>
