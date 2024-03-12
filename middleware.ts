@@ -1,14 +1,10 @@
-import { authMiddleware } from "@clerk/nextjs";
- 
-export default authMiddleware({
-  // Routes that can be accessed while signed out
-  publicRoutes: ["((?!^/dashboard).*)"],
-  // publicRoutes: (req) => !req.url.includes("/dashboard"),
-  // Routes that can always be accessed, and have
-  // no authentication information
-  ignoredRoutes: ["/((?!api|trpc))(_next.*|.+\.[\w]+$)", "/api"],
-});
- 
-export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-};
+export { auth as middleware } from "auth"
+
+// Or like this if you need to do something here.
+// export default auth((req) => {
+//   console.log(req.auth) //  { session: { user: { ... } } }
+// })
+
+// Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+export const config = { matcher: ["/dashboard"] }
+
