@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className={`${styles.footer} bg-zinc-200 dark:bg-zinc-800 pb-20 lg:pb-0`}>
+    <footer className={`${styles.footer} bg-slate-200 dark:bg-slate-800 pb-20 lg:pb-0`}>
       <div className='container max-w-[1280px] p-8'>
         <div className='inline-block py-4 ease-in-out transition hover:text-main'>
           <Image className="hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"
@@ -22,6 +22,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 lg:grid-cols-3'>
           <p className='block opacity-80 dark:text-white'>
             <Link className='text-main' href='https://github.com/aiokr/Tripper-Next' target='_blank'>Design and Code by aiokr</Link> <br />
+            <Link className='text-main' href='/dashboard'>Dashboard</Link><br />
             {
               process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ? (
                 <Link className='block text-ellipsis overflow-hidden' href={`https://github.com/aiokr/Tripper-Next/commit/` + `${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}`} target='_blank'>
@@ -31,7 +32,7 @@ export default function Footer() {
                 <span className='block text-ellipsis overflow-hidden'>Build By Vercel CLI</span>
               )
             }
-            © Tripper Press 2016-2023 <br />
+            © Tripper Press 2016-2024 <br />
           </p>
         </div>
       </div>
