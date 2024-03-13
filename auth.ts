@@ -12,7 +12,7 @@ export const config = {
   callbacks: {
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl
-      if (pathname === "/dashboard") return !!auth
+      if (pathname === "/admin") return !!auth
       return true
     },
     jwt({ token, trigger, session }) {

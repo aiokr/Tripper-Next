@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "paths": {
+      "@sanity": [
+        "./sanity"
+      ],
       "auth": [
         "./auth.ts"
       ],
