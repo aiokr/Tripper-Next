@@ -1,4 +1,35 @@
 import { defineField, defineType } from 'sanity'
+import { z } from 'zod'
+
+export const Post = z.object({
+  _id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  mainImage: z.object({
+    _ref: z.string(),
+    asset: z.object({
+      url: z.string(),
+      lqip: z.string().optional(),
+      dominant: z
+        .object({
+          background: z.string(),
+          foreground: z.string(),
+        })
+        .optional(),
+    }),
+  }),
+  publishedAt: z.string(),
+  description: z.string(),
+  body: z.any(),
+  readingTime: z.number(),
+})
+
+export type Post = z.infer<typeof Post>
+export type PostDetail = Post & {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  headings: any[]
+  related?: Post[]
+}
 
 export default defineType({
   name: 'post',
@@ -22,6 +53,15 @@ export default defineType({
       title: '简介',
       type: 'text',
       rows: 3,
+    }),
+    defineField({
+      name: 'cover',
+      title: '文章封面',
+      type: 'image',
+      description: 'This image will be used for the preview (1200 x 675px)',
+      options: {
+        hotspot: true,
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

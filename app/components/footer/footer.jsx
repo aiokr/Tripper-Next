@@ -1,12 +1,14 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import styles from './footer.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Footer() {
+  const pathname = usePathname();
   return (
-    <footer className={`${styles.footer} bg-slate-200 dark:bg-slate-800 pb-20 lg:pb-0`}>
+    <footer className={`${styles.footer} ${pathname.startsWith('/studio') ? 'hidden' : ''} bg-slate-200 dark:bg-slate-800 pb-20 lg:pb-0`}>
       <div className='container max-w-[1280px] p-8'>
         <div className='inline-block py-4 ease-in-out transition hover:text-main'>
           <Image className="hidden dark:inline" src="https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar"

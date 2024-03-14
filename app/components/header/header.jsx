@@ -21,7 +21,7 @@ export default function Header() { // 必须以大写开头
   // 根据当前页面的 pathname 选择要使用的样式
   const currentPageStyle = getPageStyle(pathname);
   return (
-    <div className={`${currentPageStyle.header} ${style.header} dark:text-white dark:bg-[#161617cc]`}>
+    <div className={`${currentPageStyle.header} ${style.header} ${pathname.startsWith('/studio') ? 'hidden' : ''} dark:text-white dark:bg-[#161617cc]`}>
       <div className='container grid grid-cols-1 md:grid-cols-3'>
         <Link href="/" className='hidden md:flex items-center'>
           <Image src='https://imgur.lzmun.com/picgo/logo/tripper2colorfull.png_avatar' width={32} height={32} unoptimized alt='LOGO'
