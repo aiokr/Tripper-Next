@@ -24,7 +24,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 lg:grid-cols-3'>
           <p className='block opacity-80 dark:text-white'>
             <Link className='text-main' href='https://github.com/aiokr/Tripper-Next' target='_blank'>Design and Code by aiokr</Link> <br />
-            <Link className='text-main' href='/dashboard'>Dashboard</Link><br />
+            <Link className='text-main' href='/Studio' target='_blank'>CMS</Link><br />
             {
               process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ? (
                 <Link className='block text-ellipsis overflow-hidden' href={`https://github.com/aiokr/Tripper-Next/commit/` + `${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}`} target='_blank'>
