@@ -5,7 +5,7 @@ export const Post = z.object({
   _id: z.string(),
   title: z.string(),
   slug: z.string(),
-  mainImage: z.object({
+  cover: z.object({
     _ref: z.string(),
     asset: z.object({
       url: z.string(),
@@ -26,7 +26,6 @@ export const Post = z.object({
 
 export type Post = z.infer<typeof Post>
 export type PostDetail = Post & {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   headings: any[]
   related?: Post[]
 }
@@ -62,7 +61,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'categories',
+      title: '分类',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'slug',
