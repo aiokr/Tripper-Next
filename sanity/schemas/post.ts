@@ -89,7 +89,7 @@ export default defineType({
     select: {
       title: 'title',
       author: 'slug',
-      media: 'mainImage',
+      media: 'cover',
     },
   },
 })

@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "paths": {
-      "sanitylib": [
-        "./sanity"
+      "~/*": [
+        "./*"
+      ],
+      "sanitylib/": [
+        "./sanity/"
       ],
       "auth": [
         "./auth.ts"

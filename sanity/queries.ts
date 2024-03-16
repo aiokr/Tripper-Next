@@ -5,9 +5,7 @@ import { type Post, type PostDetail } from './schemas/post'
 
 export const getAllLatestBlogPostSlugsQuery = () =>
   groq`
-  *[_type == "post" && !(_id in path("drafts.**"))
-  && publishedAt <="${getDate().toISOString()}"
-  && defined(slug.current)] | order(publishedAt desc).slug.current
+  *[_type == "post"]
   `
 
 export const getAllLatestBlogPostSlugs = () => {
