@@ -22,6 +22,7 @@ export const Post = z.object({
   description: z.string(),
   body: z.any(),
   readingTime: z.number(),
+  categories: z.array(z.string()).optional(),
 })
 
 export type Post = z.infer<typeof Post>

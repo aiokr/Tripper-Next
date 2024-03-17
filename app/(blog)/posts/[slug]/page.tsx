@@ -25,8 +25,7 @@ export default async function PostList({ params }) {
   const pagesCount: number = Math.ceil(totalPostNum / postPerPage) // 总页数
   const nextPageNum: number = params.slug + 1
   const prevPageNum: number = params.slug - 1
-
-  console.log(AllCategories)
+  console.log(posts)
   return (
     <main className='dark:bg-zinc-900 lg:pt-[65px] pb-12 pt-24'>
       <div className="container px-4 lg:px-8 max-w-[1280px]">
@@ -70,8 +69,8 @@ export default async function PostList({ params }) {
           <div className='mt-5'>
             <div className='text-xl font-bold mb-2 dark:text-white'>分类</div>
             {AllCategories.map((category: any) => (
-              <div key={category.slug.current}>
-                <Link href={`/category/${category.slug.current}`} className={`${style['categoryLink']}  block py-2 opacity-60 hover:opacity-100 dark:text-zinc-100`}>
+              <div key={category.slug}>
+                <Link href={`/category/${category.slug}`} className={`${style['categoryLink']}  block py-2 opacity-60 hover:opacity-100 dark:text-zinc-100`}>
                   {category.title}
                 </Link>
               </div>

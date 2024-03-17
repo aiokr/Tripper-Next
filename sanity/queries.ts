@@ -23,7 +23,7 @@ type GetBlogPostsOptions = {
 
 export const getLatestBlogPostsQuery = ({
   start = 0,
-  end  = 9999,
+  end = 9999,
   forDisplay = true,
 }: GetBlogPostsOptions) =>
   groq`
@@ -59,8 +59,6 @@ export const getBlogPostQuery = groq`
     "categories": categories[]->title,
     description,
     publishedAt,
-    readingTime,
-    mood,
     body[] {
       ...,
       _type == "image" => {
@@ -71,7 +69,7 @@ export const getBlogPostQuery = groq`
       }
     },
     "headings": body[length(style) == 2 && string::startsWith(style, "h")],
-    mainImage {
+    cover {
       _ref,
       asset->{
         url,
@@ -85,7 +83,7 @@ export const getBlogPostQuery = groq`
       "categories": categories[]->title,
       publishedAt,
       readingTime,
-      mainImage {
+      cover {
         _ref,
         asset->{
           url,
@@ -100,10 +98,27 @@ export const getBlogPost = (slug: string) =>
     slug,
   })
 
-export const getAllCategoriesQuery = ({}: {}) =>
+export const getAllCategoriesQuery = ({ }: {}) =>
   groq`
-  *[_type == "category"]
+  *[_type == "category"]{
+    title,
+    "slug": slug.current,
+  }
   `
 
 export const getAllCategories = () =>
   client.fetch<string[]>(getAllCategoriesQuery({}))
+
+export const getPostByCategoryQuery = (categorySlug) =>
+  groq`*[_type == "post"  && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
+   && defined(slug.current) && [count((categories[]->slug.current)[@ in ["app-plus", "read"]]) > 0] ] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "categories": categories[]->title,
+    "categoriesSlug": categories[]->slug.current,
+    publishedAt,
+  }`
+
+export const getPostByCategory = (categorySlug) =>
+  client.fetch<Post[] | null>(getPostByCategoryQuery(categorySlug))
