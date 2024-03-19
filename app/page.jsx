@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link';
-import { compareDesc, format, parseISO } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import style from './hero.module.css'
-import { allPosts, allPhotos } from 'contentlayer/generated'
+import { getLatestBlogPosts } from '~/sanity/queries'
 
 export const metadata = {
   'title': '按下瞬间 - Tripper Press',
@@ -11,17 +11,12 @@ export const metadata = {
 }
 
 async function fetchBlogData() {
-  const posts = allPosts
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    .slice(0, 4)
-  const album = allPhotos
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    .slice(0, 8)
-  return { posts, album }
+  const posts = await getLatestBlogPosts({ start: 0, end: 3, forDisplay: true }) || [] // 本页要显示的文章
+  return { posts }
 }
 
 export default async function Home() {
-  const { posts, album } = await fetchBlogData()
+  const { posts } = await fetchBlogData()
 
   return (
     <main>
@@ -53,11 +48,11 @@ export default async function Home() {
         </div>
         <div className='py-6 grid grid-cols-1 md:grid-cols-2 px-2 gap-6 lg:grid-cols-4 lg:px-0'>
           {posts && posts.map((post) => (
-            <div key={post.url}>
-              <Link href={`/post/${post.url}`} >
+            <div key={post.slug}>
+              <Link href={`/post/${post.slug}`} >
                 <div className={`${style['postEntry']}`}>
                   <div className={`${style['postEntryCover']} aspect-square`}>{post.cover ? (
-                    <Image src={post.cover} width={300} height={200} alt={post.title}
+                    <Image src={post.cover.asset.url} width={300} height={300} alt={post.title} unoptimized
                       className={`${style['postEntryCover']} object-cover h-full w-full`}
                     />
                   ) : (
@@ -68,9 +63,9 @@ export default async function Home() {
                   </div>
                   <div className={`${style['postEntryInfo']} h-[100px] py-4`}>
                     <div className={`${style['postEntryTitle']} text-xl font-medium dark:text-white`}>{post.title}</div>
-                    <div className='opacity-60 py-1 text-sm dark:text-zinc-400'>{format(parseISO(post.date), 'yyyy-MM-dd')}
-                      {post.category && (
-                        ' · ' + post.category
+                    <div className='opacity-60 py-1 text-sm dark:text-zinc-400'>{format(parseISO(post.publishedAt), 'yyyy-MM-dd')}
+                      {Array.isArray(post.categories) && (
+                        <span> · {post.categories.join(' · ')}</span>
                       )}
                     </div>
                     <div className={`${style['postEntryExcerpt']} opacity-60 text-sm hidden md:block dark:text-zinc-100`}>{post.excerpt}</div>

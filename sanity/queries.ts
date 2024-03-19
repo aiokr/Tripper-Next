@@ -23,7 +23,7 @@ type GetBlogPostsOptions = {
 
 export const getLatestBlogPostsQuery = ({
   start = 0,
-  end = 9999,
+  end = 4,
   forDisplay = true,
 }: GetBlogPostsOptions) =>
   groq`
@@ -111,7 +111,7 @@ export const getAllCategories = () =>
 
 export const getPostByCategoryQuery = (categorySlug) =>
   groq`*[_type == "post"  && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
-   && defined(slug.current) && [count((categories[]->slug.current)[@ in ["app-plus", "read"]]) > 0] ] | order(publishedAt desc) {
+   && defined(slug.current) ] | order(publishedAt desc) {
     _id,
     title,
     "slug": slug.current,

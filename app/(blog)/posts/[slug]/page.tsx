@@ -25,7 +25,7 @@ export default async function PostList({ params }) {
   const pagesCount: number = Math.ceil(totalPostNum / postPerPage) // 总页数
   const nextPageNum: number = params.slug + 1
   const prevPageNum: number = params.slug - 1
-  console.log(posts)
+  //console.log(posts)
   return (
     <main className='dark:bg-zinc-900 lg:pt-[65px] pb-12 pt-24'>
       <div className="container px-4 lg:px-8 max-w-[1280px]">
