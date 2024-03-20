@@ -2,6 +2,7 @@ import { groq } from 'next-sanity'
 import { getDate } from './date'
 import { client } from './client'
 import { type Post, type PostDetail } from './schemas/post'
+import { type Photo } from './schemas/photo'
 
 export const getAllLatestBlogPostSlugsQuery = () =>
   groq`
@@ -139,3 +140,31 @@ export const getPostByCategoryQuery = ({ categorySlug = '', forDisplay = true }:
 
 export const getPostByCategory = (options: GetCategoriesOptions) =>
   client.fetch<Post[] | undefined>(getPostByCategoryQuery(options))
+
+
+type GetPhotosOptions = {
+  start?: number
+  end?: number
+  offset?: number
+  forDisplay?: boolean
+}
+
+export const getLatestPhotoQuery = ({
+  start = 0,
+  end = 120
+}) => groq`
+  *[_type == "photo" && !(_id in path("drafts.**")) && takenAt <= "${getDate().toISOString()}"
+  ] | order(takenAt desc)[${start}..${end}]{
+      _id,
+      title,
+     "url": photo.asset->url,
+     "height": photo.asset->metadata.dimensions.height,
+     "width": photo.asset->metadata.dimensions.width,
+     "lqip": photo.asset->metadata.lqip,
+     "LensMake": photo.asset->metadata.exif.LensMake,
+     "LensModel": photo.asset->metadata.exif.LensModel,
+     "ISO": photo.asset->metadata.exif.ISO,
+     
+   }`
+
+export const getLatestPhoto = () => client.fetch<Photo[] | undefined>(getLatestPhotoQuery({}))

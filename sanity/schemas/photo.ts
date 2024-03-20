@@ -1,4 +1,28 @@
 import { defineField, defineType } from 'sanity'
+import { z } from 'zod'
+
+export const Photo = z.object({
+  _id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  photo: z.object({
+    _ref: z.string(),
+    asset: z.object({
+      url: z.string(),
+      lqip: z.string().optional(),
+      dominant: z
+        .object({
+          background: z.string(),
+          foreground: z.string(),
+        })
+        .optional(),
+    }),
+  }),
+  alttext: z.string(),
+  takenAt: z.string(),
+})
+
+export type Photo = z.infer<typeof Photo>
 
 export default defineType(
   {
