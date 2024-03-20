@@ -6,7 +6,7 @@ import style from './category.module.css'
 export default async function categoryPage({ params }) {
   var categorySlug = params.slug
   const posts = await getPostByCategory({ categorySlug })
-  //console.log(categorySlug, posts)
+  console.log(categorySlug, posts)
   return (
     <div className='col-span-3 lg:col-span-2'>
       {posts && posts.map((post) => (

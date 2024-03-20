@@ -21,7 +21,6 @@ export default async function categoryLayout({ children }) {
         </div>
         <hr />
         <div className='grid py-6 gap-2 grid-cols-2 lg:grid-cols-6'>
-          <Link href={`/category/null`} className="block py-2 text-center rounded-full border hover:bg-zinc-100 hover:dark:bg-zinc-800 transition-all ease-in-out">未分类</Link>
           {AllCategories.map((category: any) => (
             <Link href={`/category/${category.slug}`} key={category.slug} className="block py-2 text-center rounded-full border hover:bg-zinc-100 hover:dark:bg-zinc-800 transition-all ease-in-out">{category.title}</Link>
           ))}

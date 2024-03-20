@@ -109,16 +109,33 @@ export const getAllCategoriesQuery = ({ }: {}) =>
 export const getAllCategories = () =>
   client.fetch<string[]>(getAllCategoriesQuery({}))
 
-export const getPostByCategoryQuery = (categorySlug) =>
-  groq`*[_type == "post"  && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
-   && defined(slug.current) ] | order(publishedAt desc) {
+
+type GetCategoriesOptions = {
+  categorySlug?: string,
+  forDisplay?: boolean
+}
+
+export const getPostByCategoryQuery = ({ categorySlug = '', forDisplay = true }: GetCategoriesOptions) => groq`
+*[ _type == "post" 
+    && !(_id in path("drafts.**")) 
+    && categories[]->slug.current match "${categorySlug}" ]{
     _id,
     title,
     "slug": slug.current,
     "categories": categories[]->title,
-    "categoriesSlug": categories[]->slug.current,
+    description,
     publishedAt,
+    cover {
+      _ref,
+      asset->{
+        url,
+        ${forDisplay
+    ? '"lqip": metadata.lqip, "dominant": metadata.palette.dominant,'
+    : ''
+  }
+      }
+    }
   }`
 
-export const getPostByCategory = (categorySlug) =>
-  client.fetch<Post[] | null>(getPostByCategoryQuery(categorySlug))
+export const getPostByCategory = (options: GetCategoriesOptions) =>
+  client.fetch<Post[] | undefined>(getPostByCategoryQuery(options))

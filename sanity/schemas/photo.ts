@@ -61,6 +61,7 @@ export default defineType(
         name: 'location',
         title: '拍摄地点（无 exif 信息时读取）',
         type: 'geopoint',
+        initialValue: () => ({ lng: 109.42, lat: 24.33 }),
       }),
     ],
 
