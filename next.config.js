@@ -1,5 +1,4 @@
-const { withContentlayer } = require('next-contentlayer');
-module.exports = withContentlayer({
+module.exports = ({
   /* 其他配置 */
   experimental: {
     serverActions: true,
@@ -9,7 +8,7 @@ module.exports = withContentlayer({
     return config
   },
   images: {
-    formats: ['image/webp','image/avif'],
+    formats: ['image/webp', 'image/avif'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -30,9 +29,14 @@ module.exports = withContentlayer({
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-      }, {
+      },
+      {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
       },
     ],
   },

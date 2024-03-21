@@ -1,12 +1,19 @@
 .aboutCard {
-  border-radius: var(--radius);
-  min-height: 174px
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
 }
 
 .aboutLink {
   border-radius: 50%;
   height: 72px;
   width: 72px;
+}
+
+.reGrid {
+  display: grid;
+  padding: 0;
 }
 
 @media (max-width: 1024px) {
@@ -23,6 +30,57 @@
   background-repeat: no-repeat;
   border-radius: 12px;
 }
+
+.mapCard {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: block;
+}
+
+.mapCardInfoLayer {
+  height: 100%;
+  background: linear-gradient(#00000040, #00000000 12%, #00000000 82%, #00000060);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 24px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageCard {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.flipCard {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: ease-in-out .45s;
+}
+
+.flipCardFront,
+.flipCardBack {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden
+}
+
+.flipCardBack {
+  transform: rotateY(180deg);
+}
+
+.flipCard:hover {
+    transform: rotateY(180deg);
+  }
 
 .labCard {
   background-image: url(/cool-background.svg);

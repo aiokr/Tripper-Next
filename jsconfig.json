@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": [".contentlayer/generated"]
 }

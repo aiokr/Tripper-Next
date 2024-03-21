@@ -39,7 +39,7 @@ export default async function AboutPage() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
             {videos.map((videos) => (
               <a className='' key={videos.title} href={`${videos.url}`} target='_blank'>
-                <Image className='aspect-video object-cover mb-2 ' src={videos.img} width={1200} height={1200} unoptimized/>
+                <Image className='aspect-video object-cover mb-2 ' src={videos.img} alt={videos.title} width={1200} height={1200} unoptimized/>
                 <div>{videos.title}</div>
               </a>
             ))}

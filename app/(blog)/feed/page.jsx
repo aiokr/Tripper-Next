@@ -1,5 +1,5 @@
 import { Feed } from "feed";
-import { allPosts } from 'contentlayer/generated'
+//import { allPosts } from 'contentlayer/generated'
 import { writeFileSync } from 'fs';
 
 export default async function generateRSS() {
@@ -22,7 +22,7 @@ export default async function generateRSS() {
 
   feed.items = []
 
-  allPosts.forEach((post) => {
+  /*allPosts.forEach((post) => {
     feed.addItem({
       title: post.title,
       link: `https://tripper.press/post/${post.url}`,
@@ -30,7 +30,7 @@ export default async function generateRSS() {
       author: post.author,
       content: post.body.html,
     });
-  });
+  });*/
 
   writeFileSync('./public/feed.xml', feed.rss2());
   writeFileSync('./public/atom.xml', feed.atom1());

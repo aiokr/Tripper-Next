@@ -1,6 +1,6 @@
 import style from './color.module.css'
 
-export async function ColorPage() {
+export default async function ColorPage() {
   return (
     <main className='font-light dark:bg-[#18181B]'>
       <div className='py-8 md:py-[120px] container max-w-[1000px]'>
@@ -49,5 +49,3 @@ export async function ColorPage() {
     </main>
   )
 }
-
-export default ColorPage

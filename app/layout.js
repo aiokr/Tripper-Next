@@ -5,14 +5,11 @@ import Script from 'next/script'
 import Image from 'next/image'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
-import { Source_Code_Pro, Source_Serif_4, Source_Sans_3, Noto_Serif_SC } from 'next/font/google'
 
-export function generateMetadata() {
-  return {
-    'description': 'Tripper Press Website',
-    'viewport': 'width=device-width,initial-scale=1.0,maximum-scale=1.0',
-    'manifest': '/manifest.json',
-  }
+export const metadata = {
+  metadataBase: new URL('https://tripper.press'),
+  'description': 'Tripper Press Website',
+  'manifest': '/manifest.json',
 }
 
 const source_Code_Pro = Source_Code_Pro({

@@ -9,7 +9,7 @@
 }
 
 .postHeaderLayer {
-    background: linear-gradient(rgba(255, 255, 255, 0.7294117647) 14%, #fff 100%);
+    background: linear-gradient(#ffffff50, #ffffff);
     height: 100%;
 }
 
@@ -31,7 +31,7 @@
 @media (min-width: 1022px) {
     .info-area {
         margin: 0 auto;
-        padding-top: 148px;
-        padding-bottom: 96px;
+        padding-top: 192px;
+        padding-bottom: 148px;
     }
 }
