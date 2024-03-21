@@ -20,6 +20,11 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        serif: ['var(--font-Source-Serif-4)', 'var(--font-Noto-Serif-SC)'],
+        sans: ['var(--font-Source-Sans-3)'],
+        mono: ['var(--font-Source-Code-Pro)'],
+      },
       colors: {
         'main': '#71afdd',
         'sub': '#A3B4BF',
