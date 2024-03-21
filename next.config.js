@@ -1,5 +1,4 @@
-const { withContentlayer } = require('next-contentlayer');
-module.exports = withContentlayer({
+module.exports = ({
   /* 其他配置 */
   experimental: {
     serverActions: true,
@@ -9,7 +8,7 @@ module.exports = withContentlayer({
     return config
   },
   images: {
-    formats: ['image/webp','image/avif'],
+    formats: ['image/webp', 'image/avif'],
     remotePatterns: [
       {
         protocol: 'https',
