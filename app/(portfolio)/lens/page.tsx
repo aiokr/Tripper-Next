@@ -3,7 +3,18 @@ import Image from "next/image";
 import { compareDesc, format, parseISO } from 'date-fns'
 import { getLatestPhoto } from '~/sanity/queries'
 import style from './lens.module.css'
-import { AptureIcon, LensIcon } from '~/app/components/Icon'
+import { SunIcon, IsoIcon, ApertureIcon } from '~/app/components/Icons'
+import { Fraction } from 'fractional';
+
+function formatExposureTime(exposureTime: number) {
+  if (exposureTime > 0 && exposureTime < 1) {
+    const fraction = new Fraction(exposureTime);
+    return `1/${fraction.denominator}`;
+  } else if (exposureTime >= 1) {
+    // 如果 exposureTime 是整数，则直接返回
+    return exposureTime.toString();
+  }
+}
 
 export default async function Lens() {
   const AllPhotos = await getLatestPhoto({ start: 0, end: 20, forDisplay: true })
@@ -18,10 +29,10 @@ export default async function Lens() {
             <div className='flex h-20 bg-white p-4 gap-8 font-light text-sm dark:bg-zinc-800'>
               <div className="flex flex-col items-center justify-center">
                 <div className='text-xs'>参数</div>
-                <div className='flex'>
-                  <span>F{photo.FNumber}/ </span>
-                  <span><AptureIcon /> {photo.ExposureTime}/ </span>
-                  <span>ISO{photo.ISO}/ </span>
+                <div className='flex align-center gap-1'>
+                  <SunIcon />{formatExposureTime(photo.ExposureTime)} &nbsp;
+                  <ApertureIcon />F/{photo.FNumber} &nbsp;
+                  <IsoIcon />ISO{photo.ISO}
                 </div>
               </div>
             </div>
