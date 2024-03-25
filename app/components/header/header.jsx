@@ -10,7 +10,8 @@ export default function Header() { // 必须以大写开头
   const pathname = usePathname();
 
   const getPageStyle = (pathname) => {
-    const darkPages = ['/album', '/photo',];
+    // const darkPages = ['/album', '/photo',];
+    const darkPages = [];
 
     // 检查路径的开头是否匹配 darkPages 中的任何一个
     const isDarkPage = darkPages.some(page => pathname.startsWith(page));
