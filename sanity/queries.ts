@@ -3,6 +3,7 @@ import { getDate } from './date'
 import { client } from './client'
 import { type Post, type PostDetail } from './schemas/post'
 import { type Photo } from './schemas/photo'
+import { cache } from 'react'
 
 export const getAllLatestBlogPostSlugsQuery = () =>
   groq`
@@ -165,6 +166,7 @@ export const getLatestPhotoQuery = ({
      "background": photo.asset->metadata.palette.dominant.background,
      "LensMake": photo.asset->metadata.exif.LensMake,
      "LensModel": photo.asset->metadata.exif.LensModel,
+     "DateTimeOriginal": photo.asset->metadata.DateTimeOriginal,
      "ISO": photo.asset->metadata.exif.ISO,
      "FNumber": photo.asset->metadata.exif.FNumber,
      "ExposureTime": photo.asset->metadata.exif.ExposureTime,
@@ -178,5 +180,7 @@ export const getLatestPhotoQuery = ({
      takenAt
    }`
 
-export const getLatestPhoto = (options: GetPhotosOptions) =>
-  client.fetch<Photo[] | undefined>(getLatestPhotoQuery(options))
+export const getLatestPhoto = cache(async (options: GetPhotosOptions) => {
+  const data = await client.fetch<Photo[] | undefined>(getLatestPhotoQuery(options))
+  return data
+})

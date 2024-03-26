@@ -55,7 +55,6 @@ export default defineType(
         name: 'takenAt',
         title: '拍摄时间',
         type: 'datetime',
-        validation: (Rule) => Rule.required(),
       }),
       defineField({
         name: 'slug',
@@ -114,6 +113,11 @@ export default defineType(
         of: [{ type: 'reference', to: { type: 'lens' } }],
       }),
     ],
+
+    initialValue: () => ({
+      takenAt: new Date().toISOString(),
+    }),
+
     preview: {
       select: {
         title: 'title',
