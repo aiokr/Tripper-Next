@@ -10,7 +10,8 @@ export default function Header() { // 必须以大写开头
   const pathname = usePathname();
 
   const getPageStyle = (pathname) => {
-    const darkPages = ['/album', '/photo',];
+    // const darkPages = ['/album', '/photo',];
+    const darkPages = [];
 
     // 检查路径的开头是否匹配 darkPages 中的任何一个
     const isDarkPage = darkPages.some(page => pathname.startsWith(page));
@@ -46,7 +47,7 @@ export default function Header() { // 必须以大写开头
 
             </span>
           </Link>
-          <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') || pathname.startsWith('/lens') || pathname.startsWith('/maps') ? style.activeLink : ''}`} scroll={false} href="/photo">
+          <Link className={`${style.headerLink} ${pathname.startsWith('/album') || pathname.startsWith('/photo') || pathname.startsWith('/lens') || pathname.startsWith('/maps') ? style.activeLink : ''}`} scroll={false} href="/lens">
             <span className='hidden md:inline-block'>Lens</span>
             <span className='inline-block md:hidden translate-y-1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">

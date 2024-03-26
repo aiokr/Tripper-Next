@@ -151,8 +151,9 @@ type GetPhotosOptions = {
 
 export const getLatestPhotoQuery = ({
   start = 0,
-  end = 120
-}) => groq`
+  end = 20
+}: GetPhotosOptions) =>
+  groq`
   *[_type == "photo" && !(_id in path("drafts.**")) && takenAt <= "${getDate().toISOString()}"
   ] | order(takenAt desc)[${start}..${end}]{
       _id,
@@ -161,10 +162,21 @@ export const getLatestPhotoQuery = ({
      "height": photo.asset->metadata.dimensions.height,
      "width": photo.asset->metadata.dimensions.width,
      "lqip": photo.asset->metadata.lqip,
+     "background": photo.asset->metadata.palette.dominant.background,
      "LensMake": photo.asset->metadata.exif.LensMake,
      "LensModel": photo.asset->metadata.exif.LensModel,
      "ISO": photo.asset->metadata.exif.ISO,
-     
+     "FNumber": photo.asset->metadata.exif.FNumber,
+     "ExposureTime": photo.asset->metadata.exif.ExposureTime,
+     "CameraBrand": photo.asset->metadata.exif.Make,
+     "Camera": photo.asset->metadata.exif.Model,
+     eISO,
+     eFNumber,
+     eExposureTime,
+    "eLensModel": eLens[]->title,
+    "eCamera": eCamera[]->title,
+     takenAt
    }`
 
-export const getLatestPhoto = () => client.fetch<Photo[] | undefined>(getLatestPhotoQuery({}))
+export const getLatestPhoto = (options: GetPhotosOptions) =>
+  client.fetch<Photo[] | undefined>(getLatestPhotoQuery(options))

@@ -1,7 +1,6 @@
 module.exports = ({
   /* 其他配置 */
   experimental: {
-    serverActions: true,
   },
   webpack(config) {
     config.experiments = { ...config.experiments, topLevelAwait: true }

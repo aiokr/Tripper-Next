@@ -82,13 +82,38 @@ export default defineType(
         }
       }),
       defineField({
+        name: 'eExposureTime',
+        title: '快门速度（无 exif 信息时读取）',
+        type: 'number',
+      }),
+      defineField({
+        name: 'eFNumber',
+        title: '光圈值（无 exif 信息时读取）',
+        type: 'number',
+      }),
+      defineField({
+        name: 'eISO',
+        title: 'ISO 值（无 exif 信息时读取）',
+        type: 'number',
+      }),
+      defineField({
         name: 'location',
         title: '拍摄地点（无 exif 信息时读取）',
         type: 'geopoint',
         initialValue: () => ({ lng: 109.42, lat: 24.33 }),
       }),
+      defineField({
+        name: 'eCamera',
+        title: '相机',
+        type: 'array',
+        of: [{ type: 'reference', to: { type: 'camera' } }],
+      }), defineField({
+        name: 'eLens',
+        title: '镜头',
+        type: 'array',
+        of: [{ type: 'reference', to: { type: 'lens' } }],
+      }),
     ],
-
     preview: {
       select: {
         title: 'title',

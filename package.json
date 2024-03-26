@@ -34,6 +34,7 @@
     "eslint-config-next": "13.3.0",
     "feed": "^4.2.2",
     "firebase": "^10.8.0",
+    "fractional": "^1.0.0",
     "framer-motion": "^11.0.18",
     "markdown-it": "^13.0.2",
     "markdown-it-emoji": "^2.0.2",
@@ -49,6 +50,7 @@
     "react-dom": "18.2.0",
     "react-syntax-highlighter": "^15.5.0",
     "sanity": "^3.33.0",
+    "sanity-plugin-media": "^2.2.5",
     "tailwindcss": "^3.4.1",
     "yet-another-react-lightbox": "^3.13.0",
     "zod": "^3.22.4"
