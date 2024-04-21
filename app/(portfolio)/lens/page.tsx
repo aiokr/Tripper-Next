@@ -6,6 +6,8 @@ import style from './lens.module.css'
 import { SunIcon, IsoIcon, ApertureIcon } from '~/app/components/Icons'
 import { Fraction } from 'fractional';
 
+export const revalidate = 60
+
 function formatExposureTime(exposureTime: number) {
   if (exposureTime > 0 && exposureTime < 1) {
     const fraction = new Fraction(exposureTime);
@@ -16,7 +18,7 @@ function formatExposureTime(exposureTime: number) {
   }
 }
 
-export default async function Lens() {
+export default async function generateStaticParams() {
   const AllPhotos = await getLatestPhoto({ start: 0, end: 20, forDisplay: true })
   // console.log(AllPhotos)
   return (
@@ -33,7 +35,7 @@ export default async function Lens() {
                 <div className="flex flex-col items-center justify-center">
                   <div className='text-xs'>拍摄时间</div>
                   <div className='flex align-center gap-1'>
-                    {format(parseISO(photo.takenAt), 'yyyy 年 MM 月 dd 日')}
+                    {format(parseISO(photo.takenAt || photo.DateTimeOriginal), 'yyyy 年 MM 月 dd 日')}
                   </div>
                 </div>
               ) : null}

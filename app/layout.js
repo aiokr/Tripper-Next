@@ -14,6 +14,7 @@ export const metadata = {
   'title': '按下瞬间 - Tripper Press',
   'og:title': '按下瞬间 - Tripper Press',
   'og:image': 'https://tripper.press/api/og?title=按下瞬间&subtitle=衔枝筑巢，栽花种树。生活沉闷，前行有风。',
+  'og:url': 'https://tripper.press',
 }
 
 export default function RootLayout({ children }) {

@@ -17,19 +17,14 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
     openGraph: {
       title: title + ' - Tripper Press',
       description,
-      images: [
-        {
-          url: cover.asset.url,
-        },
-      ],
+      images: cover ? [{ url: cover.asset.url }]
+        : [{ url: 'https://tripper.press/api/og?title=' + title }],
       type: 'article',
+      url: 'https://tripper.press/post/' + params.slug
     },
     twitter: {
-      images: [
-        {
-          url: cover.asset.url,
-        },
-      ],
+      images: cover ? [{ url: cover.asset.url }]
+        : [{ url: 'https://tripper.press/api/og?title=' + title }],
       title: title + ' - Tripper Press',
       description,
       card: 'summary_large_image'
@@ -47,7 +42,7 @@ export default async function generateStaticParams({ params }) {
       {post.cover ? (
         <div className={`${style['postCoverHeader']}`} style={{ backgroundImage: 'url("' + post.cover.asset.url + '")' }}>
           <div className={`${style['postHeaderLayer']}`}>
-            <div className={`${style['info-area']} px-6 lg:px-8 max-w-[800px]`}>
+            <div className={`mx-auto px-6 lg:px-8 pt-48 pb-36 max-w-[800px]`}>
               <div className='text-3xl font-medium pt-4 dark:text-white'>{post.title}</div>
               <div className='opacity-60 pt-4 dark:text-zinc-400'>{format(parseISO(post.publishedAt), 'yyyy-MM-dd')}
                 {Array.isArray(post.categories) && (
@@ -60,7 +55,7 @@ export default async function generateStaticParams({ params }) {
       ) : (
         <div className={`${style['postDefaultHeader']}`}>
           <div className={`${style['postHeaderLayer']}`}>
-            <div className={`${style['info-area']} px-6 lg:px-8 max-w-[800px]`}>
+            <div className={`mx-auto px-6 lg:px-8 pt-36 pb-24 max-w-[800px]`}>
               <div className='text-3xl font-medium pt-4 dark:text-white'>{post.title}</div>
               <div className='opacity-60 pt-4 dark:text-zinc-400'>{format(parseISO(post.publishedAt), 'yyyy-MM-dd')}
                 {Array.isArray(post.categories) && (

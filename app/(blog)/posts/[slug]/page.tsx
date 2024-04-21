@@ -6,10 +6,10 @@ import style from '../posts.module.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '文章 - Tripper Press',
+  title: '文章列表 - Tripper Press',
   openGraph: {
-    title: '文章 - Tripper Press',
-    images: ['https://tripper.press/api/og?title=文章'],
+    title: '文章列表 - Tripper Press',
+    images: ['https://tripper.press/api/og?title=文章列表'],
   },
 }
 
